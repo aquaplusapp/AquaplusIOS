@@ -12,8 +12,8 @@ class Service: NSObject {
     
     static let shared = Service()
     
-    let baseUrl = "http://localhost:1337"
-    
+    //let baseUrl = "http://localhost:1337"
+    let baseUrl = "https://aquaapp.herokuapp.com"
     func searchForUsers(completion: @escaping (Result<[User], Error>) -> ()) {
         let url = "\(baseUrl)/search"
         AF.request(url)

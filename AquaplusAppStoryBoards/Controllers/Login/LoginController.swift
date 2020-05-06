@@ -23,34 +23,55 @@ class LoginController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     
     @IBAction func loginButton(_ sender: Any) {
-        let hud = JGProgressHUD(style: .dark)
-        hud.textLabel.text = "Logging in"
-        hud.show(in: view)
-        
-        guard let email = emailTextField.text else { return }
-        guard let password = passwordTextField.text else { return }
-        
-        
-        
-        let url = "http://localhost:1337/api/v1/entrance/login"
-        let params = ["emailAddress": email, "password": password]
-        AF.request(url, method: .put, parameters: params, encoding: URLEncoding())
-            .validate(statusCode: 200..<300)
-            .responseData { (dataResponse) in
-                hud.dismiss()
+          let hud = JGProgressHUD(style: .dark)
+                hud.textLabel.text = "Logging in"
+                hud.show(in: view)
                 
-                if let _ = dataResponse.error {
-                    self.errorLabel.isHidden = false
-                    self.errorLabel.text = "Your credentials are not correct, please try again."
-                    return
+                guard let email = emailTextField.text else { return }
+                guard let password = passwordTextField.text else { return }
+                
+                errorLabel.isHidden = true
+                
+                Service.shared.login(email: email, password: password) { (res) in
+                    hud.dismiss()
+                    
+                    switch res {
+                    case .failure:
+                        self.errorLabel.isHidden = false
+                        self.errorLabel.text = "Your credentials are not correct, please try again."
+                    case .success:
+                        self.dismiss(animated: true)
+        //                self.homeController?.fetchposts()
+                    }
                 }
-                
-                print("Successfully logged in.")
-                self.dismiss(animated: true)
-                
-                
-        }
-        
+//        let hud = JGProgressHUD(style: .dark)
+//        hud.textLabel.text = "Logging in"
+//        hud.show(in: view)
+//
+//        guard let email = emailTextField.text else { return }
+//        guard let password = passwordTextField.text else { return }
+//
+//
+//
+//        let url = "http://localhost:1337/api/v1/entrance/login"
+//        let params = ["emailAddress": email, "password": password]
+//        AF.request(url, method: .put, parameters: params, encoding: URLEncoding())
+//            .validate(statusCode: 200..<300)
+//            .responseData { (dataResponse) in
+//                hud.dismiss()
+//
+//                if let _ = dataResponse.error {
+//                    self.errorLabel.isHidden = false
+//                    self.errorLabel.text = "Your credentials are not correct, please try again."
+//                    return
+//                }
+//
+//                print("Successfully logged in.")
+//                self.dismiss(animated: true)
+//
+//
+//        }
+//
     }
     
     
