@@ -116,7 +116,31 @@ class HomeController: UITableViewController {
            self.navigationController?.pushViewController(vc!, animated: true)
 
        }
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        print("Deleting")
+//        guard let indexPath = tableView.indexPath(for: DeliveryCell) else { return }
+        let del = self.orders[indexPath.row]
 
+        let alertController = UIAlertController(title: "Options", message: nil, preferredStyle: .actionSheet)
+        alertController.addAction(.init(title: "Delete post", style: .destructive, handler: { (_) in
+
+            let url = "\(Service.shared.baseUrl)/delivery/\(del.id)"
+            AF.request(url, method: .delete)
+                .validate(statusCode: 200..<300)
+                .response { (dataResp) in
+                    if let err = dataResp.error {
+                        print("failed to delete", err)
+                        return
+                    }
+                    self.orders.remove(at: indexPath.row)
+                    self.tableView.deleteRows(at: [indexPath], with: .automatic)
+            }
+
+        }))
+        alertController.addAction(.init(title: "Cancel", style: .cancel, handler: nil))
+
+        self.present(alertController, animated: true)
+    }
 }
 
 //MARK: - IBActions
