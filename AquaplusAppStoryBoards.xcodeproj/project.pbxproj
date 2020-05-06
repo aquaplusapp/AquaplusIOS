@@ -32,6 +32,7 @@
 		3360596A245E70BF0005FC8B /* CustomerProfileControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33605969245E70BF0005FC8B /* CustomerProfileControllerTest.swift */; };
 		3360596C245E715D0005FC8B /* CustomerHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3360596B245E715D0005FC8B /* CustomerHeader.swift */; };
 		5A3F37D5DEB0C21E370FA1C9 /* Pods_AquaplusAppStoryBoardsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A687FE618993718C86EDFD75 /* Pods_AquaplusAppStoryBoardsTests.framework */; };
+		AB608B6624632D2F00B8C490 /* AddNewContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB608B6524632D2F00B8C490 /* AddNewContactViewController.swift */; };
 		C5D4C1CABFEF101374D49145 /* Pods_AquaplusAppStoryBoards.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD500CD53FE1A9F696A4C1F1 /* Pods_AquaplusAppStoryBoards.framework */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +79,7 @@
 		3360596B245E715D0005FC8B /* CustomerHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerHeader.swift; sourceTree = "<group>"; };
 		443D53B3375FD95B69BAB9ED /* Pods-AquaplusAppStoryBoardsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AquaplusAppStoryBoardsTests.release.xcconfig"; path = "Target Support Files/Pods-AquaplusAppStoryBoardsTests/Pods-AquaplusAppStoryBoardsTests.release.xcconfig"; sourceTree = "<group>"; };
 		A687FE618993718C86EDFD75 /* Pods_AquaplusAppStoryBoardsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AquaplusAppStoryBoardsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB608B6524632D2F00B8C490 /* AddNewContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewContactViewController.swift; sourceTree = "<group>"; };
 		AD500CD53FE1A9F696A4C1F1 /* Pods_AquaplusAppStoryBoards.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AquaplusAppStoryBoards.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0E1AF2129EFF759347B6D3A /* Pods-AquaplusAppStoryBoards.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AquaplusAppStoryBoards.debug.xcconfig"; path = "Target Support Files/Pods-AquaplusAppStoryBoards/Pods-AquaplusAppStoryBoards.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -214,6 +216,7 @@
 			children = (
 				335DD145245A38C300E00149 /* ContactsController.swift */,
 				33605969245E70BF0005FC8B /* CustomerProfileControllerTest.swift */,
+				AB608B6524632D2F00B8C490 /* AddNewContactViewController.swift */,
 			);
 			path = Customers;
 			sourceTree = "<group>";
@@ -415,6 +418,7 @@
 				33605941245C7A900005FC8B /* Order.swift in Sources */,
 				33605943245C7A980005FC8B /* User.swift in Sources */,
 				3360593F245C7A860005FC8B /* Customers.swift in Sources */,
+				AB608B6624632D2F00B8C490 /* AddNewContactViewController.swift in Sources */,
 				3360595A245DE16A0005FC8B /* CustomerOrderCell.swift in Sources */,
 				3360596C245E715D0005FC8B /* CustomerHeader.swift in Sources */,
 				33605956245DDA350005FC8B /* OrderViewController.swift in Sources */,

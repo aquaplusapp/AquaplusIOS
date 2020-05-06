@@ -29,7 +29,7 @@ class ContactsController: UITableViewController {
         rc.addTarget(self, action: #selector(fetchContacts), for: .valueChanged)
         self.tableView.refreshControl = rc
     }
-    @objc fileprivate func fetchContacts() {
+    @objc func fetchContacts() {
         //        let url = "http://localhost:1337/customer"
         //        AF.request(url)
         //            .validate(statusCode: 200..<300)
