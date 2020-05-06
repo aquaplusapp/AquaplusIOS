@@ -1,0 +1,701 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		335DD1152459D1FC00E00149 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335DD1142459D1FC00E00149 /* AppDelegate.swift */; };
+		335DD1172459D1FC00E00149 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335DD1162459D1FC00E00149 /* SceneDelegate.swift */; };
+		335DD1192459D1FC00E00149 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335DD1182459D1FC00E00149 /* LoginController.swift */; };
+		335DD11C2459D1FC00E00149 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 335DD11A2459D1FC00E00149 /* Main.storyboard */; };
+		335DD11E2459D20200E00149 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 335DD11D2459D20200E00149 /* Assets.xcassets */; };
+		335DD1212459D20200E00149 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 335DD11F2459D20200E00149 /* LaunchScreen.storyboard */; };
+		335DD12C2459D20300E00149 /* AquaplusAppStoryBoardsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335DD12B2459D20300E00149 /* AquaplusAppStoryBoardsTests.swift */; };
+		335DD1372459D42900E00149 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335DD1362459D42900E00149 /* HomeController.swift */; };
+		335DD13B2459EA2900E00149 /* DeliveryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335DD13A2459EA2900E00149 /* DeliveryCell.swift */; };
+		335DD13D245A093300E00149 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335DD13C245A093300E00149 /* RegisterController.swift */; };
+		335DD142245A0CAE00E00149 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335DD141245A0CAE00E00149 /* Service.swift */; };
+		335DD144245A38A700E00149 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335DD143245A38A700E00149 /* MainTabBarController.swift */; };
+		335DD146245A38C300E00149 /* ContactsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335DD145245A38C300E00149 /* ContactsController.swift */; };
+		335DD148245A3A0B00E00149 /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335DD147245A3A0B00E00149 /* ContactCell.swift */; };
+		3360593F245C7A860005FC8B /* Customers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3360593E245C7A860005FC8B /* Customers.swift */; };
+		33605941245C7A900005FC8B /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33605940245C7A900005FC8B /* Order.swift */; };
+		33605943245C7A980005FC8B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33605942245C7A980005FC8B /* User.swift */; };
+		33605949245CE1510005FC8B /* DriverPickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33605947245CE1510005FC8B /* DriverPickerController.swift */; };
+		33605950245CED2E0005FC8B /* AddNewDeliveryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3360594F245CED2E0005FC8B /* AddNewDeliveryController.swift */; };
+		33605952245CEDF50005FC8B /* CustomerPickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33605951245CEDF50005FC8B /* CustomerPickerController.swift */; };
+		33605956245DDA350005FC8B /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33605955245DDA350005FC8B /* OrderViewController.swift */; };
+		3360595A245DE16A0005FC8B /* CustomerOrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33605959245DE16A0005FC8B /* CustomerOrderCell.swift */; };
+		3360596A245E70BF0005FC8B /* CustomerProfileControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33605969245E70BF0005FC8B /* CustomerProfileControllerTest.swift */; };
+		3360596C245E715D0005FC8B /* CustomerHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3360596B245E715D0005FC8B /* CustomerHeader.swift */; };
+		5A3F37D5DEB0C21E370FA1C9 /* Pods_AquaplusAppStoryBoardsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A687FE618993718C86EDFD75 /* Pods_AquaplusAppStoryBoardsTests.framework */; };
+		C5D4C1CABFEF101374D49145 /* Pods_AquaplusAppStoryBoards.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD500CD53FE1A9F696A4C1F1 /* Pods_AquaplusAppStoryBoards.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		335DD1282459D20300E00149 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 335DD1092459D1FC00E00149 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 335DD1102459D1FC00E00149;
+			remoteInfo = AquaplusAppStoryBoards;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		153CB3DA65EA60B20E22B19E /* Pods-AquaplusAppStoryBoards.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AquaplusAppStoryBoards.release.xcconfig"; path = "Target Support Files/Pods-AquaplusAppStoryBoards/Pods-AquaplusAppStoryBoards.release.xcconfig"; sourceTree = "<group>"; };
+		2278A66F61C46F41D8044BDB /* Pods-AquaplusAppStoryBoardsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AquaplusAppStoryBoardsTests.debug.xcconfig"; path = "Target Support Files/Pods-AquaplusAppStoryBoardsTests/Pods-AquaplusAppStoryBoardsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		335DD1112459D1FC00E00149 /* AquaplusAppStoryBoards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AquaplusAppStoryBoards.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		335DD1142459D1FC00E00149 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		335DD1162459D1FC00E00149 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		335DD1182459D1FC00E00149 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		335DD11B2459D1FC00E00149 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		335DD11D2459D20200E00149 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		335DD1202459D20200E00149 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		335DD1222459D20200E00149 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		335DD1272459D20300E00149 /* AquaplusAppStoryBoardsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AquaplusAppStoryBoardsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		335DD12B2459D20300E00149 /* AquaplusAppStoryBoardsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AquaplusAppStoryBoardsTests.swift; sourceTree = "<group>"; };
+		335DD12D2459D20300E00149 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		335DD1362459D42900E00149 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		335DD13A2459EA2900E00149 /* DeliveryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryCell.swift; sourceTree = "<group>"; };
+		335DD13C245A093300E00149 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
+		335DD141245A0CAE00E00149 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		335DD143245A38A700E00149 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		335DD145245A38C300E00149 /* ContactsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsController.swift; sourceTree = "<group>"; };
+		335DD147245A3A0B00E00149 /* ContactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCell.swift; sourceTree = "<group>"; };
+		3360593E245C7A860005FC8B /* Customers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customers.swift; sourceTree = "<group>"; };
+		33605940245C7A900005FC8B /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		33605942245C7A980005FC8B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		33605947245CE1510005FC8B /* DriverPickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriverPickerController.swift; sourceTree = "<group>"; };
+		3360594F245CED2E0005FC8B /* AddNewDeliveryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewDeliveryController.swift; sourceTree = "<group>"; };
+		33605951245CEDF50005FC8B /* CustomerPickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomerPickerController.swift; sourceTree = "<group>"; };
+		33605955245DDA350005FC8B /* OrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
+		33605959245DE16A0005FC8B /* CustomerOrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerOrderCell.swift; sourceTree = "<group>"; };
+		33605969245E70BF0005FC8B /* CustomerProfileControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerProfileControllerTest.swift; sourceTree = "<group>"; };
+		3360596B245E715D0005FC8B /* CustomerHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerHeader.swift; sourceTree = "<group>"; };
+		443D53B3375FD95B69BAB9ED /* Pods-AquaplusAppStoryBoardsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AquaplusAppStoryBoardsTests.release.xcconfig"; path = "Target Support Files/Pods-AquaplusAppStoryBoardsTests/Pods-AquaplusAppStoryBoardsTests.release.xcconfig"; sourceTree = "<group>"; };
+		A687FE618993718C86EDFD75 /* Pods_AquaplusAppStoryBoardsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AquaplusAppStoryBoardsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD500CD53FE1A9F696A4C1F1 /* Pods_AquaplusAppStoryBoards.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AquaplusAppStoryBoards.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0E1AF2129EFF759347B6D3A /* Pods-AquaplusAppStoryBoards.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AquaplusAppStoryBoards.debug.xcconfig"; path = "Target Support Files/Pods-AquaplusAppStoryBoards/Pods-AquaplusAppStoryBoards.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		335DD10E2459D1FC00E00149 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C5D4C1CABFEF101374D49145 /* Pods_AquaplusAppStoryBoards.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		335DD1242459D20300E00149 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A3F37D5DEB0C21E370FA1C9 /* Pods_AquaplusAppStoryBoardsTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		335DD1082459D1FC00E00149 = {
+			isa = PBXGroup;
+			children = (
+				335DD1132459D1FC00E00149 /* AquaplusAppStoryBoards */,
+				335DD12A2459D20300E00149 /* AquaplusAppStoryBoardsTests */,
+				335DD1122459D1FC00E00149 /* Products */,
+				4932FF59FC55EB2C21FA4EA1 /* Pods */,
+				3D32BDC275288E65731E7B0C /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		335DD1122459D1FC00E00149 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				335DD1112459D1FC00E00149 /* AquaplusAppStoryBoards.app */,
+				335DD1272459D20300E00149 /* AquaplusAppStoryBoardsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		335DD1132459D1FC00E00149 /* AquaplusAppStoryBoards */ = {
+			isa = PBXGroup;
+			children = (
+				3360593D245C7A710005FC8B /* Model */,
+				335DD140245A0CA300E00149 /* API */,
+				335DD1392459EA1900E00149 /* Views */,
+				335DD1382459D57C00E00149 /* Controllers */,
+				335DD1142459D1FC00E00149 /* AppDelegate.swift */,
+				335DD1162459D1FC00E00149 /* SceneDelegate.swift */,
+				335DD11A2459D1FC00E00149 /* Main.storyboard */,
+				335DD11D2459D20200E00149 /* Assets.xcassets */,
+				335DD11F2459D20200E00149 /* LaunchScreen.storyboard */,
+				335DD1222459D20200E00149 /* Info.plist */,
+			);
+			path = AquaplusAppStoryBoards;
+			sourceTree = "<group>";
+		};
+		335DD12A2459D20300E00149 /* AquaplusAppStoryBoardsTests */ = {
+			isa = PBXGroup;
+			children = (
+				335DD12B2459D20300E00149 /* AquaplusAppStoryBoardsTests.swift */,
+				335DD12D2459D20300E00149 /* Info.plist */,
+			);
+			path = AquaplusAppStoryBoardsTests;
+			sourceTree = "<group>";
+		};
+		335DD1382459D57C00E00149 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3360594E245CEA280005FC8B /* Customers */,
+				3360594D245CEA100005FC8B /* Deliveries */,
+				3360594C245CE9FB0005FC8B /* Login */,
+				335DD1362459D42900E00149 /* HomeController.swift */,
+				335DD143245A38A700E00149 /* MainTabBarController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		335DD1392459EA1900E00149 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				335DD13A2459EA2900E00149 /* DeliveryCell.swift */,
+				335DD147245A3A0B00E00149 /* ContactCell.swift */,
+				33605959245DE16A0005FC8B /* CustomerOrderCell.swift */,
+				3360596B245E715D0005FC8B /* CustomerHeader.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		335DD140245A0CA300E00149 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				335DD141245A0CAE00E00149 /* Service.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		3360593D245C7A710005FC8B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3360593E245C7A860005FC8B /* Customers.swift */,
+				33605940245C7A900005FC8B /* Order.swift */,
+				33605942245C7A980005FC8B /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3360594C245CE9FB0005FC8B /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				335DD1182459D1FC00E00149 /* LoginController.swift */,
+				335DD13C245A093300E00149 /* RegisterController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		3360594D245CEA100005FC8B /* Deliveries */ = {
+			isa = PBXGroup;
+			children = (
+				33605955245DDA350005FC8B /* OrderViewController.swift */,
+				3360594F245CED2E0005FC8B /* AddNewDeliveryController.swift */,
+				33605951245CEDF50005FC8B /* CustomerPickerController.swift */,
+				33605947245CE1510005FC8B /* DriverPickerController.swift */,
+			);
+			path = Deliveries;
+			sourceTree = "<group>";
+		};
+		3360594E245CEA280005FC8B /* Customers */ = {
+			isa = PBXGroup;
+			children = (
+				335DD145245A38C300E00149 /* ContactsController.swift */,
+				33605969245E70BF0005FC8B /* CustomerProfileControllerTest.swift */,
+			);
+			path = Customers;
+			sourceTree = "<group>";
+		};
+		3D32BDC275288E65731E7B0C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AD500CD53FE1A9F696A4C1F1 /* Pods_AquaplusAppStoryBoards.framework */,
+				A687FE618993718C86EDFD75 /* Pods_AquaplusAppStoryBoardsTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4932FF59FC55EB2C21FA4EA1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E0E1AF2129EFF759347B6D3A /* Pods-AquaplusAppStoryBoards.debug.xcconfig */,
+				153CB3DA65EA60B20E22B19E /* Pods-AquaplusAppStoryBoards.release.xcconfig */,
+				2278A66F61C46F41D8044BDB /* Pods-AquaplusAppStoryBoardsTests.debug.xcconfig */,
+				443D53B3375FD95B69BAB9ED /* Pods-AquaplusAppStoryBoardsTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		335DD1102459D1FC00E00149 /* AquaplusAppStoryBoards */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 335DD1302459D20300E00149 /* Build configuration list for PBXNativeTarget "AquaplusAppStoryBoards" */;
+			buildPhases = (
+				E0ADE198A26F7CE1EBE3322F /* [CP] Check Pods Manifest.lock */,
+				335DD10D2459D1FC00E00149 /* Sources */,
+				335DD10E2459D1FC00E00149 /* Frameworks */,
+				335DD10F2459D1FC00E00149 /* Resources */,
+				B54CA94F548B6E4AC8DC4ED9 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AquaplusAppStoryBoards;
+			productName = AquaplusAppStoryBoards;
+			productReference = 335DD1112459D1FC00E00149 /* AquaplusAppStoryBoards.app */;
+			productType = "com.apple.product-type.application";
+		};
+		335DD1262459D20300E00149 /* AquaplusAppStoryBoardsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 335DD1332459D20300E00149 /* Build configuration list for PBXNativeTarget "AquaplusAppStoryBoardsTests" */;
+			buildPhases = (
+				CCD71AE0F53ACA058E78C12C /* [CP] Check Pods Manifest.lock */,
+				335DD1232459D20300E00149 /* Sources */,
+				335DD1242459D20300E00149 /* Frameworks */,
+				335DD1252459D20300E00149 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				335DD1292459D20300E00149 /* PBXTargetDependency */,
+			);
+			name = AquaplusAppStoryBoardsTests;
+			productName = AquaplusAppStoryBoardsTests;
+			productReference = 335DD1272459D20300E00149 /* AquaplusAppStoryBoardsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		335DD1092459D1FC00E00149 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1140;
+				LastUpgradeCheck = 1140;
+				ORGANIZATIONNAME = "David Mendes Da Silva";
+				TargetAttributes = {
+					335DD1102459D1FC00E00149 = {
+						CreatedOnToolsVersion = 11.4.1;
+					};
+					335DD1262459D20300E00149 = {
+						CreatedOnToolsVersion = 11.4.1;
+						TestTargetID = 335DD1102459D1FC00E00149;
+					};
+				};
+			};
+			buildConfigurationList = 335DD10C2459D1FC00E00149 /* Build configuration list for PBXProject "AquaplusAppStoryBoards" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 335DD1082459D1FC00E00149;
+			productRefGroup = 335DD1122459D1FC00E00149 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				335DD1102459D1FC00E00149 /* AquaplusAppStoryBoards */,
+				335DD1262459D20300E00149 /* AquaplusAppStoryBoardsTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		335DD10F2459D1FC00E00149 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				335DD1212459D20200E00149 /* LaunchScreen.storyboard in Resources */,
+				335DD11E2459D20200E00149 /* Assets.xcassets in Resources */,
+				335DD11C2459D1FC00E00149 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		335DD1252459D20300E00149 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B54CA94F548B6E4AC8DC4ED9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AquaplusAppStoryBoards/Pods-AquaplusAppStoryBoards-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AquaplusAppStoryBoards/Pods-AquaplusAppStoryBoards-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AquaplusAppStoryBoards/Pods-AquaplusAppStoryBoards-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CCD71AE0F53ACA058E78C12C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AquaplusAppStoryBoardsTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E0ADE198A26F7CE1EBE3322F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AquaplusAppStoryBoards-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		335DD10D2459D1FC00E00149 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				335DD148245A3A0B00E00149 /* ContactCell.swift in Sources */,
+				335DD1372459D42900E00149 /* HomeController.swift in Sources */,
+				335DD142245A0CAE00E00149 /* Service.swift in Sources */,
+				335DD144245A38A700E00149 /* MainTabBarController.swift in Sources */,
+				335DD1192459D1FC00E00149 /* LoginController.swift in Sources */,
+				33605952245CEDF50005FC8B /* CustomerPickerController.swift in Sources */,
+				33605941245C7A900005FC8B /* Order.swift in Sources */,
+				33605943245C7A980005FC8B /* User.swift in Sources */,
+				3360593F245C7A860005FC8B /* Customers.swift in Sources */,
+				3360595A245DE16A0005FC8B /* CustomerOrderCell.swift in Sources */,
+				3360596C245E715D0005FC8B /* CustomerHeader.swift in Sources */,
+				33605956245DDA350005FC8B /* OrderViewController.swift in Sources */,
+				335DD146245A38C300E00149 /* ContactsController.swift in Sources */,
+				33605949245CE1510005FC8B /* DriverPickerController.swift in Sources */,
+				335DD13D245A093300E00149 /* RegisterController.swift in Sources */,
+				335DD13B2459EA2900E00149 /* DeliveryCell.swift in Sources */,
+				33605950245CED2E0005FC8B /* AddNewDeliveryController.swift in Sources */,
+				3360596A245E70BF0005FC8B /* CustomerProfileControllerTest.swift in Sources */,
+				335DD1152459D1FC00E00149 /* AppDelegate.swift in Sources */,
+				335DD1172459D1FC00E00149 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		335DD1232459D20300E00149 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				335DD12C2459D20300E00149 /* AquaplusAppStoryBoardsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		335DD1292459D20300E00149 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 335DD1102459D1FC00E00149 /* AquaplusAppStoryBoards */;
+			targetProxy = 335DD1282459D20300E00149 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		335DD11A2459D1FC00E00149 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				335DD11B2459D1FC00E00149 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		335DD11F2459D20200E00149 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				335DD1202459D20200E00149 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		335DD12E2459D20300E00149 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		335DD12F2459D20300E00149 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		335DD1312459D20300E00149 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E0E1AF2129EFF759347B6D3A /* Pods-AquaplusAppStoryBoards.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = S899XY5RMB;
+				INFOPLIST_FILE = AquaplusAppStoryBoards/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.David.AquaplusAppStoryBoards;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		335DD1322459D20300E00149 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 153CB3DA65EA60B20E22B19E /* Pods-AquaplusAppStoryBoards.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = S899XY5RMB;
+				INFOPLIST_FILE = AquaplusAppStoryBoards/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.David.AquaplusAppStoryBoards;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		335DD1342459D20300E00149 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2278A66F61C46F41D8044BDB /* Pods-AquaplusAppStoryBoardsTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = S899XY5RMB;
+				INFOPLIST_FILE = AquaplusAppStoryBoardsTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.David.AquaplusAppStoryBoardsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AquaplusAppStoryBoards.app/AquaplusAppStoryBoards";
+			};
+			name = Debug;
+		};
+		335DD1352459D20300E00149 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 443D53B3375FD95B69BAB9ED /* Pods-AquaplusAppStoryBoardsTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = S899XY5RMB;
+				INFOPLIST_FILE = AquaplusAppStoryBoardsTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.David.AquaplusAppStoryBoardsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AquaplusAppStoryBoards.app/AquaplusAppStoryBoards";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		335DD10C2459D1FC00E00149 /* Build configuration list for PBXProject "AquaplusAppStoryBoards" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				335DD12E2459D20300E00149 /* Debug */,
+				335DD12F2459D20300E00149 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		335DD1302459D20300E00149 /* Build configuration list for PBXNativeTarget "AquaplusAppStoryBoards" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				335DD1312459D20300E00149 /* Debug */,
+				335DD1322459D20300E00149 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		335DD1332459D20300E00149 /* Build configuration list for PBXNativeTarget "AquaplusAppStoryBoardsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				335DD1342459D20300E00149 /* Debug */,
+				335DD1352459D20300E00149 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 335DD1092459D1FC00E00149 /* Project object */;
+}
