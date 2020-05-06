@@ -14,7 +14,7 @@ import Alamofire
 class HomeController: UITableViewController {
     
     override func viewDidLoad() {
-    super.viewDidLoad()
+        super.viewDidLoad()
         fetchOrders()
         
         let rc = UIRefreshControl()
@@ -22,32 +22,32 @@ class HomeController: UITableViewController {
         self.tableView.refreshControl = rc
         
     }
-
-//    @IBAction func addDelivery(_ sender: Any) {
-//        print("add")
-//    }
+    
+    //    @IBAction func addDelivery(_ sender: Any) {
+    //        print("add")
+    //    }
     
     @objc fileprivate func fetchOrders() {
-//        let url = "http://localhost:1337/delivery"
-//        AF.request(url)
-//            .validate(statusCode: 200..<300)
-//            .responseData { (dataResp) in
-//                self.tableView.refreshControl?.endRefreshing()
-//                if let err = dataResp.error {
-//                    print("Failed to fetch posts:", err)
-//                    return
-//                }
-//
-//                guard let data = dataResp.data else { return }
-//                do {
-//                    let orders = try JSONDecoder().decode([Order].self, from: data)
-//                    self.orders = orders
-//                    self.tableView.reloadData()
-//                 print(orders)
-//                } catch {
-//                    print(error)
-//                }
-//        }
+        //        let url = "http://localhost:1337/delivery"
+        //        AF.request(url)
+        //            .validate(statusCode: 200..<300)
+        //            .responseData { (dataResp) in
+        //                self.tableView.refreshControl?.endRefreshing()
+        //                if let err = dataResp.error {
+        //                    print("Failed to fetch posts:", err)
+        //                    return
+        //                }
+        //
+        //                guard let data = dataResp.data else { return }
+        //                do {
+        //                    let orders = try JSONDecoder().decode([Order].self, from: data)
+        //                    self.orders = orders
+        //                    self.tableView.reloadData()
+        //                 print(orders)
+        //                } catch {
+        //                    print(error)
+        //                }
+        //        }
         Service.shared.fetchOrders { (res) in
             self.tableView.refreshControl?.endRefreshing()
             switch res {
@@ -61,26 +61,26 @@ class HomeController: UITableViewController {
     }
     
     //@IBAction func fetchPosts(_ sender: Any) {
-
-//        let url = "http://localhost:1337/delivery"
-//               AF.request(url)
-//                   .validate(statusCode: 200..<300)
-//                   .responseData { (dataResp) in
-//                       if let err = dataResp.error {
-//                           print("Failed to fetch posts:", err)
-//                           return
-//                       }
-//
-//                       guard let data = dataResp.data else { return }
-//                       do {
-//                           let orders = try JSONDecoder().decode([Order].self, from: data)
-//                           self.orders = orders
-//                           self.tableView.reloadData()
-//                        print(orders)
-//                       } catch {
-//                           print(error)
-//                       }
-//               }
+    
+    //        let url = "http://localhost:1337/delivery"
+    //               AF.request(url)
+    //                   .validate(statusCode: 200..<300)
+    //                   .responseData { (dataResp) in
+    //                       if let err = dataResp.error {
+    //                           print("Failed to fetch posts:", err)
+    //                           return
+    //                       }
+    //
+    //                       guard let data = dataResp.data else { return }
+    //                       do {
+    //                           let orders = try JSONDecoder().decode([Order].self, from: data)
+    //                           self.orders = orders
+    //                           self.tableView.reloadData()
+    //                        print(orders)
+    //                       } catch {
+    //                           print(error)
+    //                       }
+    //               }
     //}
     
     
@@ -97,33 +97,33 @@ class HomeController: UITableViewController {
         //
         let order = orders[indexPath.row]
         deliveryCell.accountName.text = order.customers.accountNumber
-//        cell.textLabel?.font = .boldSystemFont(ofSize: 14)
-       deliveryCell.quantityBottles.text = order.quantityBottles
+        //        cell.textLabel?.font = .boldSystemFont(ofSize: 14)
+        deliveryCell.quantityBottles.text = order.quantityBottles
         //cell.detailTextLabel?.numberOfLines = 0
         return deliveryCell
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)  {
-           print("Row \(indexPath.row)selected")
-           
-           let vc = storyboard?.instantiateViewController(withIdentifier : "OrderViewController") as? OrderViewController
-           
-           let order = orders[indexPath.row]
-           vc?.account = order.customers.accountNumber
-           vc?.name = order.customers.fullName
-           vc?.water = order.quantityBottles
-               //vc?.water = customer.water!
-           
-           self.navigationController?.pushViewController(vc!, animated: true)
-
-       }
+        print("Row \(indexPath.row)selected")
+        
+        let vc = storyboard?.instantiateViewController(withIdentifier : "OrderViewController") as? OrderViewController
+        
+        let order = orders[indexPath.row]
+        vc?.account = order.customers.accountNumber
+        vc?.name = order.customers.fullName
+        vc?.water = order.quantityBottles
+        //vc?.water = customer.water!
+        
+        self.navigationController?.pushViewController(vc!, animated: true)
+        
+    }
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         print("Deleting")
-//        guard let indexPath = tableView.indexPath(for: DeliveryCell) else { return }
+        //        guard let indexPath = tableView.indexPath(for: DeliveryCell) else { return }
         let del = self.orders[indexPath.row]
-
+        
         let alertController = UIAlertController(title: "Options", message: nil, preferredStyle: .actionSheet)
         alertController.addAction(.init(title: "Delete post", style: .destructive, handler: { (_) in
-
+            
             let url = "\(Service.shared.baseUrl)/delivery/\(del.id)"
             AF.request(url, method: .delete)
                 .validate(statusCode: 200..<300)
@@ -135,10 +135,10 @@ class HomeController: UITableViewController {
                     self.orders.remove(at: indexPath.row)
                     self.tableView.deleteRows(at: [indexPath], with: .automatic)
             }
-
+            
         }))
         alertController.addAction(.init(title: "Cancel", style: .cancel, handler: nil))
-
+        
         self.present(alertController, animated: true)
     }
 }
@@ -148,6 +148,6 @@ extension HomeController {
     //function to cancel delivery note
     @IBAction func cancelToHomeController(_ segue: UIStoryboardSegue){
         fetchOrders()
-
+        
     }
 }
