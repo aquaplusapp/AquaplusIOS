@@ -10,8 +10,12 @@ import UIKit
 import Alamofire
 import JGProgressHUD
 
-class AddNewDeliveryController: UITableViewController {
+protocol AddNewDeliveryControllerDelegate {
+    func addNewDeliveryControllerDidAddNewDelivery(_ addNewDeliveryController: AddNewDeliveryController)
+}
 
+class AddNewDeliveryController: UITableViewController {
+    var delegate: AddNewDeliveryControllerDelegate?
     var account = "Customer Name"
     var custid = "ID"
     
@@ -39,7 +43,7 @@ class AddNewDeliveryController: UITableViewController {
     @IBAction func saveDel(_ sender: UIBarButtonItem) {
         handleSend()
         self.dismiss(animated: false, completion: nil)
-        
+        delegate?.addNewDeliveryControllerDidAddNewDelivery(self)
     }
     
     override func viewDidLoad() {

@@ -452,7 +452,7 @@ App</string>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="pzL-gV-09L">
                             <connections>
-                                <segue destination="7k3-uB-aP2" kind="show" id="lvN-Kw-LxO"/>
+                                <segue destination="7k3-uB-aP2" kind="show" identifier="addNewDeliveryController" id="lvN-Kw-LxO"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

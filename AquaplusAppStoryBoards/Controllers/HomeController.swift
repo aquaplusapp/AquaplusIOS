@@ -10,7 +10,6 @@
 import WebKit
 import Alamofire
 
-
 class HomeController: UITableViewController {
     
     override func viewDidLoad() {
@@ -21,6 +20,15 @@ class HomeController: UITableViewController {
         rc.addTarget(self, action: #selector(fetchOrders), for: .valueChanged)
         self.tableView.refreshControl = rc
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard
+            segue.identifier == "addNewDeliveryController",
+            let navigationController = segue.destination as? UINavigationController,
+            let addNewDeliveryController = navigationController.viewControllers.first as? AddNewDeliveryController
+            else { return }
+        addNewDeliveryController.delegate = self
     }
     
     //    @IBAction func addDelivery(_ sender: Any) {
@@ -140,6 +148,12 @@ class HomeController: UITableViewController {
         alertController.addAction(.init(title: "Cancel", style: .cancel, handler: nil))
         
         self.present(alertController, animated: true)
+    }
+}
+
+extension HomeController: AddNewDeliveryControllerDelegate {
+    func addNewDeliveryControllerDidAddNewDelivery(_ addNewDeliveryController: AddNewDeliveryController) {
+        fetchOrders()
     }
 }
 
