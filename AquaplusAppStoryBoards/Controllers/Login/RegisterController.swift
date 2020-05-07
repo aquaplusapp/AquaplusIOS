@@ -17,6 +17,7 @@ class RegisterController: UIViewController{
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    
     @IBOutlet weak var errorLabel: UILabel!
     
     @IBAction func handleSignup(_ sender: Any) {
@@ -45,6 +46,9 @@ class RegisterController: UIViewController{
     override func viewDidLoad() {
     super.viewDidLoad()
         errorLabel.isHidden = true
+    }
+    @IBAction func goBack(_ sender: Any) {
+        self.dismiss(animated: true)
     }
     
 }
