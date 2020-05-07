@@ -130,7 +130,7 @@ class HomeController: UITableViewController {
         let del = self.orders[indexPath.row]
         
         let alertController = UIAlertController(title: "Options", message: nil, preferredStyle: .actionSheet)
-        alertController.addAction(.init(title: "Delete post", style: .destructive, handler: { (_) in
+        alertController.addAction(.init(title: "Delete order", style: .destructive, handler: { (_) in
             
             let url = "\(Service.shared.baseUrl)/delivery/\(del.id)"
             AF.request(url, method: .delete)
