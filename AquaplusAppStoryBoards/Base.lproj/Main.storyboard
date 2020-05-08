@@ -226,7 +226,7 @@ App</string>
                                 <rect key="frame" x="37" y="110" width="340" height="170"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bu8-IY-UBQ">
-                                        <rect key="frame" x="137" y="37" width="184" height="96"/>
+                                        <rect key="frame" x="137" y="37.5" width="184" height="95.5"/>
                                         <string key="text">Aquaplus 
 App</string>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
@@ -988,6 +988,16 @@ App</string>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="daR-LS-018" id="4He-Sm-uDa">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="crh-hA-t44">
+                                                    <rect key="frame" x="184" y="6" width="46" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <connections>
+                                                        <action selector="sendEmail:" destination="EHK-l5-74e" eventType="touchUpInside" id="I0F-Iu-Yim"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -1256,7 +1266,11 @@ App</string>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="New Contact" id="3pE-1T-tcr">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="nLW-jV-n0R"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="nLW-jV-n0R">
+                            <connections>
+                                <segue destination="wfo-GK-ctE" kind="unwind" unwindAction="cancelToContactsController:" id="RVL-Nj-NV1"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="Lc2-vc-nZ5">
                             <connections>
                                 <action selector="saveContact:" destination="Yox-jm-12v" id="z1s-hy-cLD"/>
@@ -1278,6 +1292,7 @@ App</string>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aR9-0l-5JZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="wfo-GK-ctE" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2913.04347826087" y="1615.8482142857142"/>
         </scene>
