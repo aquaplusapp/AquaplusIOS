@@ -12,26 +12,54 @@ class OrderViewController: UITableViewController {
 
     
     var account = ""
+    var customerID = ""
     var name = ""
     var water = ""
+    var dateOrder = Int()
+    //var dateOrder = Date()
+    let dateFormatter = DateFormatter()
+
+    
     
     @IBOutlet weak var accountNumber: UILabel!
     @IBOutlet weak var accountName: UILabel!
     @IBOutlet weak var numberBottles: UILabel!
+    @IBOutlet weak var custID: UILabel!
+    @IBOutlet weak var emptyBottles: UITextField!
+    @IBOutlet weak var orderedDate: UILabel!
     
+    @IBAction func completeOrder(_ sender: UIBarButtonItem) {
+        //handleCompleteOrder()
+    }
+    
+    
+    var orders: Order!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         accountNumber.text = account
         accountName.text = name
         numberBottles.text = water
-
+        custID.text = customerID
+        //orderedDate.text = orders.fromnow
+       
+        //orderedDate.text = dateOrder
+        //dateFormatter.dateStyle = DateFormatter.Style.medium
+       //orderedDate.text = DateFormatter.localizedString(from: dateOrder, dateStyle: DateFormatter.Style.short, timeStyle: DateFormatter.Style.short)
+        orderedDate.text = String(dateOrder)
+        
+//        dateFormatter.dateFormat = "dd.MM.yy"
+//        let result = dateFormatter.string(from: dateOrder)
+//        orderedDate.text = result
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+    
+    
     @IBAction func sendEmail(_ sender: Any) {
     }
     

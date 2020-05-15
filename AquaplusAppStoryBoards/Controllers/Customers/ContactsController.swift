@@ -123,4 +123,11 @@ class ContactsController: UITableViewController {
 //        fatalError("init(coder:) has not been implemented")
 //    }
 }
-
+//MARK: - IBActions
+extension ContactsController {
+    //function to cancel AddNewContactController
+    @IBAction func cancelToContactsController(_ segue: UIStoryboardSegue){
+        fetchContacts()
+        
+    }
+}

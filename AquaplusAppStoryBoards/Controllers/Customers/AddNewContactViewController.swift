@@ -142,11 +142,4 @@ class AddNewContactViewController: UITableViewController {
     */
 
 }
-//MARK: - IBActions
-extension ContactsController {
-    //function to cancel AddNewContactController
-    @IBAction func cancelToContactsController(_ segue: UIStoryboardSegue){
-        fetchContacts()
-        
-    }
-}
+

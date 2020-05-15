@@ -119,7 +119,9 @@ class HomeController: UITableViewController {
         vc?.account = order.customers.accountNumber
         vc?.name = order.customers.fullName
         vc?.water = order.quantityBottles
+        vc?.customerID = order.customers.id
         //vc?.water = customer.water!
+        vc?.dateOrder = order.createdAt
         
         self.navigationController?.pushViewController(vc!, animated: true)
         
