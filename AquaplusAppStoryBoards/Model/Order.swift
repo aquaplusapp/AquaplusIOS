@@ -10,7 +10,8 @@ import Foundation
 
 struct Order: Decodable {
     let id: String
-    let quantityBottles: String
+    let quantityBottles: Int
+    let emptyBottles: Int
     let createdAt: Int
     var fromnow: String?
     let customers: Customers

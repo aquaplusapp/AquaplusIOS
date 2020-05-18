@@ -1001,20 +1001,33 @@ App</string>
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Empties" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pMm-a4-mE5">
-                                                    <rect key="frame" x="20" y="11" width="62" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Empties" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pMm-a4-mE5">
+                                                    <rect key="frame" x="20" y="11" width="62" height="21.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y30-sd-sA9">
+                                                    <rect key="frame" x="362" y="5" width="32" height="34.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nm9-yl-OpE">
+                                                    <rect key="frame" x="307" y="11" width="42" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y30-sd-sA9">
-                                                    <rect key="frame" x="354" y="5" width="40" height="34"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                </textField>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="pMm-a4-mE5" secondAttribute="bottom" constant="11.5" id="0hD-pO-wmY"/>
+                                                <constraint firstItem="Y30-sd-sA9" firstAttribute="top" secondItem="jxv-Tn-Sjo" secondAttribute="top" constant="5" id="Dyf-XQ-zu3"/>
+                                                <constraint firstItem="pMm-a4-mE5" firstAttribute="leading" secondItem="jxv-Tn-Sjo" secondAttribute="leading" constant="20" id="Rra-d9-smX"/>
+                                                <constraint firstItem="pMm-a4-mE5" firstAttribute="top" secondItem="jxv-Tn-Sjo" secondAttribute="top" constant="11" id="TjF-YG-LIC"/>
+                                                <constraint firstAttribute="trailing" secondItem="Y30-sd-sA9" secondAttribute="trailing" constant="20" id="igp-6j-pfh"/>
+                                                <constraint firstAttribute="bottom" secondItem="Y30-sd-sA9" secondAttribute="bottom" constant="4.5" id="pC3-IU-RQb"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="daR-LS-018">
@@ -1053,7 +1066,8 @@ App</string>
                         <outlet property="accountName" destination="Sac-vZ-ee2" id="mND-SQ-sIZ"/>
                         <outlet property="accountNumber" destination="7nr-Bz-4lr" id="dOm-X1-oOe"/>
                         <outlet property="custID" destination="wE1-HO-4WC" id="ggz-OD-x5x"/>
-                        <outlet property="emptyBottles" destination="Y30-sd-sA9" id="gNP-0u-req"/>
+                        <outlet property="emptyBottles" destination="nm9-yl-OpE" id="1i6-GY-XuH"/>
+                        <outlet property="emptyBottlesText" destination="Y30-sd-sA9" id="JBv-vv-Kl2"/>
                         <outlet property="numberBottles" destination="GAt-sR-2je" id="60M-F8-8Vn"/>
                         <outlet property="orderedDate" destination="coR-Jg-cjq" id="88w-7X-d5m"/>
                     </connections>

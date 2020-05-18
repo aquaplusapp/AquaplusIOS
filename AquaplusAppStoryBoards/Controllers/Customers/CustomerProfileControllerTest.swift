@@ -92,11 +92,13 @@ var cellColor = true
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomerOrderCell", for: indexPath) as! CustomerOrderCell
     let cust = orders[indexPath.row]
+//        let myInteger = cust.quantityBottles
+//        let myString = "\(myInteger)"
         // Configure the cell
 //    cell.backgroundColor = cellColor ? UIColor.red : UIColor.blue
 //    cellColor = !cellColor
         cell.accountNameLabel?.text = cust.customers.accountNumber
-        cell.quantityBottlesLabel?.text = cust.quantityBottles
+        cell.quantityBottlesLabel?.text = String(cust.quantityBottles)
         return cell
     }
 

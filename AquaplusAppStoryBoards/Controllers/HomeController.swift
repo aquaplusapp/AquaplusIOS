@@ -16,6 +16,8 @@ class HomeController: UITableViewController {
         super.viewDidLoad()
         fetchOrders()
         
+        //navigationController?.navigationBar.tintColor = .black
+        
         let rc = UIRefreshControl()
         rc.addTarget(self, action: #selector(fetchOrders), for: .valueChanged)
         self.tableView.refreshControl = rc
@@ -104,9 +106,12 @@ class HomeController: UITableViewController {
         let deliveryCell = self.tableView.dequeueReusableCell(withIdentifier: "DeliveryCell") as! DeliveryCell
         //
         let order = orders[indexPath.row]
+//        let myInteger = order.quantityBottles
+//        let myString = "\(myInteger)"
         deliveryCell.accountName.text = order.customers.accountNumber
         //        cell.textLabel?.font = .boldSystemFont(ofSize: 14)
-        deliveryCell.quantityBottles.text = order.quantityBottles
+        //deliveryCell.quantityBottles.text = myString
+        deliveryCell.quantityBottles.text = String(order.quantityBottles)
         //cell.detailTextLabel?.numberOfLines = 0
         return deliveryCell
     }
@@ -116,12 +121,26 @@ class HomeController: UITableViewController {
         let vc = storyboard?.instantiateViewController(withIdentifier : "OrderViewController") as? OrderViewController
         
         let order = orders[indexPath.row]
+        
+//        let myInteger = order.quantityBottles
+//        let myString = "\(myInteger)"
+//        
+//        let myInteger2 = order.emptyBottles
+//        let myString2 = "\(myInteger2)"
+        
         vc?.account = order.customers.accountNumber
         vc?.name = order.customers.fullName
-        vc?.water = order.quantityBottles
+        //vc?.water = myString
+        vc?.water = String(order.quantityBottles)
+
+        
         vc?.customerID = order.customers.id
         //vc?.water = customer.water!
         vc?.dateOrder = order.createdAt
+        vc?.delNoId = order.id
+        //vc?.emptyBottle = myString2
+        vc?.emptyBottle = String(order.emptyBottles)
+
         
         self.navigationController?.pushViewController(vc!, animated: true)
         
