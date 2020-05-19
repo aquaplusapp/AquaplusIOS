@@ -30,10 +30,9 @@ class OrderViewController: UITableViewController {
     @IBOutlet weak var custID: UILabel!
     @IBOutlet weak var emptyBottlesText: UITextField!
     @IBOutlet weak var orderedDate: UILabel!
-    @IBOutlet weak var emptyBottles: UILabel!
     
     @objc func handleCompleteOrder() {
-        print("Save")
+         print("Save")
          let hud = JGProgressHUD(style: .dark)
          hud.textLabel.text = "Updating"
          hud.show(in: view)
@@ -50,6 +49,9 @@ class OrderViewController: UITableViewController {
                  self.accountNumber.text = nil
                  self.accountNumber.isHidden = false
                  self.reloadInputViews()
+                 self.navigationController?.popViewController(animated: true)
+                 self.dismiss(animated: true, completion: nil)
+                
                  
          }
     }
@@ -61,6 +63,10 @@ class OrderViewController: UITableViewController {
         formatter.dateFormat = "HH:mm:ss dd/MM/yyyy"
         let result = formatter.string(from: date)
         print(result)
+        
+        //self.dismiss(animated: true, completion: nil)
+
+        
     }
     
     
@@ -72,7 +78,7 @@ class OrderViewController: UITableViewController {
         accountName.text = name
         numberBottles.text = water
         custID.text = customerID
-        emptyBottles.text = emptyBottle
+        emptyBottlesText.text = emptyBottle
         //orderedDate.text = orders.fromnow
         
         //orderedDate.text = dateOrder

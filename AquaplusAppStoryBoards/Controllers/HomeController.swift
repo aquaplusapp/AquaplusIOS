@@ -16,12 +16,18 @@ class HomeController: UITableViewController {
         super.viewDidLoad()
         fetchOrders()
         
+        
         //navigationController?.navigationBar.tintColor = .black
         
         let rc = UIRefreshControl()
         rc.addTarget(self, action: #selector(fetchOrders), for: .valueChanged)
         self.tableView.refreshControl = rc
         
+    }
+    
+    //func to reload tableview when VC appears
+    override func viewWillAppear(_ animated: Bool) {
+        fetchOrders()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -37,7 +43,7 @@ class HomeController: UITableViewController {
     //        print("add")
     //    }
     
-    @objc fileprivate func fetchOrders() {
+    @objc func fetchOrders() {
         //        let url = "http://localhost:1337/delivery"
         //        AF.request(url)
         //            .validate(statusCode: 200..<300)
@@ -170,6 +176,8 @@ class HomeController: UITableViewController {
         
         self.present(alertController, animated: true)
     }
+    
+// MARK: - Navigation
 }
 
 extension HomeController: AddNewDeliveryControllerDelegate {

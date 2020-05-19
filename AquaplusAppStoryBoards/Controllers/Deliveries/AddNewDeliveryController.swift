@@ -18,6 +18,7 @@ class AddNewDeliveryController: UITableViewController {
     var delegate: AddNewDeliveryControllerDelegate?
     var account = "Customer Name"
     var custid = "ID"
+    var VChome = HomeController()
     
     var driver: String = "" {
       didSet {
@@ -48,8 +49,8 @@ class AddNewDeliveryController: UITableViewController {
        print(result)
         
         handleSend()
-        self.dismiss(animated: false, completion: nil)
-        delegate?.addNewDeliveryControllerDidAddNewDelivery(self)
+       
+        //delegate?.addNewDeliveryControllerDidAddNewDelivery(self)
         
         
     }
@@ -89,9 +90,9 @@ class AddNewDeliveryController: UITableViewController {
                 hud.dismiss()
                 self.waterLabel.text = nil
                 self.waterLabel.isHidden = false
-               
-                
-                
+
+                self.dismiss(animated: false, completion: nil)
+
                 //self.fetchCustomerProfile()
 
         }
