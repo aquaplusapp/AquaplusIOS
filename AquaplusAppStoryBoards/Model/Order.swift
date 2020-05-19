@@ -13,6 +13,7 @@ struct Order: Decodable {
     let quantityBottles: Int
     let emptyBottles: Int
     let createdAt: Int
+    let notes: String
     var fromnow: String?
     let customers: Customers
 }

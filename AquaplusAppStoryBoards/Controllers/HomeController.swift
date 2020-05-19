@@ -134,6 +134,7 @@ class HomeController: UITableViewController {
 //        let myInteger2 = order.emptyBottles
 //        let myString2 = "\(myInteger2)"
         
+        
         vc?.account = order.customers.accountNumber
         vc?.name = order.customers.fullName
         //vc?.water = myString
@@ -144,6 +145,7 @@ class HomeController: UITableViewController {
         //vc?.water = customer.water!
         vc?.dateOrder = order.createdAt
         vc?.delNoId = order.id
+        vc?.notes = order.notes
         //vc?.emptyBottle = myString2
         vc?.emptyBottle = String(order.emptyBottles)
 

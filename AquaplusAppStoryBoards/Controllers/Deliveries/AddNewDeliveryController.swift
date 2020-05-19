@@ -40,6 +40,7 @@ class AddNewDeliveryController: UITableViewController {
     @IBAction func waterStepper(_ sender: UIStepper) {
         waterLabel.text = Int(sender.value).description
     }
+    @IBOutlet weak var notesText: UITextView!
     
     @IBAction func saveDel(_ sender: UIBarButtonItem) {
        let date = Date()
@@ -81,7 +82,7 @@ class AddNewDeliveryController: UITableViewController {
         hud.textLabel.text = "Submitting..."
         hud.show(in: view)
 
-        let params = ["quantityBottles": waterLabel.text ?? ""]
+        let params = ["quantityBottles": waterLabel.text ?? "", "notes": notesText.text ?? ""]
         let url = "\(Service.shared.baseUrl)/delivery/customer/\(custid)"
         AF.request(url, method: .post, parameters: params)
             .validate(statusCode: 200..<300)
