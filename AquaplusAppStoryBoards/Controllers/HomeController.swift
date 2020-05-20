@@ -12,6 +12,21 @@ import Alamofire
 
 class HomeController: UITableViewController {
     
+    var selectedSegment = 1
+    
+    @IBOutlet var ordersTableView: UITableView!
+    @IBAction func segmentControl(_ sender: UISegmentedControl) {
+        if sender.selectedSegmentIndex == 0{
+            selectedSegment = 1
+            
+        } else {
+            selectedSegment = 2
+            
+        }
+        
+        self.ordersTableView.reloadData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchOrders()
@@ -104,7 +119,11 @@ class HomeController: UITableViewController {
     var orders = [Order]()
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return orders.count
+        if selectedSegment == 1{
+            return orders.count
+        } else {
+            return 0
+        }
     }
     //let cellReuseIdentifier = "cell"
     
