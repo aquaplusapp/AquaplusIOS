@@ -78,11 +78,17 @@ class AddNewDeliveryController: UITableViewController {
     @objc func handleSend() {
         //print(customInputView.textView.text ?? "")
 
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "ddMMyyyy"
+        let result = formatter.string(from: date)
+        print(result)
+        
         let hud = JGProgressHUD(style: .dark)
         hud.textLabel.text = "Submitting..."
         hud.show(in: view)
 
-        let params = ["quantityBottles": waterLabel.text ?? "", "notes": notesText.text ?? ""]
+        let params = ["quantityBottles": waterLabel.text ?? "", "notes": notesText.text ?? "", "dateOrdered": result ]
         let url = "\(Service.shared.baseUrl)/delivery/customer/\(custid)"
         AF.request(url, method: .post, parameters: params)
             .validate(statusCode: 200..<300)
