@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OTx-Mq-1Dv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OTx-Mq-1Dv">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -459,7 +459,7 @@ App</string>
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rCx-2O-WYO">
-                                            <rect key="frame" x="20" y="49" width="241" height="20"/>
+                                            <rect key="frame" x="20" y="49" width="35.5" height="20"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -468,7 +468,7 @@ App</string>
                                     <constraints>
                                         <constraint firstItem="rCx-2O-WYO" firstAttribute="leading" secondItem="uFW-Jl-Meh" secondAttribute="leading" constant="20" id="3sF-CP-9SF"/>
                                         <constraint firstItem="rrU-8q-Pst" firstAttribute="top" secondItem="uFW-Jl-Meh" secondAttribute="top" constant="11" id="7H7-Dh-FlG"/>
-                                        <constraint firstAttribute="trailing" secondItem="rCx-2O-WYO" secondAttribute="trailing" constant="122" id="9Lt-hI-cjc"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="rCx-2O-WYO" secondAttribute="trailing" symbolic="YES" id="9Lt-hI-cjc"/>
                                         <constraint firstAttribute="trailing" secondItem="rrU-8q-Pst" secondAttribute="trailing" constant="122" id="A5I-E8-0jk"/>
                                         <constraint firstItem="rCx-2O-WYO" firstAttribute="top" secondItem="rrU-8q-Pst" secondAttribute="bottom" constant="8" id="FYD-Ac-wdW"/>
                                         <constraint firstAttribute="bottom" secondItem="rCx-2O-WYO" secondAttribute="bottom" constant="21" id="Wbn-g6-r01"/>
@@ -480,6 +480,67 @@ App</string>
                                 <connections>
                                     <outlet property="accountName" destination="rrU-8q-Pst" id="kmN-aP-zk8"/>
                                     <outlet property="quantityBottles" destination="rCx-2O-WYO" id="iEr-ii-wWT"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" showsReorderControl="YES" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="DeliveryCompletedCell" rowHeight="101" id="gVf-b2-YII" customClass="DeliveryCompletedCell" customModule="AquaplusAppStoryBoards" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="150" width="414" height="101"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gVf-b2-YII" id="U2y-X1-Y55">
+                                    <rect key="frame" x="0.0" y="0.0" width="383" height="101"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BIS-ba-e4B">
+                                            <rect key="frame" x="20" y="12" width="141" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="141" id="GoG-cE-fOF"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="um0-OC-qRp">
+                                            <rect key="frame" x="20" y="45" width="141" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="ykp-RY-sH1"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="52c-nI-X0M">
+                                            <rect key="frame" x="20" y="68" width="141" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="CyV-6c-5PX"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WD9-TH-IPm">
+                                            <rect key="frame" x="315" y="39" width="18" height="23"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" image="post_options"/>
+                                            <connections>
+                                                <action selector="optionsButton:" destination="gVf-b2-YII" eventType="touchUpInside" id="Via-f7-rqe"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="um0-OC-qRp" firstAttribute="top" secondItem="BIS-ba-e4B" secondAttribute="bottom" constant="3" id="2ap-nW-wjs"/>
+                                        <constraint firstItem="um0-OC-qRp" firstAttribute="trailing" secondItem="52c-nI-X0M" secondAttribute="trailing" id="HR9-Vb-YgN"/>
+                                        <constraint firstItem="BIS-ba-e4B" firstAttribute="leading" secondItem="um0-OC-qRp" secondAttribute="leading" id="Qg3-uE-C7i"/>
+                                        <constraint firstItem="BIS-ba-e4B" firstAttribute="top" secondItem="U2y-X1-Y55" secondAttribute="topMargin" constant="1" id="WRf-9u-ldP"/>
+                                        <constraint firstItem="52c-nI-X0M" firstAttribute="top" secondItem="um0-OC-qRp" secondAttribute="bottom" constant="2" id="b1D-56-DPs"/>
+                                        <constraint firstItem="BIS-ba-e4B" firstAttribute="leading" secondItem="U2y-X1-Y55" secondAttribute="leadingMargin" id="dr6-h0-ms2"/>
+                                        <constraint firstItem="um0-OC-qRp" firstAttribute="leading" secondItem="52c-nI-X0M" secondAttribute="leading" id="efq-D9-JXR"/>
+                                        <constraint firstItem="BIS-ba-e4B" firstAttribute="trailing" secondItem="um0-OC-qRp" secondAttribute="trailing" id="fHZ-x8-Lf2"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="52c-nI-X0M" secondAttribute="bottom" constant="1" id="hLj-F8-aCH"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="accountName1" destination="BIS-ba-e4B" id="8wn-PG-yH9"/>
+                                    <outlet property="emtpyBottles" destination="52c-nI-X0M" id="kz8-IF-kMg"/>
+                                    <outlet property="quantityBottles1" destination="um0-OC-qRp" id="58O-gw-QKL"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -494,11 +555,18 @@ App</string>
                                 <segue destination="BYZ-38-t0r" kind="presentation" id="LLJ-DN-ujz"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="pzL-gV-09L">
-                            <connections>
-                                <segue destination="7k3-uB-aP2" kind="show" identifier="addNewDeliveryController" id="lvN-Kw-LxO"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="pzL-gV-09L">
+                                <connections>
+                                    <segue destination="7k3-uB-aP2" kind="show" identifier="addNewDeliveryController" id="lvN-Kw-LxO"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="refresh" id="c9L-JL-c3h">
+                                <connections>
+                                    <action selector="refreshBtn:" destination="rz4-aR-CxW" id="QkZ-QA-Nlg"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="ordersTableView" destination="y2H-Bm-eVc" id="Akl-UY-cA4"/>
@@ -786,7 +854,7 @@ App</string>
                     </navigationItem>
                     <connections>
                         <outlet property="customerLabel" destination="ixV-In-Faj" id="BqQ-D3-G0r"/>
-                        <outlet property="date" destination="y59-yi-XSx" id="G6I-oh-8ag"/>
+                        <outlet property="dateDueLabel" destination="y59-yi-XSx" id="ZCG-MC-hgF"/>
                         <outlet property="driverLabel" destination="QwH-Eq-Uje" id="Aij-PC-4G8"/>
                         <outlet property="idLabel" destination="7BS-kn-BuA" id="833-Yu-dOQ"/>
                         <outlet property="notesText" destination="QTA-QJ-8BE" id="uUu-oJ-CyI"/>

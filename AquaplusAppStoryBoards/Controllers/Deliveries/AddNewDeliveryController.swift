@@ -31,9 +31,9 @@ class AddNewDeliveryController: UITableViewController {
     
     @IBOutlet weak var driverLabel: UILabel!
     
+    @IBOutlet weak var dateDueLabel: UILabel!
     
     @IBOutlet weak var toggle: UISwitch!
-    @IBOutlet weak var date: UILabel!
     
     @IBOutlet weak var waterLabel: UILabel!
     @IBOutlet weak var waterStepper: UIStepper!
@@ -78,6 +78,8 @@ class AddNewDeliveryController: UITableViewController {
     @objc func handleSend() {
         //print(customInputView.textView.text ?? "")
 
+        //guard let dateDue = date.text else {return}
+        
         let date = Date()
         let formatter = DateFormatter()
         formatter.dateFormat = "ddMMyyyy"
@@ -88,7 +90,7 @@ class AddNewDeliveryController: UITableViewController {
         hud.textLabel.text = "Submitting..."
         hud.show(in: view)
 
-        let params = ["quantityBottles": waterLabel.text ?? "", "notes": notesText.text ?? "", "dateOrdered": result ]
+        let params = ["quantityBottles": waterLabel.text ?? "", "notes": notesText.text ?? "", "dateOrdered": result, "dateDue": dateDueLabel.text ?? ""]
         let url = "\(Service.shared.baseUrl)/delivery/customer/\(custid)"
         AF.request(url, method: .post, parameters: params)
             .validate(statusCode: 200..<300)
@@ -112,9 +114,16 @@ class AddNewDeliveryController: UITableViewController {
     @IBAction func dateChanged(_ sender: UIDatePicker) {
         
         let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = DateFormatter.Style.medium
+        dateFormatter.dateFormat = "ddMMyyyy"
         //dateFormatter.timeStyle = DateFormatter.Style.medium
-        date.text = dateFormatter.string(from: sender.date)
+        let dateDue = dateFormatter.string(from: sender.date)
+        dateDueLabel.text = dateDue
+        
+        
+//        let date = Date()
+//        let formatter = DateFormatter()
+//        formatter.dateFormat = "dd.MM.yyyy"
+//        let result = formatter.string(from: date)
     }
     
 //    @IBAction func unwindWithSelectedAccount(segue: UIStoryboardSegue) {

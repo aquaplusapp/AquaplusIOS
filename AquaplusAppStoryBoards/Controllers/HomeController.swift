@@ -13,7 +13,10 @@ import Alamofire
 class HomeController: UITableViewController {
     
     var selectedSegment = 1
+    var array1 = ["one", "two"]
     
+    
+
     @IBOutlet var ordersTableView: UITableView!
     @IBAction func segmentControl(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 0{
@@ -30,21 +33,41 @@ class HomeController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchOrders()
+        fetchCompletedOrders()
         
         
         //navigationController?.navigationBar.tintColor = .black
-        
+        if selectedSegment == 1{
+
         let rc = UIRefreshControl()
         rc.addTarget(self, action: #selector(fetchOrders), for: .valueChanged)
         self.tableView.refreshControl = rc
-        
+        }else{
+            let rc = UIRefreshControl()
+                   rc.addTarget(self, action: #selector(fetchCompletedOrders), for: .valueChanged)
+                   self.tableView.refreshControl = rc
+        }
+    
     }
     
     //func to reload tableview when VC appears
     override func viewWillAppear(_ animated: Bool) {
+         if selectedSegment == 1{
         fetchOrders()
+         }else{
+            fetchCompletedOrders()
+        }
     }
     
+    @IBAction func refreshBtn(_ sender: UIBarButtonItem) {
+        if selectedSegment == 1 {
+            print("1")
+            fetchOrders()
+        }else{
+            print("2")
+            fetchCompletedOrders()
+        }
+    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard
             segue.identifier == "addNewDeliveryController",
@@ -89,8 +112,24 @@ class HomeController: UITableViewController {
                 self.tableView.reloadData()
             }
         }
+        
     }
     
+    @objc func fetchCompletedOrders() {
+        
+        Service.shared.fetchCompletedOrders { (res) in
+            self.tableView.refreshControl?.endRefreshing()
+            switch res {
+            case .failure(let err):
+                print("Failed to fetch posts:", err)
+            case .success(let completedOrders):
+                self.completedOrders = completedOrders
+                self.tableView.reloadData()
+                //print(completedOrders)
+            }
+        }
+        
+    }
     //@IBAction func fetchPosts(_ sender: Any) {
     
     //        let url = "http://localhost:1337/delivery"
@@ -117,19 +156,23 @@ class HomeController: UITableViewController {
     
     
     var orders = [Order]()
-    
+    var completedOrders = [Order]()
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if selectedSegment == 1{
             return orders.count
         } else {
-            return 0
+            return completedOrders.count
         }
     }
     //let cellReuseIdentifier = "cell"
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let deliveryCell = self.tableView.dequeueReusableCell(withIdentifier: "DeliveryCell") as! DeliveryCell
+//        let Cell1 = tableView.dequeueReusableCell(withIdentifier: "Cell1", for: indexPath) as UITableViewCell
+        let deliveryCompletedCell = self.tableView.dequeueReusableCell(withIdentifier: "DeliveryCompletedCell") as! DeliveryCompletedCell
         //
+        if selectedSegment == 1{
+
         let order = orders[indexPath.row]
 //        let myInteger = order.quantityBottles
 //        let myString = "\(myInteger)"
@@ -139,37 +182,71 @@ class HomeController: UITableViewController {
         deliveryCell.quantityBottles.text = String(order.quantityBottles)
         //cell.detailTextLabel?.numberOfLines = 0
         return deliveryCell
+            
+        }else{
+            let completedOrder = completedOrders[indexPath.row]
+            deliveryCompletedCell.accountName1.text = completedOrder.customers.accountNumber
+            deliveryCompletedCell.quantityBottles1.text = String(completedOrder.quantityBottles)
+            deliveryCompletedCell.emtpyBottles.text = String(completedOrder.emptyBottles)
+            return deliveryCompletedCell
+            
+//            Cell1.textLabel?.text = array1[indexPath.row]
+//            return Cell1
+        }
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)  {
         print("Row \(indexPath.row)selected")
         
-        let vc = storyboard?.instantiateViewController(withIdentifier : "OrderViewController") as? OrderViewController
+          let vc = storyboard?.instantiateViewController(withIdentifier : "OrderViewController") as? OrderViewController
         
-        let order = orders[indexPath.row]
-        
-//        let myInteger = order.quantityBottles
-//        let myString = "\(myInteger)"
-//        
-//        let myInteger2 = order.emptyBottles
-//        let myString2 = "\(myInteger2)"
-        
-        
-        vc?.account = order.customers.accountNumber
-        vc?.name = order.customers.fullName
-        //vc?.water = myString
-        vc?.water = String(order.quantityBottles)
+        if selectedSegment == 1 {
+          
+                    
+                    let order = orders[indexPath.row]
+                    
+            //        let myInteger = order.quantityBottles
+            //        let myString = "\(myInteger)"
+            //
+            //        let myInteger2 = order.emptyBottles
+            //        let myString2 = "\(myInteger2)"
+                    
+                    
+                    vc?.account = order.customers.accountNumber
+                    vc?.name = order.customers.fullName
+                    //vc?.water = myString
+                    vc?.water = String(order.quantityBottles)
 
-        
-        vc?.customerID = order.customers.id
-        //vc?.water = customer.water!
-        vc?.dateOrder = order.createdAt
-        vc?.delNoId = order.id
-        vc?.notes = order.notes
-        //vc?.emptyBottle = myString2
-        vc?.emptyBottle = String(order.emptyBottles)
+                    
+                    vc?.customerID = order.customers.id
+                    //vc?.water = customer.water!
+                    vc?.dateOrder = order.createdAt
+                    vc?.delNoId = order.id
+                    vc?.notes = order.notes
+                    vc?.emptyBottle = String(order.emptyBottles)
+            
+            self.navigationController?.pushViewController(vc!, animated: true)
 
+
+        } else {
+            
+            let completedOrder = completedOrders[indexPath.row]
+            
+            vc?.account = completedOrder.customers.accountNumber
+            vc?.name = completedOrder.customers.fullName
+            vc?.water = String(completedOrder.quantityBottles)
+            vc?.customerID = completedOrder.id
+            vc?.dateOrder = completedOrder.createdAt
+            vc?.delNoId = completedOrder.id
+            vc?.notes = completedOrder.notes
+            vc?.emptyBottle = String(completedOrder.emptyBottles)
+            self.navigationController?.pushViewController(vc!, animated: true)
+            print("Row \(completedOrder)selected")
+
+
+            
+        }
         
-        self.navigationController?.pushViewController(vc!, animated: true)
+        
         
     }
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
