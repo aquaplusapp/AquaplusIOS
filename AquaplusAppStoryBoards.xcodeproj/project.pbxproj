@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		335246992485AB3200B67B05 /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335246982485AB3200B67B05 /* FeedbackViewController.swift */; };
+		3352469B2485B0BD00B67B05 /* FeedbackCatergory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3352469A2485B0BD00B67B05 /* FeedbackCatergory.swift */; };
 		335DD1152459D1FC00E00149 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335DD1142459D1FC00E00149 /* AppDelegate.swift */; };
 		335DD1172459D1FC00E00149 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335DD1162459D1FC00E00149 /* SceneDelegate.swift */; };
 		335DD1192459D1FC00E00149 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335DD1182459D1FC00E00149 /* LoginController.swift */; };
@@ -50,6 +52,8 @@
 /* Begin PBXFileReference section */
 		153CB3DA65EA60B20E22B19E /* Pods-AquaplusAppStoryBoards.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AquaplusAppStoryBoards.release.xcconfig"; path = "Target Support Files/Pods-AquaplusAppStoryBoards/Pods-AquaplusAppStoryBoards.release.xcconfig"; sourceTree = "<group>"; };
 		2278A66F61C46F41D8044BDB /* Pods-AquaplusAppStoryBoardsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AquaplusAppStoryBoardsTests.debug.xcconfig"; path = "Target Support Files/Pods-AquaplusAppStoryBoardsTests/Pods-AquaplusAppStoryBoardsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		335246982485AB3200B67B05 /* FeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
+		3352469A2485B0BD00B67B05 /* FeedbackCatergory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackCatergory.swift; sourceTree = "<group>"; };
 		335DD1112459D1FC00E00149 /* AquaplusAppStoryBoards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AquaplusAppStoryBoards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		335DD1142459D1FC00E00149 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		335DD1162459D1FC00E00149 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -160,6 +164,7 @@
 				3360594C245CE9FB0005FC8B /* Login */,
 				335DD1362459D42900E00149 /* HomeController.swift */,
 				335DD143245A38A700E00149 /* MainTabBarController.swift */,
+				335246982485AB3200B67B05 /* FeedbackViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -190,6 +195,7 @@
 				3360593E245C7A860005FC8B /* Customers.swift */,
 				33605940245C7A900005FC8B /* Order.swift */,
 				33605942245C7A980005FC8B /* User.swift */,
+				3352469A2485B0BD00B67B05 /* FeedbackCatergory.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -425,7 +431,9 @@
 				AB608B6624632D2F00B8C490 /* AddNewContactViewController.swift in Sources */,
 				3360595A245DE16A0005FC8B /* CustomerOrderCell.swift in Sources */,
 				3360596C245E715D0005FC8B /* CustomerHeader.swift in Sources */,
+				335246992485AB3200B67B05 /* FeedbackViewController.swift in Sources */,
 				33605956245DDA350005FC8B /* OrderViewController.swift in Sources */,
+				3352469B2485B0BD00B67B05 /* FeedbackCatergory.swift in Sources */,
 				335DD146245A38C300E00149 /* ContactsController.swift in Sources */,
 				33605949245CE1510005FC8B /* DriverPickerController.swift in Sources */,
 				335DD13D245A093300E00149 /* RegisterController.swift in Sources */,
