@@ -6,10 +6,13 @@ target 'AquaplusAppStoryBoards' do
   use_frameworks!
 
   # Pods for AquaplusAppStoryBoards
-	pod 'LBTATools'
+  pod 'LBTATools'
   pod 'Alamofire'
   pod 'SDWebImage'
   pod 'JGProgressHUD'
+  pod 'SendGrid', :git => 'https://github.com/scottkawai/sendgrid-swift.git'
+
+  pod 'Loaf'
 
   target 'AquaplusAppStoryBoardsTests' do
     inherit! :search_paths
