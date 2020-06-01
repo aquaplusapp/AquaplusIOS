@@ -2,4 +2,6 @@ ${PODS_ROOT}/Target Support Files/Pods-AquaplusAppStoryBoards/Pods-AquaplusAppSt
 ${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
 ${BUILT_PRODUCTS_DIR}/JGProgressHUD/JGProgressHUD.framework
 ${BUILT_PRODUCTS_DIR}/LBTATools/LBTATools.framework
+${BUILT_PRODUCTS_DIR}/Loaf/Loaf.framework
 ${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework
+${BUILT_PRODUCTS_DIR}/SendGrid/SendGrid.framework
