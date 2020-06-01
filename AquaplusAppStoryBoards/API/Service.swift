@@ -12,8 +12,8 @@ class Service: NSObject {
     
     static let shared = Service()
     
-    let baseUrl = "http://localhost:1337"
-    //let baseUrl = "https://aquaapp.herokuapp.com"
+    //let baseUrl = "http://localhost:1337"
+    let baseUrl = "https://aquaapp.herokuapp.com"
     func searchForUsers(completion: @escaping (Result<[User], Error>) -> ()) {
         let url = "\(baseUrl)/search"
         AF.request(url)
@@ -51,7 +51,7 @@ class Service: NSObject {
     }
     
     func fetchOrders(completion: @escaping (Result<[Order], Error>) -> ()) {
-        let url = "\(baseUrl)/delivery"
+        let url = "\(baseUrl)/notcompletedorder"
         AF.request(url)
             .validate(statusCode: 200..<300)
             .responseData { (dataResp) in
@@ -70,7 +70,7 @@ class Service: NSObject {
         }
     }
     func fetchCompletedOrders(completion: @escaping (Result<[Order], Error>) -> ()) {
-        let url = "\(baseUrl)/listdelivery"
+        let url = "\(baseUrl)/completedorder"
         AF.request(url)
             .validate(statusCode: 200..<300)
             .responseData { (dataResp) in
