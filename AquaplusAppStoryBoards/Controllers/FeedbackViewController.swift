@@ -13,7 +13,7 @@ class FeedbackViewController: UIViewController {
     @IBOutlet weak var catergoryTextField: UITextField!
     @IBOutlet weak var commentTextView: UITextView!
     
-    private var feedbackCategory: FeedbackCatergory?
+    private var feedbackCategory: FeedbackCategory?
     
     lazy var pickerView: UIPickerView = {
         let pv = UIPickerView()
@@ -64,13 +64,13 @@ extension FeedbackViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         
     }
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return FeedbackCatergory.allCases.count
+        return FeedbackCategory.allCases.count
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return FeedbackCatergory.allCases[row].rawValue
+        return FeedbackCategory.allCases[row].rawValue
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        let category = FeedbackCatergory.allCases[row]
+        let category = FeedbackCategory.allCases[row]
         feedbackCategory = category
         catergoryTextField.text = category.rawValue
     }
@@ -79,7 +79,7 @@ extension FeedbackViewController: UIPickerViewDelegate, UIPickerViewDataSource {
 extension FeedbackViewController: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if feedbackCategory == nil {
-            let firstItem = FeedbackCatergory.allCases.first
+            let firstItem = FeedbackCategory.allCases.first
             feedbackCategory = firstItem
             catergoryTextField.text = firstItem?.rawValue
         }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum FeedbackCatergory: String, CaseIterable {
+enum FeedbackCategory: String, CaseIterable {
     case eventFeedback = "Event Feedback"
     case ticketEnquiry = "Ticket enquiry"
     case bug = "Report a bug"
