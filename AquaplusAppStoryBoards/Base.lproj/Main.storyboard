@@ -1624,6 +1624,7 @@ App</string>
                     <connections>
                         <outlet property="catergoryTextField" destination="SL2-3c-cq4" id="X9b-MU-U7W"/>
                         <outlet property="commentTextView" destination="Yj7-5C-ieK" id="xV7-gm-F0P"/>
+                        <outlet property="submitButton" destination="ncg-mM-iyJ" id="bIi-sI-wT1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rLs-ch-e25" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

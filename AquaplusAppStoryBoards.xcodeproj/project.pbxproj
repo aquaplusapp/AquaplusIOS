@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3329575C24883FD400A858B6 /* FeedbackForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3329575B24883FD300A858B6 /* FeedbackForm.swift */; };
+		3329575F2488569600A858B6 /* EmailManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3329575E2488569600A858B6 /* EmailManager.swift */; };
 		335246992485AB3200B67B05 /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335246982485AB3200B67B05 /* FeedbackViewController.swift */; };
 		3352469B2485B0BD00B67B05 /* FeedbackCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3352469A2485B0BD00B67B05 /* FeedbackCategory.swift */; };
 		335DD1152459D1FC00E00149 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335DD1142459D1FC00E00149 /* AppDelegate.swift */; };
@@ -52,6 +54,8 @@
 /* Begin PBXFileReference section */
 		153CB3DA65EA60B20E22B19E /* Pods-AquaplusAppStoryBoards.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AquaplusAppStoryBoards.release.xcconfig"; path = "Target Support Files/Pods-AquaplusAppStoryBoards/Pods-AquaplusAppStoryBoards.release.xcconfig"; sourceTree = "<group>"; };
 		2278A66F61C46F41D8044BDB /* Pods-AquaplusAppStoryBoardsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AquaplusAppStoryBoardsTests.debug.xcconfig"; path = "Target Support Files/Pods-AquaplusAppStoryBoardsTests/Pods-AquaplusAppStoryBoardsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		3329575B24883FD300A858B6 /* FeedbackForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackForm.swift; sourceTree = "<group>"; };
+		3329575E2488569600A858B6 /* EmailManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailManager.swift; sourceTree = "<group>"; };
 		335246982485AB3200B67B05 /* FeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
 		3352469A2485B0BD00B67B05 /* FeedbackCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackCategory.swift; sourceTree = "<group>"; };
 		335DD1112459D1FC00E00149 /* AquaplusAppStoryBoards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AquaplusAppStoryBoards.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -110,6 +114,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3329575D2488567A00A858B6 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				3329575E2488569600A858B6 /* EmailManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
 		335DD1082459D1FC00E00149 = {
 			isa = PBXGroup;
 			children = (
@@ -133,6 +145,7 @@
 		335DD1132459D1FC00E00149 /* AquaplusAppStoryBoards */ = {
 			isa = PBXGroup;
 			children = (
+				3329575D2488567A00A858B6 /* Manager */,
 				3360593D245C7A710005FC8B /* Model */,
 				335DD140245A0CA300E00149 /* API */,
 				335DD1392459EA1900E00149 /* Views */,
@@ -196,6 +209,7 @@
 				33605940245C7A900005FC8B /* Order.swift */,
 				33605942245C7A980005FC8B /* User.swift */,
 				3352469A2485B0BD00B67B05 /* FeedbackCategory.swift */,
+				3329575B24883FD300A858B6 /* FeedbackForm.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -420,12 +434,14 @@
 			files = (
 				335DD148245A3A0B00E00149 /* ContactCell.swift in Sources */,
 				335DD1372459D42900E00149 /* HomeController.swift in Sources */,
+				3329575F2488569600A858B6 /* EmailManager.swift in Sources */,
 				335DD142245A0CAE00E00149 /* Service.swift in Sources */,
 				335DD144245A38A700E00149 /* MainTabBarController.swift in Sources */,
 				335DD1192459D1FC00E00149 /* LoginController.swift in Sources */,
 				AB6B38A924813E9400329A27 /* DeliveryCompletedCell.swift in Sources */,
 				33605952245CEDF50005FC8B /* CustomerPickerController.swift in Sources */,
 				33605941245C7A900005FC8B /* Order.swift in Sources */,
+				3329575C24883FD400A858B6 /* FeedbackForm.swift in Sources */,
 				33605943245C7A980005FC8B /* User.swift in Sources */,
 				3360593F245C7A860005FC8B /* Customers.swift in Sources */,
 				AB608B6624632D2F00B8C490 /* AddNewContactViewController.swift in Sources */,

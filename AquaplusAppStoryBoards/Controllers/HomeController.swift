@@ -125,7 +125,7 @@ class HomeController: UITableViewController {
             case .success(let completedOrders):
                 self.completedOrders = completedOrders
                 self.tableView.reloadData()
-                print(completedOrders)
+                //print(completedOrders)
             }
         }
         

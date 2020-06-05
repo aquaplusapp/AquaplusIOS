@@ -11,6 +11,7 @@ target 'AquaplusAppStoryBoards' do
   pod 'SDWebImage'
   pod 'JGProgressHUD'
   pod 'SendGrid', :git => 'https://github.com/scottkawai/sendgrid-swift.git'
+  pod 'MBProgressHUD'
 
   pod 'Loaf'
 

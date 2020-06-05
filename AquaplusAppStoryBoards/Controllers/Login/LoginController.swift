@@ -9,6 +9,7 @@
 import UIKit
 import JGProgressHUD
 import Alamofire
+import Loaf
 
 class LoginController: UIViewController {
     
@@ -40,6 +41,8 @@ class LoginController: UIViewController {
                         self.errorLabel.isHidden = false
                         self.errorLabel.text = "Your credentials are not correct, please try again."
                     case .success:
+                        Loaf("Signe In", state: .success, sender: self).show()
+
                         self.dismiss(animated: true)
         //                self.homeController?.fetchposts()
                     }

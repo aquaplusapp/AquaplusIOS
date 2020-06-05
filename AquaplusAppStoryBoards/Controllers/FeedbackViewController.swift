@@ -7,13 +7,24 @@
 //
 
 import UIKit
+import Combine
+import Loaf
+import JGProgressHUD
+import MBProgressHUD
+
 
 class FeedbackViewController: UIViewController {
     
     @IBOutlet weak var catergoryTextField: UITextField!
     @IBOutlet weak var commentTextView: UITextView!
+    @IBOutlet weak var submitButton: UIBarButtonItem!
     
-    private var feedbackCategory: FeedbackCategory?
+    @Published private var feedbackCategory: FeedbackCategory?
+    @Published private var comments: String?
+    
+    private var subscriber: AnyCancellable?
+    
+    private var emailManager = EmailManager()
     
     lazy var pickerView: UIPickerView = {
         let pv = UIPickerView()
@@ -22,39 +33,124 @@ class FeedbackViewController: UIViewController {
         return pv
     }()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        //view.backgroundColor = .yellow
-        
-        setupTextField()
-        addDoneButton()
-    }
-    private func setupTextField(){
-        catergoryTextField.delegate = self
-        catergoryTextField.inputView = pickerView
-    }
-    
-    private func addDoneButton() {
-        let toolbar = UIToolbar()
-        toolbar.sizeToFit()
+    lazy var toolbar: UIToolbar = {
+        let frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 0)
+        let tb = UIToolbar(frame: frame)
+        tb.sizeToFit()
         
         let flexButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         
         let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(dismissPickerView))
         
-        toolbar.setItems([flexButton, doneButton], animated: true)
-        toolbar.isUserInteractionEnabled = true
+        tb.setItems([flexButton, doneButton], animated: true)
+        tb.isUserInteractionEnabled = true
+        return tb
+    }()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        //view.backgroundColor = .yellow
+        
+        setupTextField()
+        setupViews()
+        setupTextView()
+        observeForm()
+        setupGestures()
+        //addDoneButton()
+    }
+    
+    private func setupViews() {
+        submitButton.isEnabled = false
+    }
+    
+    private func setupTextField() {
+        catergoryTextField.delegate = self
+        catergoryTextField.inputView = pickerView
         catergoryTextField.inputAccessoryView = toolbar
     }
+    
+    private func setupTextView() {
+        commentTextView.delegate = self
+    }
+    
+    private func observeForm() {
+        subscriber = Publishers.CombineLatest($feedbackCategory, $comments).sink { [unowned self] (category, comments) in
+            let isFormCompeted = (category != nil && comments?.isEmpty == false)
+            self.submitButton.isEnabled = isFormCompeted
+        }
+    }
+    
+    private func clearForm() {
+        catergoryTextField.text = ""
+        commentTextView.text = ""
+        feedbackCategory = nil
+        comments = nil
+        pickerView.selectRow(0, inComponent: 0, animated: true)
+    }
+    private func setupGestures() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc private func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    //    private func addDoneButton() {
+    //
+    //
+    //        //commentTextView.inputAccessoryView = toolbar
+    //    }
     
     @objc private func dismissPickerView() {
         catergoryTextField.endEditing(true)
     }
     @IBAction func submitButtonTap(_ sender: Any) {
-        print("text")
+        guard let category = self.feedbackCategory, let comments = self.comments else { return }
+        
+        dismissKeyboard()
+        
+        let form = FeedbackForm(category:category, comments: comments)
+        
+        let hud = JGProgressHUD(style: .dark)
+        hud.textLabel.text = "Sending Feedback"
+        hud.show(in: self.view)
+//        MBProgressHUD.showAdded(to: view, animated: true)
+        
+        emailManager.send(form: form) { [unowned self](result) in
+            
+            DispatchQueue.main.async {
+                
+                self.clearForm()
+//                MBProgressHUD.hide(for: self.view, animated: true)
+                hud.dismiss()
+                switch result {
+                case .success:
+                    Loaf("your feedback has been successfully submitted", state: .success, sender: self).show()
+                    print("your feedback has been successfully submitted")
+                //self.dismiss(animated: true)
+                case .failure(let error):
+                    Loaf(error.localizedDescription, state: .error, sender: self).show()
+                    print("error: \(error.localizedDescription)")
+                }
+            }
+        }
+    }  
+}
+extension FeedbackViewController: UITextViewDelegate {
+    
+    func textViewShouldEndEditing(_ textView: UITextView) -> Bool {
+        if catergoryTextField.isFirstResponder {
+            catergoryTextField.resignFirstResponder()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                self.commentTextView.becomeFirstResponder()
+            }
+        }
+        return true
     }
-    
-    
+    func textViewDidChange(_ textView: UITextView) {
+        comments = textView.text
+        //print(textView.text)
+    }
 }
 extension FeedbackViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     
