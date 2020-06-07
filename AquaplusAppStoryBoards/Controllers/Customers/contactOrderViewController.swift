@@ -17,7 +17,9 @@ class contactOrderViewController: UITableViewController {
     
     var customer = [Customers]()
     
+    var number = +447793290205
    
+    
     @IBOutlet weak var accountIDLabel: UILabel!
     @IBOutlet weak var accountNumberLabel: UILabel!
     @IBOutlet weak var accountNameLabel: UILabel!
@@ -38,6 +40,17 @@ class contactOrderViewController: UITableViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+    @IBAction func callButton(_ sender: Any) {
+       if let url = URL(string: "tel://\(number)"), UIApplication.shared.canOpenURL(url) {
+        if #available(iOS 10, *) {
+            UIApplication.shared.open(url)
+        } else {
+            UIApplication.shared.openURL(url)
+        }
+    }
+    }
+    
     
     fileprivate func fetchCustomerProfile() {
         //let custId = "5ed58522c123a90017798abf"

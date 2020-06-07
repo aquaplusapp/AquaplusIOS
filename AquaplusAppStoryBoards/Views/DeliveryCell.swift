@@ -16,6 +16,7 @@ class DeliveryCell: UITableViewCell {
     //@IBOutlet weak var optionsButton: UIButton!
     @IBOutlet weak var quantityBottles: UILabel!
     
+    @IBOutlet weak var postCodeLabel: UILabel!
     //weak var delegate: PostCellOptionsDelegate?
     
     @IBAction func optionsButton(_ sender: Any) {
