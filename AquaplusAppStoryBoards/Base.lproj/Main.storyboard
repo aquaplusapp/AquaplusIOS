@@ -582,7 +582,7 @@ App</string>
         <scene sceneID="Pb2-z8-qQC">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="krK-K7-e6P" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="truck (2)" id="YuH-8k-hwl"/>
+                    <tabBarItem key="tabBarItem" title="" image="tray" catalog="system" id="YuH-8k-hwl"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vJi-hb-vDq">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -1654,7 +1654,7 @@ App</string>
         <scene sceneID="tXA-iF-vqZ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PTq-96-zDm" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="icFeedback" id="R4E-Im-8su"/>
+                    <tabBarItem key="tabBarItem" title="" image="pencil" catalog="system" id="R4E-Im-8su"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="v3f-uZ-UzR">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -1671,11 +1671,11 @@ App</string>
         </scene>
     </scenes>
     <resources>
-        <image name="icFeedback" width="24" height="24"/>
         <image name="map" catalog="system" width="128" height="113"/>
+        <image name="pencil" catalog="system" width="128" height="113"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="post_options" width="18" height="4.5"/>
         <image name="startup" width="360" height="360"/>
-        <image name="truck (2)" width="42.666667938232422" height="42.666667938232422"/>
+        <image name="tray" catalog="system" width="128" height="88"/>
     </resources>
 </document>
