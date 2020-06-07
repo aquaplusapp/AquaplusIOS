@@ -42,15 +42,18 @@ class contactOrderViewController: UITableViewController {
     }
     
     @IBAction func callButton(_ sender: Any) {
-       if let url = URL(string: "tel://\(number)"), UIApplication.shared.canOpenURL(url) {
-        if #available(iOS 10, *) {
-            UIApplication.shared.open(url)
-        } else {
-            UIApplication.shared.openURL(url)
-        }
-    }
+     call()
     }
     
+    private func call() {
+        if let url = URL(string: "tel://\(number)"), UIApplication.shared.canOpenURL(url) {
+              if #available(iOS 10, *) {
+                  UIApplication.shared.open(url)
+              } else {
+                  UIApplication.shared.openURL(url)
+              }
+          }
+    }
     
     fileprivate func fetchCustomerProfile() {
         //let custId = "5ed58522c123a90017798abf"
