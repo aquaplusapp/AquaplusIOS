@@ -111,6 +111,31 @@ class OrderViewController: UITableViewController {
         
     }
     
+//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        print("Row \(indexPath.row)selected")
+//
+//        if indexPath.row == 0 && indexPath.section == 0 {
+//         let vc = storyboard?.instantiateViewController(withIdentifier : "contactOrderViewController") as? contactOrderViewController
+//
+//            vc?.accountID = customerID
+//
+//        self.navigationController?.pushViewController(vc!, animated: true)
+//        }
+//    }
+    
+    override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
+        print(indexPath.row)
+        
+        let vc = storyboard?.instantiateViewController(withIdentifier : "contactOrderViewController") as? contactOrderViewController
+
+            vc?.accountID = customerID
+
+        self.navigationController?.pushViewController(vc!, animated: true)
+        
+    }
+//    func accessoryButtonTapped(sender : AnyObject){
+//        print("Tapped")
+//    }
     // MARK: - Table view data source
     
     //    override func numberOfSections(in tableView: UITableView) -> Int {

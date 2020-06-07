@@ -36,6 +36,19 @@ var cellColor = true
         // Do any additional setup after loading the view.
     }
    
+    @IBAction func viewContact(_ sender: Any) {
+        
+        performSegue(withIdentifier: "showContact", sender: self)
+
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+    let vc = segue.destination as! contactOrderViewController
+             //vc.test = account
+        vc.accountID = custId
+
+     }
     /*
     // MARK: - Navigation
 
