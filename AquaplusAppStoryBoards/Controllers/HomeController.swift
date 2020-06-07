@@ -176,6 +176,7 @@ class HomeController: UITableViewController {
         let order = orders[indexPath.row]
 //        let myInteger = order.quantityBottles
 //        let myString = "\(myInteger)"
+//        deliveryCell.postCodeLabel.text = order.customers.postCode
         deliveryCell.accountName.text = order.customers.accountNumber
         //        cell.textLabel?.font = .boldSystemFont(ofSize: 14)
         //deliveryCell.quantityBottles.text = myString

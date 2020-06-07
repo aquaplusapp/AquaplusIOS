@@ -461,7 +461,7 @@ App</string>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hxg-K8-00O">
-                                            <rect key="frame" x="315" y="34" width="18" height="22"/>
+                                            <rect key="frame" x="313" y="15" width="18" height="22"/>
                                             <state key="normal" image="post_options"/>
                                             <connections>
                                                 <action selector="optionsButton:" destination="oio-5o-fNx" eventType="touchUpInside" id="KCJ-fK-lXF"/>
@@ -473,21 +473,30 @@ App</string>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X1i-YJ-cIt">
+                                            <rect key="frame" x="301" y="45" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="rCx-2O-WYO" firstAttribute="leading" secondItem="uFW-Jl-Meh" secondAttribute="leading" constant="20" id="3sF-CP-9SF"/>
-                                        <constraint firstItem="rrU-8q-Pst" firstAttribute="top" secondItem="uFW-Jl-Meh" secondAttribute="top" constant="11" id="7H7-Dh-FlG"/>
-                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="rCx-2O-WYO" secondAttribute="trailing" symbolic="YES" id="9Lt-hI-cjc"/>
-                                        <constraint firstAttribute="trailing" secondItem="rrU-8q-Pst" secondAttribute="trailing" constant="122" id="A5I-E8-0jk"/>
-                                        <constraint firstItem="rCx-2O-WYO" firstAttribute="top" secondItem="rrU-8q-Pst" secondAttribute="bottom" constant="8" id="FYD-Ac-wdW"/>
-                                        <constraint firstAttribute="bottom" secondItem="rCx-2O-WYO" secondAttribute="bottom" constant="21" id="Wbn-g6-r01"/>
-                                        <constraint firstItem="Hxg-K8-00O" firstAttribute="leading" secondItem="rrU-8q-Pst" secondAttribute="trailing" constant="54" id="b6E-AI-ROS"/>
-                                        <constraint firstItem="Hxg-K8-00O" firstAttribute="top" secondItem="uFW-Jl-Meh" secondAttribute="topMargin" constant="23" id="hyP-a9-7gi"/>
-                                        <constraint firstItem="rrU-8q-Pst" firstAttribute="leading" secondItem="uFW-Jl-Meh" secondAttribute="leading" constant="20" id="pZX-ib-ivi"/>
+                                        <constraint firstItem="rCx-2O-WYO" firstAttribute="top" secondItem="rrU-8q-Pst" secondAttribute="bottom" constant="8" id="1Is-Ck-25g"/>
+                                        <constraint firstItem="rrU-8q-Pst" firstAttribute="leading" secondItem="uFW-Jl-Meh" secondAttribute="leadingMargin" id="76e-ah-1I0"/>
+                                        <constraint firstItem="Hxg-K8-00O" firstAttribute="centerX" secondItem="X1i-YJ-cIt" secondAttribute="centerX" id="89o-pF-Xwq"/>
+                                        <constraint firstItem="rrU-8q-Pst" firstAttribute="top" secondItem="uFW-Jl-Meh" secondAttribute="topMargin" id="B0g-zO-b9K"/>
+                                        <constraint firstItem="X1i-YJ-cIt" firstAttribute="top" secondItem="Hxg-K8-00O" secondAttribute="bottom" constant="8" id="BJ2-LD-qVI"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="rCx-2O-WYO" secondAttribute="bottom" constant="10" id="KKr-yU-1pX"/>
+                                        <constraint firstItem="rrU-8q-Pst" firstAttribute="centerY" secondItem="Hxg-K8-00O" secondAttribute="centerY" id="PUn-L2-lCz"/>
+                                        <constraint firstItem="Hxg-K8-00O" firstAttribute="leading" secondItem="rrU-8q-Pst" secondAttribute="trailing" constant="52" id="Slx-ul-knV"/>
+                                        <constraint firstItem="rrU-8q-Pst" firstAttribute="leading" secondItem="rCx-2O-WYO" secondAttribute="leading" id="m2T-cX-MUe"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Hxg-K8-00O" secondAttribute="trailing" constant="44" id="vcj-hn-rxD"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="X1i-YJ-cIt" secondAttribute="trailing" constant="32" id="z8i-eT-aQv"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="accountName" destination="rrU-8q-Pst" id="kmN-aP-zk8"/>
+                                    <outlet property="postCodeLabel" destination="X1i-YJ-cIt" id="WuP-N6-BZd"/>
                                     <outlet property="quantityBottles" destination="rCx-2O-WYO" id="iEr-ii-wWT"/>
                                 </connections>
                             </tableViewCell>
@@ -1239,7 +1248,13 @@ App</string>
                             <outlet property="delegate" destination="Rr3-6G-bXT" id="L3S-vn-PZi"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="9cZ-BA-wwj"/>
+                    <navigationItem key="navigationItem" id="9cZ-BA-wwj">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="phone" id="1Wn-Ma-PSp">
+                            <connections>
+                                <action selector="callButton:" destination="Rr3-6G-bXT" id="sBP-Kw-MGv"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="accountIDLabel" destination="97G-Nc-lLm" id="cqj-QK-N1E"/>
                         <outlet property="accountNameLabel" destination="YEt-Lk-B20" id="DDd-ZT-Xpa"/>
@@ -2008,6 +2023,7 @@ App</string>
         <image name="icFeedback" width="24" height="24"/>
         <image name="map" catalog="system" width="128" height="113"/>
         <image name="person" catalog="system" width="128" height="117"/>
+        <image name="phone" width="26" height="26"/>
         <image name="post_options" width="18" height="4.5"/>
         <image name="startup" width="360" height="360"/>
         <image name="truck (2)" width="42.666667938232422" height="42.666667938232422"/>
