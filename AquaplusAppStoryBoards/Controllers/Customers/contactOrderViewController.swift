@@ -8,9 +8,16 @@
 
 import UIKit
 import Alamofire
+import MessageUI
 
 
-class contactOrderViewController: UITableViewController {
+class contactOrderViewController: UITableViewController, MFMessageComposeViewControllerDelegate {
+    func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
+        self.dismiss(animated: true, completion: {
+            self.presentingViewController?.dismiss(animated: true, completion: nil)
+        })
+    }
+    
 
     var accountID = ""
     //var accountName = "name"
@@ -44,6 +51,32 @@ class contactOrderViewController: UITableViewController {
     @IBAction func callButton(_ sender: Any) {
      call()
     }
+    
+    @IBAction func mobileButton(_ sender: UIButton) {
+        print("calling ring ring")
+        call()
+    }
+    @IBAction func messageButton(_ sender: Any) {
+       message()
+    }
+    
+    @IBAction func mobileMButton(_ sender: Any) {
+       message()
+    }
+    private func message(){
+        let composeVC = MFMessageComposeViewController()
+               composeVC.messageComposeDelegate = self
+
+               // Configure the fields of the interface.
+               composeVC.recipients = ["\(number)"]
+               composeVC.body = "I love Swift! From Aquaplus APP :)"
+
+               // Present the view controller modally.
+               if MFMessageComposeViewController.canSendText() {
+                   self.present(composeVC, animated: true, completion: nil)
+               }
+    }
+    
     
     private func call() {
         if let url = URL(string: "tel://\(number)"), UIApplication.shared.canOpenURL(url) {

@@ -1113,6 +1113,22 @@ App</string>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SI9-vS-Tdl">
+                                                    <rect key="frame" x="374" y="-1" width="20" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Button" image="phone.fill" catalog="system"/>
+                                                    <connections>
+                                                        <action selector="mobileButton:" destination="Rr3-6G-bXT" eventType="touchUpInside" id="isE-rC-jHR"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B1O-0I-5yz">
+                                                    <rect key="frame" x="346" y="0.0" width="20" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Button" image="message.fill" catalog="system"/>
+                                                    <connections>
+                                                        <action selector="mobileMButton:" destination="Rr3-6G-bXT" eventType="touchUpInside" id="tHW-T2-ATE"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -1249,11 +1265,18 @@ App</string>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="9cZ-BA-wwj">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="phone" id="1Wn-Ma-PSp">
-                            <connections>
-                                <action selector="callButton:" destination="Rr3-6G-bXT" id="sBP-Kw-MGv"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Item" image="phone" id="1Wn-Ma-PSp">
+                                <connections>
+                                    <action selector="callButton:" destination="Rr3-6G-bXT" id="sBP-Kw-MGv"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Item" image="message.fill" catalog="system" id="Rf1-Ai-nJo">
+                                <connections>
+                                    <action selector="messageButton:" destination="Rr3-6G-bXT" id="Smw-2e-MRY"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="accountIDLabel" destination="97G-Nc-lLm" id="cqj-QK-N1E"/>
@@ -2021,9 +2044,11 @@ App</string>
     </scenes>
     <resources>
         <image name="map" catalog="system" width="128" height="113"/>
+        <image name="message.fill" catalog="system" width="128" height="113"/>
         <image name="pencil" catalog="system" width="128" height="113"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="phone" width="26" height="26"/>
+        <image name="phone.fill" catalog="system" width="128" height="114"/>
         <image name="post_options" width="18" height="4.5"/>
         <image name="startup" width="360" height="360"/>
         <image name="tray" catalog="system" width="128" height="88"/>
