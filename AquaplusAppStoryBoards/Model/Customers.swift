@@ -10,13 +10,14 @@ import Foundation
 struct Customers: Decodable {
     let id: String
     let accountNumber: String
+    let accountName: String
     let fullName: String
     let emailAddress: String
-    //let telephone: String
-    //let address1: String
-    //let address2: String
-    //let town: String
-    //let county: String
-    //let postCode: String
+    let telephone: String
+    let address1: String
+    let address2: String
+    let town: String
+    let county: String
+    let postCode: String
     var orders: [Order]?
 }
