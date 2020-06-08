@@ -20,12 +20,9 @@ class contactOrderViewController: UITableViewController, MFMessageComposeViewCon
     
 
     var accountID = ""
-    //var accountName = "name"
     
     var customer = [Customers]()
     
-    var number = +447793290205
-   
     
     @IBOutlet weak var accountIDLabel: UILabel!
     @IBOutlet weak var accountNumberLabel: UILabel!
@@ -37,6 +34,7 @@ class contactOrderViewController: UITableViewController, MFMessageComposeViewCon
     @IBOutlet weak var townLabel: UILabel!
     @IBOutlet weak var countyLabel: UILabel!
     @IBOutlet weak var postCodeLabel: UILabel!
+    @IBOutlet weak var contactNameLabel: UILabel!
     
     
     
@@ -47,6 +45,7 @@ class contactOrderViewController: UITableViewController, MFMessageComposeViewCon
 
         // Do any additional setup after loading the view.
     }
+    
     
     @IBAction func callButton(_ sender: Any) {
      call()
@@ -68,7 +67,7 @@ class contactOrderViewController: UITableViewController, MFMessageComposeViewCon
                composeVC.messageComposeDelegate = self
 
                // Configure the fields of the interface.
-               composeVC.recipients = ["\(number)"]
+        composeVC.recipients = ["\(mobileLabel.text ?? "")"]
                composeVC.body = "I love Swift! From Aquaplus APP :)"
 
                // Present the view controller modally.
@@ -79,7 +78,7 @@ class contactOrderViewController: UITableViewController, MFMessageComposeViewCon
     
     
     private func call() {
-        if let url = URL(string: "tel://\(number)"), UIApplication.shared.canOpenURL(url) {
+        if let url = URL(string: "tel://\(mobileLabel.text ?? "")"), UIApplication.shared.canOpenURL(url) {
               if #available(iOS 10, *) {
                   UIApplication.shared.open(url)
               } else {
@@ -107,15 +106,16 @@ class contactOrderViewController: UITableViewController, MFMessageComposeViewCon
                     let customer = try JSONDecoder().decode(Customers.self, from: data)
                     
                    // self.orders = customer.orders ?? []
-                    self.accountNameLabel.text = customer.fullName
+                    self.accountNameLabel.text = customer.accountName
                     self.accountNumberLabel.text = customer.accountNumber
                     self.eAdressLabel.text = customer.emailAddress
-                    //self.mobileLabel.text = customer.telephone
-                    //self.address1Label.text = customer.address1
-                    //self.address2Label.text = customer.address2
-                    //self.townLabel.text = customer.town
-                    //self.countyLabel.text = customer.county
-                    //self.postCodeLabel.text = customer.postCode
+                    self.mobileLabel.text = customer.telephone
+                    self.address1Label.text = customer.address1
+                    self.address2Label.text = customer.address2
+                    self.townLabel.text = customer.town
+                    self.countyLabel.text = customer.county
+                    self.postCodeLabel.text = customer.postCode
+                    self.contactNameLabel.text = customer.fullName
                 
                     
                     
