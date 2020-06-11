@@ -9,6 +9,7 @@
 
 import WebKit
 import Alamofire
+import Loaf
 
 class HomeController: UITableViewController {
     
@@ -121,6 +122,8 @@ class HomeController: UITableViewController {
             self.tableView.refreshControl?.endRefreshing()
             switch res {
             case .failure(let err):
+                Loaf("Not Signed In", state: .error, location: .top, sender: self).show()
+                
                 print("Failed to fetch posts:", err)
             case .success(let completedOrders):
                 self.completedOrders = completedOrders

@@ -37,14 +37,17 @@ class LoginController: UIViewController {
                     hud.dismiss()
                     
                     switch res {
-                    case .failure:
+                    case .failure(let error):
+                        Loaf(error.localizedDescription, state: .error, sender: self).show()
+
                         self.errorLabel.isHidden = false
                         self.errorLabel.text = "Your credentials are not correct, please try again."
                     case .success:
                         Loaf("Signe In", state: .success, sender: self).show()
 
-                        self.dismiss(animated: true)
-        //                self.homeController?.fetchposts()
+                        self.dismiss(animated: true, completion: {
+                            self.presentingViewController?.dismiss(animated: true, completion: nil)
+                        })        //                self.homeController?.fetchposts()
                     }
                 }
 //        let hud = JGProgressHUD(style: .dark)

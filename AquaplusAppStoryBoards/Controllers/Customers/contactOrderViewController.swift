@@ -46,17 +46,9 @@ class contactOrderViewController: UITableViewController, MFMessageComposeViewCon
         // Do any additional setup after loading the view.
     }
     
-    
-    @IBAction func callButton(_ sender: Any) {
-     call()
-    }
-    
     @IBAction func mobileButton(_ sender: UIButton) {
         print("calling ring ring")
         call()
-    }
-    @IBAction func messageButton(_ sender: Any) {
-       message()
     }
     
     @IBAction func mobileMButton(_ sender: Any) {
@@ -125,16 +117,44 @@ class contactOrderViewController: UITableViewController, MFMessageComposeViewCon
         }
         
     }
-
     
-    /*
+    @IBAction func editContact(_ sender: Any) {
+        performSegue(withIdentifier: "editContact", sender: self)
+
+    }
+    //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//
+//    let vc = segue.destination as! contactOrderViewController
+//             //vc.test = account
+//        vc.accountID = custId
+//
+//     }
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        let vc = segue.destination as! EditContatctViewController
+        vc.accID = accountIDLabel.text ?? ""
+        vc.accNumber = accountNumberLabel.text!
+        vc.accName = accountNameLabel.text!
+        vc.fullName = contactNameLabel.text!
+        vc.email = eAdressLabel.text!
+        vc.mobileNumber = mobileLabel.text!
+        vc.add1 = address1Label.text!
+        vc.add2 = address2Label.text!
+        vc.addTown = townLabel.text!
+        vc.addCounty = countyLabel.text!
+        vc.addPostCode = postCodeLabel.text!
     }
-    */
+    
 
+}
+//MARK: - IBActions
+extension contactOrderViewController {
+    //function to cancel AddNewContactController
+    @IBAction func cancelToContactController(_ segue: UIStoryboardSegue){
+    
+    }
 }
