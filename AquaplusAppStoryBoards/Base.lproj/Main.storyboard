@@ -1642,6 +1642,9 @@ App</string>
                                                     <rect key="frame" x="20" y="4" width="374" height="36"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                                                    <connections>
+                                                        <action selector="changed:" destination="Yox-jm-12v" eventType="editingChanged" id="1rw-cq-9Jf"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -1705,6 +1708,9 @@ App</string>
                                                     <rect key="frame" x="20" y="4" width="374" height="36"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" textContentType="email"/>
+                                                    <connections>
+                                                        <action selector="changed:" destination="Yox-jm-12v" eventType="editingDidEnd" id="0ZD-Of-QCE"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -1890,6 +1896,7 @@ App</string>
                         <outlet property="emailAddress" destination="6JL-Lq-Agd" id="CaW-OS-yEs"/>
                         <outlet property="fullName" destination="dyW-n9-aEi" id="HIz-7T-73P"/>
                         <outlet property="notes" destination="Ti6-Up-wnt" id="6U6-Sc-iwp"/>
+                        <outlet property="save" destination="Lc2-vc-nZ5" id="f5r-k8-Vnl"/>
                         <outlet property="telephoneNum" destination="gSo-el-Oo0" id="Nxa-Z8-M4e"/>
                     </connections>
                 </tableViewController>

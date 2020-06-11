@@ -9,8 +9,10 @@
 import UIKit
 import Alamofire
 import JGProgressHUD
+import Combine
 
 class AddNewContactViewController: UITableViewController {
+
 
     
     @IBOutlet weak var accountNumber: UITextField!
@@ -24,6 +26,12 @@ class AddNewContactViewController: UITableViewController {
     @IBOutlet weak var addressCounty: UITextField!
     @IBOutlet weak var addressPostCode: UITextField!
     @IBOutlet weak var notes: UITextView!
+    @IBOutlet weak var save: UIBarButtonItem!
+    
+    @Published private var accNumber: String?
+    @Published private var emailAdd: String?
+    
+    private var subscriber: AnyCancellable?
     
     @IBAction func saveContact(_ sender: UIBarButtonItem) {
         handleCreate()
@@ -31,15 +39,51 @@ class AddNewContactViewController: UITableViewController {
         
     }
     
+    lazy var toolbar: UIToolbar = {
+        let frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 0)
+        let tb = UIToolbar(frame: frame)
+        tb.sizeToFit()
+        
+        let flexButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        
+        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(dismissKeyboard))
+        
+        tb.setItems([flexButton, doneButton], animated: true)
+        tb.isUserInteractionEnabled = true
+        return tb
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setupViews()
+        setupGestures()
+        setupTextField()
+        observeForm()
+        //setupTextView()
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    
+//    private func setupTextView() {
+//        accountNumber.delegate = self
+//        emailAddress.delegate = self
+//    }
+    
+    private func observeForm() {
+        subscriber = Publishers.CombineLatest($accNumber, $emailAdd).sink { [unowned self] (an, ea) in
+            let isFormCompleted = (an?.isEmpty == false && ea?.isEmpty == false)
+            self.save.isEnabled = isFormCompleted
+            
+        }
+    }
+    
+    
+    private func setupViews(){
+        save.isEnabled = false
     }
     
     @objc func handleCreate() {
@@ -74,6 +118,38 @@ class AddNewContactViewController: UITableViewController {
         }
     }
 
+    
+    private func setupGestures(){
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc private func dismissKeyboard(){
+        view.endEditing(true)
+    }
+    
+    private func setupTextField(){
+        
+        accountNumber.inputAccessoryView = toolbar
+        accountName.inputAccessoryView = toolbar
+        fullName.inputAccessoryView = toolbar
+        emailAddress.inputAccessoryView = toolbar
+        telephoneNum.inputAccessoryView = toolbar
+        addressOne.inputAccessoryView = toolbar
+        addressTwo.inputAccessoryView = toolbar
+        addressTown.inputAccessoryView = toolbar
+        addressCounty.inputAccessoryView = toolbar
+        addressPostCode.inputAccessoryView = toolbar
+        notes.inputAccessoryView = toolbar
+    }
+    
+    @IBAction func changed(_ sender: UITextField) {
+        accNumber = accountNumber.text
+        emailAdd = emailAddress.text
+    }
+    
+   
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -142,4 +218,9 @@ class AddNewContactViewController: UITableViewController {
     */
 
 }
-
+//extension AddNewContactViewController: UITextFieldDelegate {
+//    func textFieldDidChangeSelection(_ textField: UITextField) {
+////        accNumber = textField.text
+////        emailAdd = textField.text
+//    }
+//}
