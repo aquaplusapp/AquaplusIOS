@@ -11,6 +11,7 @@
 		3329575F2488569600A858B6 /* EmailManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3329575E2488569600A858B6 /* EmailManager.swift */; };
 		335246992485AB3200B67B05 /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335246982485AB3200B67B05 /* FeedbackViewController.swift */; };
 		3352469B2485B0BD00B67B05 /* FeedbackCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3352469A2485B0BD00B67B05 /* FeedbackCategory.swift */; };
+		335C0745249CDC78009D81CE /* OrderConfirmation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335C0744249CDC78009D81CE /* OrderConfirmation.swift */; };
 		335DD1152459D1FC00E00149 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335DD1142459D1FC00E00149 /* AppDelegate.swift */; };
 		335DD1172459D1FC00E00149 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335DD1162459D1FC00E00149 /* SceneDelegate.swift */; };
 		335DD1192459D1FC00E00149 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335DD1182459D1FC00E00149 /* LoginController.swift */; };
@@ -35,6 +36,9 @@
 		3360595A245DE16A0005FC8B /* CustomerOrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33605959245DE16A0005FC8B /* CustomerOrderCell.swift */; };
 		3360596A245E70BF0005FC8B /* CustomerProfileControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33605969245E70BF0005FC8B /* CustomerProfileControllerTest.swift */; };
 		3360596C245E715D0005FC8B /* CustomerHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3360596B245E715D0005FC8B /* CustomerHeader.swift */; };
+		33DEC94924990CBB007CAAA8 /* OrderDeliveryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DEC94824990CBB007CAAA8 /* OrderDeliveryCell.swift */; };
+		33DEC94B24990D1B007CAAA8 /* OrderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DEC94A24990D1B007CAAA8 /* OrderTableViewController.swift */; };
+		33DEC94D249A683E007CAAA8 /* OrderConfirmationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DEC94C249A683E007CAAA8 /* OrderConfirmationController.swift */; };
 		5A3F37D5DEB0C21E370FA1C9 /* Pods_AquaplusAppStoryBoardsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A687FE618993718C86EDFD75 /* Pods_AquaplusAppStoryBoardsTests.framework */; };
 		AB608B6624632D2F00B8C490 /* AddNewContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB608B6524632D2F00B8C490 /* AddNewContactViewController.swift */; };
 		AB6B38A924813E9400329A27 /* DeliveryCompletedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6B38A824813E9400329A27 /* DeliveryCompletedCell.swift */; };
@@ -60,6 +64,7 @@
 		3329575E2488569600A858B6 /* EmailManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailManager.swift; sourceTree = "<group>"; };
 		335246982485AB3200B67B05 /* FeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
 		3352469A2485B0BD00B67B05 /* FeedbackCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackCategory.swift; sourceTree = "<group>"; };
+		335C0744249CDC78009D81CE /* OrderConfirmation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderConfirmation.swift; sourceTree = "<group>"; };
 		335DD1112459D1FC00E00149 /* AquaplusAppStoryBoards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AquaplusAppStoryBoards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		335DD1142459D1FC00E00149 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		335DD1162459D1FC00E00149 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +93,9 @@
 		33605959245DE16A0005FC8B /* CustomerOrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerOrderCell.swift; sourceTree = "<group>"; };
 		33605969245E70BF0005FC8B /* CustomerProfileControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerProfileControllerTest.swift; sourceTree = "<group>"; };
 		3360596B245E715D0005FC8B /* CustomerHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerHeader.swift; sourceTree = "<group>"; };
+		33DEC94824990CBB007CAAA8 /* OrderDeliveryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDeliveryCell.swift; sourceTree = "<group>"; };
+		33DEC94A24990D1B007CAAA8 /* OrderTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTableViewController.swift; sourceTree = "<group>"; };
+		33DEC94C249A683E007CAAA8 /* OrderConfirmationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderConfirmationController.swift; sourceTree = "<group>"; };
 		443D53B3375FD95B69BAB9ED /* Pods-AquaplusAppStoryBoardsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AquaplusAppStoryBoardsTests.release.xcconfig"; path = "Target Support Files/Pods-AquaplusAppStoryBoardsTests/Pods-AquaplusAppStoryBoardsTests.release.xcconfig"; sourceTree = "<group>"; };
 		A687FE618993718C86EDFD75 /* Pods_AquaplusAppStoryBoardsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AquaplusAppStoryBoardsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB608B6524632D2F00B8C490 /* AddNewContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewContactViewController.swift; sourceTree = "<group>"; };
@@ -182,6 +190,8 @@
 				335DD1362459D42900E00149 /* HomeController.swift */,
 				335DD143245A38A700E00149 /* MainTabBarController.swift */,
 				335246982485AB3200B67B05 /* FeedbackViewController.swift */,
+				33DEC94A24990D1B007CAAA8 /* OrderTableViewController.swift */,
+				33DEC94C249A683E007CAAA8 /* OrderConfirmationController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -191,6 +201,7 @@
 			children = (
 				335DD13A2459EA2900E00149 /* DeliveryCell.swift */,
 				AB6B38A824813E9400329A27 /* DeliveryCompletedCell.swift */,
+				33DEC94824990CBB007CAAA8 /* OrderDeliveryCell.swift */,
 				335DD147245A3A0B00E00149 /* ContactCell.swift */,
 				33605959245DE16A0005FC8B /* CustomerOrderCell.swift */,
 				3360596B245E715D0005FC8B /* CustomerHeader.swift */,
@@ -214,6 +225,7 @@
 				33605942245C7A980005FC8B /* User.swift */,
 				3352469A2485B0BD00B67B05 /* FeedbackCategory.swift */,
 				3329575B24883FD300A858B6 /* FeedbackForm.swift */,
+				335C0744249CDC78009D81CE /* OrderConfirmation.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -453,14 +465,18 @@
 				AB608B6624632D2F00B8C490 /* AddNewContactViewController.swift in Sources */,
 				3360595A245DE16A0005FC8B /* CustomerOrderCell.swift in Sources */,
 				3360596C245E715D0005FC8B /* CustomerHeader.swift in Sources */,
+				33DEC94924990CBB007CAAA8 /* OrderDeliveryCell.swift in Sources */,
+				33DEC94B24990D1B007CAAA8 /* OrderTableViewController.swift in Sources */,
 				335246992485AB3200B67B05 /* FeedbackViewController.swift in Sources */,
 				33605956245DDA350005FC8B /* OrderViewController.swift in Sources */,
 				3352469B2485B0BD00B67B05 /* FeedbackCategory.swift in Sources */,
 				335DD146245A38C300E00149 /* ContactsController.swift in Sources */,
 				33605949245CE1510005FC8B /* DriverPickerController.swift in Sources */,
 				AB89BA2D248FE8700064E1DF /* EditContatctViewController.swift in Sources */,
+				335C0745249CDC78009D81CE /* OrderConfirmation.swift in Sources */,
 				335DD13D245A093300E00149 /* RegisterController.swift in Sources */,
 				335DD13B2459EA2900E00149 /* DeliveryCell.swift in Sources */,
+				33DEC94D249A683E007CAAA8 /* OrderConfirmationController.swift in Sources */,
 				33605950245CED2E0005FC8B /* AddNewDeliveryController.swift in Sources */,
 				AB89BA2A248AE3030064E1DF /* contactOrderViewController.swift in Sources */,
 				3360596A245E70BF0005FC8B /* CustomerProfileControllerTest.swift in Sources */,
@@ -628,13 +644,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 99E2XX32KG;
+				DEVELOPMENT_TEAM = S899XY5RMB;
 				INFOPLIST_FILE = AquaplusAppStoryBoards/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Edson.AquaplusAppStoryBoards;
+				PRODUCT_BUNDLE_IDENTIFIER = com.David.AquaplusAppStoryBoards;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;

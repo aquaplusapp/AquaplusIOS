@@ -81,6 +81,7 @@ class OrderViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         accountNumber.text = account
+        //accountNumber.text = orders.customers.accountNumber
         accountName.text = name
         //numberBottles.text = water
         quantityBottlesText.text = water
