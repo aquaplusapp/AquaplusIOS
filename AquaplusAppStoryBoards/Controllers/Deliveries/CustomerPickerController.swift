@@ -49,10 +49,9 @@ class CustomerPickerController: UITableViewController {
       return searchController.isActive && !isSearchBarEmpty
     }
 
-  func filterContentForSearchText(_ searchText: String,
-                                  category: Customers? = nil) {
+  func filterContentForSearchText(_ searchText: String) {
     filteredCustomers = customers.filter { (customer: Customers) -> Bool in
-        return customer.accountNumber.lowercased().contains(searchText.lowercased())
+        return customer.accountNumber.lowercased().contains(searchText.lowercased()) || customer.accountName.lowercased().contains(searchText.lowercased())
     }
     
     tableView.reloadData()
