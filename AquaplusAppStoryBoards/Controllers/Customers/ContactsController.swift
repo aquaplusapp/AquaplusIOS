@@ -13,6 +13,11 @@ import JGProgressHUD
 
 class ContactsController: UITableViewController {
     
+    
+    var customers : [Customers]=[]
+    let searchController = UISearchController(searchResultsController: nil)
+    var filteredCustomers: [Customers] = []
+
 //    let custId: String
 //
 //    init(custId: String) {
@@ -23,12 +28,22 @@ class ContactsController: UITableViewController {
     
     override func viewDidLoad() {
     super.viewDidLoad()
+        // 1
+        searchController.searchResultsUpdater = self
+        // 2
+        searchController.obscuresBackgroundDuringPresentation = false
+        // 3
+        searchController.searchBar.placeholder = "Search Customers"
+        // 4
+        navigationItem.searchController = searchController
+        // 5
         fetchContacts()
         contactsTableView.delegate = self
         let rc = UIRefreshControl()
         rc.addTarget(self, action: #selector(fetchContacts), for: .valueChanged)
         self.tableView.refreshControl = rc
     }
+    
     @objc func fetchContacts() {
         //        let url = "http://localhost:1337/customer"
         //        AF.request(url)
@@ -65,26 +80,47 @@ class ContactsController: UITableViewController {
         }
     }
     
+    var isSearchBarEmpty: Bool {
+        return searchController.searchBar.text?.isEmpty ?? true
+      }
+
+      var isFiltering: Bool {
+        return searchController.isActive && !isSearchBarEmpty
+      }
+
+    func filterContentForSearchText(_ searchText: String) {
+      filteredCustomers = customers.filter { (customer: Customers) -> Bool in
+        return customer.accountNumber.lowercased().contains(searchText.lowercased()) || customer.accountName.lowercased().contains(searchText.lowercased())
+      }
+      
+      tableView.reloadData()
+    }
 
     
-    var customers = [Customers]()
     
 //    var nameText = ""
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return customers.count
-    }
+       if isFiltering {
+                return filteredCustomers.count
+            }
+            return customers.count
+        }
+
     //let cellReuseIdentifier = "cell"
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let contactCell = self.tableView.dequeueReusableCell(withIdentifier: "ContactCell") as! ContactCell
         //
-        let cust = customers[indexPath.row]
-        contactCell.accountNumber.text = cust.accountNumber
-//        cell.textLabel?.font = .boldSystemFont(ofSize: 14)
-        contactCell.fullName.text = cust.fullName
-        //self.nameText = contactCell.accountNumber.text!
-        //cell.detailTextLabel?.numberOfLines = 0
+        
+        let customer: Customers
+        if isFiltering {
+            customer = filteredCustomers[indexPath.row]
+        } else {
+            customer = customers[indexPath.row]
+        }
+        contactCell.accountNumber.text = customer.accountNumber
+        contactCell.fullName.text = customer.accountName
         return contactCell
     }
     
@@ -92,11 +128,16 @@ class ContactsController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(indexPath.row)
 
-        let cust = customers[indexPath.row]
+        let customer: Customers
+        if isFiltering {
+            customer = filteredCustomers[indexPath.row]
+        } else {
+            customer = customers[indexPath.row]
+        }
         let controller = storyboard?.instantiateViewController(withIdentifier : "CustomerProfileControllerTest") as! CustomerProfileControllerTest
-        controller.account = cust.accountNumber //here is the customer you need to pass to next viewcontroller
-        controller.custId = cust.id
-        print(cust.accountNumber)
+        controller.account = customer.accountNumber //here is the customer you need to pass to next viewcontroller
+        controller.custId = customer.id
+        print(customer.accountNumber)
         self.navigationController?.pushViewController(controller, animated: true)
         
 
@@ -130,4 +171,10 @@ extension ContactsController {
         fetchContacts()
         
     }
+}
+extension ContactsController: UISearchResultsUpdating {
+  func updateSearchResults(for searchController: UISearchController) {
+    let searchBar = searchController.searchBar
+        filterContentForSearchText(searchBar.text!)
+  }
 }
