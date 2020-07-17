@@ -32,12 +32,6 @@ class OrderDeliveryCell: UITableViewCell {
        // handlePostOptions
 
     }
-    
-//    @objc func optionsButton(){
-//        guard let order = self.order else {fatalError("Order is missing")}
-//        optionsButtonDidTap?(order)
-//    }
-    
     func configure(with order: Order) {
         self.order = order
         accountName.text = order.customers.accountNumber

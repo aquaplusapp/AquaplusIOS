@@ -12,6 +12,7 @@
 		335246992485AB3200B67B05 /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335246982485AB3200B67B05 /* FeedbackViewController.swift */; };
 		3352469B2485B0BD00B67B05 /* FeedbackCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3352469A2485B0BD00B67B05 /* FeedbackCategory.swift */; };
 		335C0745249CDC78009D81CE /* OrderConfirmation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335C0744249CDC78009D81CE /* OrderConfirmation.swift */; };
+		335C074724A16A0B009D81CE /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335C074624A16A0A009D81CE /* MapViewController.swift */; };
 		335DD1152459D1FC00E00149 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335DD1142459D1FC00E00149 /* AppDelegate.swift */; };
 		335DD1172459D1FC00E00149 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335DD1162459D1FC00E00149 /* SceneDelegate.swift */; };
 		335DD1192459D1FC00E00149 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335DD1182459D1FC00E00149 /* LoginController.swift */; };
@@ -36,6 +37,7 @@
 		3360595A245DE16A0005FC8B /* CustomerOrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33605959245DE16A0005FC8B /* CustomerOrderCell.swift */; };
 		3360596A245E70BF0005FC8B /* CustomerProfileControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33605969245E70BF0005FC8B /* CustomerProfileControllerTest.swift */; };
 		3360596C245E715D0005FC8B /* CustomerHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3360596B245E715D0005FC8B /* CustomerHeader.swift */; };
+		33B6FF3324B8AA92001B833F /* MapTasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B6FF3224B8AA92001B833F /* MapTasks.swift */; };
 		33DEC94924990CBB007CAAA8 /* OrderDeliveryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DEC94824990CBB007CAAA8 /* OrderDeliveryCell.swift */; };
 		33DEC94B24990D1B007CAAA8 /* OrderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DEC94A24990D1B007CAAA8 /* OrderTableViewController.swift */; };
 		33DEC94D249A683E007CAAA8 /* OrderConfirmationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DEC94C249A683E007CAAA8 /* OrderConfirmationController.swift */; };
@@ -65,6 +67,7 @@
 		335246982485AB3200B67B05 /* FeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
 		3352469A2485B0BD00B67B05 /* FeedbackCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackCategory.swift; sourceTree = "<group>"; };
 		335C0744249CDC78009D81CE /* OrderConfirmation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderConfirmation.swift; sourceTree = "<group>"; };
+		335C074624A16A0A009D81CE /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		335DD1112459D1FC00E00149 /* AquaplusAppStoryBoards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AquaplusAppStoryBoards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		335DD1142459D1FC00E00149 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		335DD1162459D1FC00E00149 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +96,7 @@
 		33605959245DE16A0005FC8B /* CustomerOrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerOrderCell.swift; sourceTree = "<group>"; };
 		33605969245E70BF0005FC8B /* CustomerProfileControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerProfileControllerTest.swift; sourceTree = "<group>"; };
 		3360596B245E715D0005FC8B /* CustomerHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerHeader.swift; sourceTree = "<group>"; };
+		33B6FF3224B8AA92001B833F /* MapTasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTasks.swift; sourceTree = "<group>"; };
 		33DEC94824990CBB007CAAA8 /* OrderDeliveryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDeliveryCell.swift; sourceTree = "<group>"; };
 		33DEC94A24990D1B007CAAA8 /* OrderTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTableViewController.swift; sourceTree = "<group>"; };
 		33DEC94C249A683E007CAAA8 /* OrderConfirmationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderConfirmationController.swift; sourceTree = "<group>"; };
@@ -184,6 +188,7 @@
 		335DD1382459D57C00E00149 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				33B6FF3124B8AA79001B833F /* Map */,
 				3360594E245CEA280005FC8B /* Customers */,
 				3360594D245CEA100005FC8B /* Deliveries */,
 				3360594C245CE9FB0005FC8B /* Login */,
@@ -262,6 +267,15 @@
 			path = Customers;
 			sourceTree = "<group>";
 		};
+		33B6FF3124B8AA79001B833F /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				335C074624A16A0A009D81CE /* MapViewController.swift */,
+				33B6FF3224B8AA92001B833F /* MapTasks.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
 		3D32BDC275288E65731E7B0C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -294,6 +308,7 @@
 				335DD10E2459D1FC00E00149 /* Frameworks */,
 				335DD10F2459D1FC00E00149 /* Resources */,
 				B54CA94F548B6E4AC8DC4ED9 /* [CP] Embed Pods Frameworks */,
+				1CE4AD4776C5D454E326E8B9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -382,6 +397,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1CE4AD4776C5D454E326E8B9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AquaplusAppStoryBoards/Pods-AquaplusAppStoryBoards-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AquaplusAppStoryBoards/Pods-AquaplusAppStoryBoards-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AquaplusAppStoryBoards/Pods-AquaplusAppStoryBoards-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		B54CA94F548B6E4AC8DC4ED9 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -465,6 +497,7 @@
 				AB608B6624632D2F00B8C490 /* AddNewContactViewController.swift in Sources */,
 				3360595A245DE16A0005FC8B /* CustomerOrderCell.swift in Sources */,
 				3360596C245E715D0005FC8B /* CustomerHeader.swift in Sources */,
+				33B6FF3324B8AA92001B833F /* MapTasks.swift in Sources */,
 				33DEC94924990CBB007CAAA8 /* OrderDeliveryCell.swift in Sources */,
 				33DEC94B24990D1B007CAAA8 /* OrderTableViewController.swift in Sources */,
 				335246992485AB3200B67B05 /* FeedbackViewController.swift in Sources */,
@@ -472,6 +505,7 @@
 				3352469B2485B0BD00B67B05 /* FeedbackCategory.swift in Sources */,
 				335DD146245A38C300E00149 /* ContactsController.swift in Sources */,
 				33605949245CE1510005FC8B /* DriverPickerController.swift in Sources */,
+				335C074724A16A0B009D81CE /* MapViewController.swift in Sources */,
 				AB89BA2D248FE8700064E1DF /* EditContatctViewController.swift in Sources */,
 				335C0745249CDC78009D81CE /* OrderConfirmation.swift in Sources */,
 				335DD13D245A093300E00149 /* RegisterController.swift in Sources */,

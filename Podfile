@@ -12,7 +12,7 @@ target 'AquaplusAppStoryBoards' do
   pod 'JGProgressHUD'
   pod 'SendGrid', :git => 'https://github.com/scottkawai/sendgrid-swift.git'
   pod 'MBProgressHUD'
-
+  pod 'GoogleMaps', '~> 3.7.0'
   pod 'Loaf'
 
   target 'AquaplusAppStoryBoardsTests' do

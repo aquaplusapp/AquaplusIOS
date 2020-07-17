@@ -12,6 +12,10 @@ import Alamofire
 
 class DeliveryCell: UITableViewCell {
     
+    var optionsButtonDidTap: ((_ order: Order) -> Void)?
+    
+    private var order: Order?
+    
     @IBOutlet weak var accountName: UILabel!
     //@IBOutlet weak var optionsButton: UIButton!
     @IBOutlet weak var quantityBottles: UILabel!
@@ -20,12 +24,24 @@ class DeliveryCell: UITableViewCell {
     //weak var delegate: PostCellOptionsDelegate?
     
     @IBAction func optionsButton(_ sender: Any) {
-        print("Handle delete options on post cell")
+        
+        guard let order = self.order else {fatalError("Order is missing")}
+        optionsButtonDidTap?(order)
         //delegate?.handlePostOptions(cell: self)
-       // handlePostOptions
-
+        // handlePostOptions
+        print("")
     }
     
+    
+    func configure(with order: Order) {
+        self.order = order
+        postCodeLabel.text = order.customers.postCode
+        accountName.text = order.customers.accountNumber
+        
+        quantityBottles.text = String(order.quantityBottles)
+        
+    
+    }
 }
 //protocol PostCellOptionsDelegate: class {
 //    func handlePostOptions(cell: DeliveryCell)

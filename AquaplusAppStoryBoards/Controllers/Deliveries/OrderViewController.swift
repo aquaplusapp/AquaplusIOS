@@ -12,17 +12,15 @@ import Alamofire
 
 class OrderViewController: UITableViewController {
     
-    var delNoId = ""
-    var account = ""
-    var customerID = ""
-    var name = ""
-    var water = ""
-    var emptyBottle = ""
-    var dateOrder = Int()
-    var notes = ""
+    //    var delNoId = ""
+    //    var account = ""
+    //    var customerID = ""
+    //    var name = ""
+    //    var water = ""
+    //    var emptyBottle = ""
+    //    var dateOrder = Int()
+    //    var notes = ""
     //var dateOrder = Date()
-    let dateFormatter = DateFormatter()
-    
     
     
     @IBOutlet weak var accountNumber: UILabel!
@@ -35,6 +33,46 @@ class OrderViewController: UITableViewController {
     @IBOutlet weak var orderNo: UILabel!
     @IBOutlet weak var notesText: UITextView!
     
+    let dateFormatter = DateFormatter()
+    
+    private var emailManager = EmailManager()
+    
+    var order: Order?
+    //var orders: Order!
+    weak var delegate: HomeControllerDelegate?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupViews()
+        
+        /*
+         accountNumber.text = account
+         //accountNumber.text = orders.customers.accountNumber
+         accountName.text = name
+         //numberBottles.text = water
+         quantityBottlesText.text = water
+         custID.text = customerID
+         emptyBottlesText.text = emptyBottle
+         //orderedDate.text = orders.fromnow
+         
+         //orderedDate.text = dateOrder
+         //dateFormatter.dateStyle = DateFormatter.Style.medium
+         //orderedDate.text = DateFormatter.localizedString(from: dateOrder, dateStyle: DateFormatter.Style.short, timeStyle: DateFormatter.Style.short)
+         orderedDate.text = String(dateOrder)
+         orderNo.text = delNoId
+         notesText.text = notes
+         
+         //        dateFormatter.dateFormat = "dd.MM.yy"
+         //        let result = dateFormatter.string(from: dateOrder)
+         //        orderedDate.text = result
+         
+         // Uncomment the following line to preserve selection between presentations
+         // self.clearsSelectionOnViewWillAppear = false
+         
+         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+         */
+    }
     @objc func handleCompleteOrder() {
         print("Save")
         let hud = JGProgressHUD(style: .dark)
@@ -47,7 +85,7 @@ class OrderViewController: UITableViewController {
         
         let params = ["emptyBottles": eb, "quantityBottles": fb, "notes": n]
         
-        let url = "\(Service.shared.baseUrl)/delivery/\(delNoId)"
+        let url = "\(Service.shared.baseUrl)/delivery/\(order?.id ?? "")"
         
         AF.request(url, method: .post, parameters: params)
             .validate(statusCode: 200..<300)
@@ -65,6 +103,7 @@ class OrderViewController: UITableViewController {
     }
     @IBAction func completeOrder(_ sender: UIBarButtonItem) {
         handleCompleteOrder()
+        //sendEmail()
         
         let date = Date()
         let formatter = DateFormatter()
@@ -72,71 +111,73 @@ class OrderViewController: UITableViewController {
         let result = formatter.string(from: date)
         print(result)
         
-        //self.dismiss(animated: true, completion: nil)
         
+       // self.dismiss(animated: true, completion: nil)
+//        self.dismiss(animated: true, completion: {
+//                                   self.presentingViewController?.dismiss(animated: true, completion: nil)
+//                               })
     }
     
-    var orders: Order!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        accountNumber.text = account
-        //accountNumber.text = orders.customers.accountNumber
-        accountName.text = name
-        //numberBottles.text = water
-        quantityBottlesText.text = water
-        custID.text = customerID
-        emptyBottlesText.text = emptyBottle
-        //orderedDate.text = orders.fromnow
+    private func setupViews() {
+        accountNumber.text = order?.customers.accountNumber
+        accountName.text = order?.customers.accountName
+        quantityBottlesText.text = String(order?.quantityBottles)
+        custID.text = order?.customers.id
+        emptyBottlesText.text = String(order?.emptyBottles)
         
-        //orderedDate.text = dateOrder
-        //dateFormatter.dateStyle = DateFormatter.Style.medium
-        //orderedDate.text = DateFormatter.localizedString(from: dateOrder, dateStyle: DateFormatter.Style.short, timeStyle: DateFormatter.Style.short)
-        orderedDate.text = String(dateOrder)
-        orderNo.text = delNoId
-        notesText.text = notes
         
-        //        dateFormatter.dateFormat = "dd.MM.yy"
-        //        let result = dateFormatter.string(from: dateOrder)
-        //        orderedDate.text = result
+        orderedDate.text = String(order?.createdAt)
+        orderNo.text = order?.id
+        notesText.text = order?.notes
         
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
         
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-    
-    
+    @objc func sendEmail() {
+        guard let order = self.order else {fatalError("order missing")}
+        let orderConfirmation = OrderConfirmation(order: order)
+        emailManager.send(orderConfirmation: orderConfirmation) { [unowned self] (result) in
+            DispatchQueue.main.async {
+                self.delegate?.showOrderConfirmationStatus(result: result)
+            }
+            
+        }
+    }
     @IBAction func sendEmail(_ sender: Any) {
-        
+        guard let order = self.order else {fatalError("order missing")}
+        let orderConfirmation = OrderConfirmation(order: order)
+        emailManager.send(orderConfirmation: orderConfirmation) { [unowned self] (result) in
+            DispatchQueue.main.async {
+                self.delegate?.showOrderConfirmationStatus(result: result)
+            }
+            
+        }
     }
     
-//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        print("Row \(indexPath.row)selected")
-//
-//        if indexPath.row == 0 && indexPath.section == 0 {
-//         let vc = storyboard?.instantiateViewController(withIdentifier : "contactOrderViewController") as? contactOrderViewController
-//
-//            vc?.accountID = customerID
-//
-//        self.navigationController?.pushViewController(vc!, animated: true)
-//        }
-//    }
+    //    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    //        print("Row \(indexPath.row)selected")
+    //
+    //        if indexPath.row == 0 && indexPath.section == 0 {
+    //         let vc = storyboard?.instantiateViewController(withIdentifier : "contactOrderViewController") as? contactOrderViewController
+    //
+    //            vc?.accountID = customerID
+    //
+    //        self.navigationController?.pushViewController(vc!, animated: true)
+    //        }
+    //    }
     
     override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
         print(indexPath.row)
         
         let vc = storyboard?.instantiateViewController(withIdentifier : "contactOrderViewController") as? contactOrderViewController
-
-            vc?.accountID = customerID
-
+        
+        vc?.accountID = order?.customers.id as! String
+        
         self.navigationController?.pushViewController(vc!, animated: true)
         
     }
-//    func accessoryButtonTapped(sender : AnyObject){
-//        print("Tapped")
-//    }
+    //    func accessoryButtonTapped(sender : AnyObject){
+    //        print("Tapped")
+    //    }
     // MARK: - Table view data source
     
     //    override func numberOfSections(in tableView: UITableView) -> Int {
@@ -205,3 +246,19 @@ class OrderViewController: UITableViewController {
      */
     
 }
+extension String {
+    init?<T : CustomStringConvertible>(_ value : T?) {
+        guard let value = value else { return nil }
+        self.init(describing: value)
+    }
+}
+extension DateFormatter {
+    func date(fromSwapiString dateString: String) -> Date? {
+        // SWAPI dates look like: "2014-12-10T16:44:31.486000Z"
+        self.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SZ"
+        self.timeZone = TimeZone(abbreviation: "UTC")
+        self.locale = Locale(identifier: "en_US_POSIX")
+        return self.date(from: dateString)
+    }
+}
+

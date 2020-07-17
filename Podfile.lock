@@ -1,5 +1,10 @@
 PODS:
   - Alamofire (5.1.0)
+  - GoogleMaps (3.7.0):
+    - GoogleMaps/Maps (= 3.7.0)
+  - GoogleMaps/Base (3.7.0)
+  - GoogleMaps/Maps (3.7.0):
+    - GoogleMaps/Base
   - JGProgressHUD (2.1)
   - LBTATools (1.0.12)
   - Loaf (0.5.0)
@@ -11,6 +16,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - GoogleMaps (~> 3.7.0)
   - JGProgressHUD
   - LBTATools
   - Loaf
@@ -21,6 +27,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - GoogleMaps
     - JGProgressHUD
     - LBTATools
     - Loaf
@@ -38,6 +45,7 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Alamofire: 9d5c5f602928e512395b30950c5984eca840093c
+  GoogleMaps: 55da829c68aa931f3ae982b9e341cc2f3d89c587
   JGProgressHUD: aa403e9a5b45cae98903c4600cccdd98c0c3ec90
   LBTATools: 389a901a01b9a56bea5682c40cd6e23530f40015
   Loaf: 0800b444431366bc395d54267975d4ad4ad5c99c
@@ -45,6 +53,6 @@ SPEC CHECKSUMS:
   SDWebImage: 97351f6582ceca541ea294ba66a1fcb342a331c2
   SendGrid: 75853f4d9e7a9d6e6891a29e109ef39f9910e2a5
 
-PODFILE CHECKSUM: b69c724596731c924baf233517ed145ddeb4ee11
+PODFILE CHECKSUM: 657156c26b65ec39d947f346f1b727d8b7b887cb
 
 COCOAPODS: 1.9.1
