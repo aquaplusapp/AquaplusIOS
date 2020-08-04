@@ -567,6 +567,13 @@ App</string>
                                             <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pN0-K1-s8H">
+                                            <rect key="frame" x="20" y="69" width="241" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="rCx-2O-WYO" firstAttribute="top" secondItem="rrU-8q-Pst" secondAttribute="bottom" constant="8" id="1Is-Ck-25g"/>
@@ -584,6 +591,7 @@ App</string>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="accountName" destination="rrU-8q-Pst" id="kmN-aP-zk8"/>
+                                    <outlet property="dateCreated" destination="pN0-K1-s8H" id="zbb-Zo-vKg"/>
                                     <outlet property="postCodeLabel" destination="X1i-YJ-cIt" id="WuP-N6-BZd"/>
                                     <outlet property="quantityBottles" destination="rCx-2O-WYO" id="iEr-ii-wWT"/>
                                 </connections>
@@ -681,7 +689,7 @@ App</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dU0-xy-oPl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="903" y="-554"/>
+            <point key="canvasLocation" x="902.89855072463774" y="-554.46428571428567"/>
         </scene>
         <!--Order Confirmation Controller-->
         <scene sceneID="pwi-FS-a11">

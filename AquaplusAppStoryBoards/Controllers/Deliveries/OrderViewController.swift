@@ -37,6 +37,7 @@ class OrderViewController: UITableViewController {
     
     private var emailManager = EmailManager()
     
+    
     var order: Order?
     //var orders: Order!
     weak var delegate: HomeControllerDelegate?
@@ -73,6 +74,9 @@ class OrderViewController: UITableViewController {
          // self.navigationItem.rightBarButtonItem = self.editButtonItem
          */
     }
+    
+    
+
     @objc func handleCompleteOrder() {
         print("Save")
         let hud = JGProgressHUD(style: .dark)
@@ -102,7 +106,10 @@ class OrderViewController: UITableViewController {
         }
     }
     @IBAction func completeOrder(_ sender: UIBarButtonItem) {
-        handleCompleteOrder()
+        
+        
+            handleCompleteOrder()
+            sendEmail()
         //sendEmail()
         
         let date = Date()
@@ -123,15 +130,53 @@ class OrderViewController: UITableViewController {
         accountName.text = order?.customers.accountName
         quantityBottlesText.text = String(order?.quantityBottles)
         custID.text = order?.customers.id
+        
         emptyBottlesText.text = String(order?.emptyBottles)
         
         
-        orderedDate.text = String(order?.createdAt)
+        //orderedDate.text = String(order?.createdAt)
         orderNo.text = order?.id
         notesText.text = order?.notes
         
+        let dateO = Date(timeIntervalSince1970: order!.createdAt/1000)
+        print("1:", dateO)
+        
+        //Date().millisecondsSince1970 // 1476889390939
+        print("2:", Date().millisecondsSince1970)
+        
+        let DateE = Date(milliseconds: Int64(order!.createdAt))
+        print("3:", DateE)
+        
+        print("4:", Date(milliseconds: Int64(order!.createdAt)))
+        
+        orderedDate.text = order!.dateOrdered
+        print("5:", order!.dateOrdered)
+        
+        print("6:", order!.createdAt)
+        
+        let string = String(DateE)!
+        let formatter4 = DateFormatter()
+        formatter4.dateFormat = "yyyy-MM-dd HH:mm:ss ZZZZZ"
+        print("7:", formatter4.date(from: string) ?? "Unknown date")
+        
+        let dateFormatterGet = DateFormatter()
+        dateFormatterGet.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
+
+        let dateFormatterPrint1 = DateFormatter()
+        dateFormatterPrint1.dateFormat = "dd/MM/yyyy"
+        
+        let dateFormatterPrint2 = DateFormatter()
+        dateFormatterPrint2.dateFormat = "HH:mm"
+
+        if let date = dateFormatterGet.date(from: order!.dateOrdered) {
+            print("8:", dateFormatterPrint1.string(from: date), dateFormatterPrint2.string(from: date))
+        } else {
+           print("There was an error decoding the string")
+        }
         
     }
+    
+
     @objc func sendEmail() {
         guard let order = self.order else {fatalError("order missing")}
         let orderConfirmation = OrderConfirmation(order: order)
@@ -252,13 +297,23 @@ extension String {
         self.init(describing: value)
     }
 }
-extension DateFormatter {
-    func date(fromSwapiString dateString: String) -> Date? {
-        // SWAPI dates look like: "2014-12-10T16:44:31.486000Z"
-        self.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SZ"
-        self.timeZone = TimeZone(abbreviation: "UTC")
-        self.locale = Locale(identifier: "en_US_POSIX")
-        return self.date(from: dateString)
+//extension DateFormatter {
+//    func date(fromSwapiString dateString: String) -> Date? {
+//        // SWAPI dates look like: "2014-12-10T16:44:31.486000Z"
+//        self.dateFormat = "yyyy-MM-dd"
+//        self.timeZone = TimeZone(abbreviation: "UTC")
+//        self.locale = Locale(identifier: "en_US_POSIX")
+//        return self.date(from: dateString)
+//    }
+//
+//}
+
+extension Date {
+    var millisecondsSince1970:Int64 {
+        return Int64((self.timeIntervalSince1970 * 1000.0).rounded())
+    }
+
+    init(milliseconds:Int64) {
+        self = Date(timeIntervalSince1970: TimeInterval(milliseconds) / 1000.0)
     }
 }
-

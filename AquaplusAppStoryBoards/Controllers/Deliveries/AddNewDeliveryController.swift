@@ -82,7 +82,9 @@ class AddNewDeliveryController: UITableViewController {
         
         let date = Date()
         let formatter = DateFormatter()
-        formatter.dateFormat = "ddMMyyyy"
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        formatter.timeZone = TimeZone.current
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
         let result = formatter.string(from: date)
         print(result)
         
@@ -114,7 +116,7 @@ class AddNewDeliveryController: UITableViewController {
     @IBAction func dateChanged(_ sender: UIDatePicker) {
         
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "ddMMyyyy"
+        dateFormatter.dateFormat = "dd/MM/yyyy"
         //dateFormatter.timeStyle = DateFormatter.Style.medium
         let dateDue = dateFormatter.string(from: sender.date)
         dateDueLabel.text = dateDue

@@ -22,6 +22,7 @@ class DeliveryCell: UITableViewCell {
     
     @IBOutlet weak var postCodeLabel: UILabel!
     //weak var delegate: PostCellOptionsDelegate?
+    @IBOutlet weak var dateCreated: UILabel!
     
     @IBAction func optionsButton(_ sender: Any) {
         
@@ -39,6 +40,10 @@ class DeliveryCell: UITableViewCell {
         accountName.text = order.customers.accountNumber
         
         quantityBottles.text = String(order.quantityBottles)
+        let dateCreatedAt = Date(timeIntervalSince1970: order.createdAt/1000)
+        //print("1:", dateCreated)
+        
+        dateCreated.text = String(dateCreatedAt)
         
     
     }

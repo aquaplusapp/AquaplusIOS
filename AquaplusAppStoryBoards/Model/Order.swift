@@ -12,8 +12,9 @@ struct Order: Decodable {
     let id: String
     let quantityBottles: Int
     let emptyBottles: Int
-    let createdAt: Int
+    let createdAt: Double
     let notes: String
     var fromnow: String?
     let customers: Customers
+    let dateOrdered: String
 }
