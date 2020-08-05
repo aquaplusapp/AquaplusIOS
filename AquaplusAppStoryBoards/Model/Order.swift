@@ -17,4 +17,6 @@ struct Order: Decodable {
     var fromnow: String?
     let customers: Customers
     let dateOrdered: String
+    let dateDue: String
+    let dateCompleted: String
 }

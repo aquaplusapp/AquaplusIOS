@@ -43,11 +43,11 @@ class AddNewDeliveryController: UITableViewController {
     @IBOutlet weak var notesText: UITextView!
     
     @IBAction func saveDel(_ sender: UIBarButtonItem) {
-       let date = Date()
-       let formatter = DateFormatter()
-       formatter.dateFormat = "dd.MM.yyyy"
-       let result = formatter.string(from: date)
-       print(result)
+//       let date = Date()
+//       let formatter = DateFormatter()
+//       formatter.dateFormat = "dd.MM.yyyy"
+//       let result = formatter.string(from: date)
+//       print(result)
         
         handleSend()
        
@@ -85,14 +85,16 @@ class AddNewDeliveryController: UITableViewController {
         formatter.locale = Locale(identifier: "en_US_POSIX")
         formatter.timeZone = TimeZone.current
         formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
-        let result = formatter.string(from: date)
-        print(result)
+        let orderedDate = formatter.string(from: date)
+        print(orderedDate)
         
         let hud = JGProgressHUD(style: .dark)
         hud.textLabel.text = "Submitting..."
         hud.show(in: view)
 
-        let params = ["quantityBottles": waterLabel.text ?? "", "notes": notesText.text ?? "", "dateOrdered": result, "dateDue": dateDueLabel.text ?? ""]
+        
+        
+        let params = ["quantityBottles": waterLabel.text ?? "", "notes": notesText.text ?? "", "dateOrdered": orderedDate, "dateDue": dateDueLabel.text ?? ""]
         let url = "\(Service.shared.baseUrl)/delivery/customer/\(custid)"
         AF.request(url, method: .post, parameters: params)
             .validate(statusCode: 200..<300)
@@ -116,10 +118,13 @@ class AddNewDeliveryController: UITableViewController {
     @IBAction func dateChanged(_ sender: UIDatePicker) {
         
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd/MM/yyyy"
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
         //dateFormatter.timeStyle = DateFormatter.Style.medium
-        let dateDue = dateFormatter.string(from: sender.date)
-        dateDueLabel.text = dateDue
+        dateDueLabel.text = dateFormatter.string(from: sender.date)
+        print(dateDueLabel.text!)
+        let dueDate = dateDueLabel.text
+        print(dueDate!)
+       
         
         
 //        let date = Date()

@@ -29,6 +29,9 @@ class OrderViewController: UITableViewController {
     @IBOutlet weak var custID: UILabel!
     @IBOutlet weak var emptyBottlesText: UITextField!
     @IBOutlet weak var orderedDate: UILabel!
+    @IBOutlet weak var completedDate: UILabel!
+    @IBOutlet weak var completedTime: UILabel!
+    @IBOutlet weak var dueDate: UILabel!
     @IBOutlet weak var quantityBottlesText: UITextField!
     @IBOutlet weak var orderNo: UILabel!
     @IBOutlet weak var notesText: UITextView!
@@ -78,6 +81,14 @@ class OrderViewController: UITableViewController {
     
 
     @objc func handleCompleteOrder() {
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        formatter.timeZone = TimeZone.current
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
+        let completedDate = formatter.string(from: date)
+        print(completedDate)
+        
         print("Save")
         let hud = JGProgressHUD(style: .dark)
         hud.textLabel.text = "Updating"
@@ -87,7 +98,8 @@ class OrderViewController: UITableViewController {
         guard let fb = quantityBottlesText.text else {return}
         guard let n = notesText.text else {return}
         
-        let params = ["emptyBottles": eb, "quantityBottles": fb, "notes": n]
+        
+        let params = ["emptyBottles": eb, "quantityBottles": fb, "notes": n, "dateCompleted": completedDate]
         
         let url = "\(Service.shared.baseUrl)/delivery/\(order?.id ?? "")"
         
@@ -110,13 +122,12 @@ class OrderViewController: UITableViewController {
         
             handleCompleteOrder()
             sendEmail()
-        //sendEmail()
         
-        let date = Date()
-        let formatter = DateFormatter()
-        formatter.dateFormat = "HH:mm:ss dd/MM/yyyy"
-        let result = formatter.string(from: date)
-        print(result)
+//        let date = Date()
+//        let formatter = DateFormatter()
+//        formatter.dateFormat = "HH:mm:ss dd/MM/yyyy"
+//        let result = formatter.string(from: date)
+//        print(result)
         
         
        // self.dismiss(animated: true, completion: nil)
@@ -138,26 +149,26 @@ class OrderViewController: UITableViewController {
         orderNo.text = order?.id
         notesText.text = order?.notes
         
-        let dateO = Date(timeIntervalSince1970: order!.createdAt/1000)
-        print("1:", dateO)
-        
-        //Date().millisecondsSince1970 // 1476889390939
-        print("2:", Date().millisecondsSince1970)
-        
-        let DateE = Date(milliseconds: Int64(order!.createdAt))
-        print("3:", DateE)
-        
-        print("4:", Date(milliseconds: Int64(order!.createdAt)))
-        
-        orderedDate.text = order!.dateOrdered
-        print("5:", order!.dateOrdered)
-        
-        print("6:", order!.createdAt)
-        
-        let string = String(DateE)!
-        let formatter4 = DateFormatter()
-        formatter4.dateFormat = "yyyy-MM-dd HH:mm:ss ZZZZZ"
-        print("7:", formatter4.date(from: string) ?? "Unknown date")
+//        let dateO = Date(timeIntervalSince1970: order!.createdAt/1000)
+//        print("1:", dateO)
+//
+//        //Date().millisecondsSince1970 // 1476889390939
+//        print("2:", Date().millisecondsSince1970)
+//
+//        let DateE = Date(milliseconds: Int64(order!.createdAt))
+//        print("3:", DateE)
+//
+//        print("4:", Date(milliseconds: Int64(order!.createdAt)))
+//
+//        //orderedDate.text = dateOrdered
+//        print("5:", order!.dateOrdered)
+//
+//        print("6:", order!.createdAt)
+//
+//        let string = String(DateE)!
+//        let formatter4 = DateFormatter()
+//        formatter4.dateFormat = "yyyy-MM-dd HH:mm:ss ZZZZZ"
+//        print("7:", formatter4.date(from: string) ?? "Unknown date")
         
         let dateFormatterGet = DateFormatter()
         dateFormatterGet.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
@@ -170,10 +181,31 @@ class OrderViewController: UITableViewController {
 
         if let date = dateFormatterGet.date(from: order!.dateOrdered) {
             print("8:", dateFormatterPrint1.string(from: date), dateFormatterPrint2.string(from: date))
+            orderedDate.text = dateFormatterPrint1.string(from: date)
         } else {
            print("There was an error decoding the string")
         }
         
+        if let date = dateFormatterGet.date(from: order!.dateDue) {
+            print("9:", dateFormatterPrint1.string(from: date), dateFormatterPrint2.string(from: date))
+            dueDate.text = dateFormatterPrint1.string(from: date)
+        } else {
+           print("There was an error decoding the string")
+        }
+        if let date = dateFormatterGet.date(from: order!.dateCompleted) {
+            print("10:", dateFormatterPrint1.string(from: date), dateFormatterPrint2.string(from: date))
+            completedDate.text = dateFormatterPrint1.string(from: date)
+            completedTime.text = dateFormatterPrint2.string(from: date)
+        } else {
+           print("There was an error decoding the string")
+        }
+        
+        
+        
+        //dueDate.text = String(order!.dateDue)
+        
+        
+       
     }
     
 
@@ -188,14 +220,15 @@ class OrderViewController: UITableViewController {
         }
     }
     @IBAction func sendEmail(_ sender: Any) {
-        guard let order = self.order else {fatalError("order missing")}
-        let orderConfirmation = OrderConfirmation(order: order)
-        emailManager.send(orderConfirmation: orderConfirmation) { [unowned self] (result) in
-            DispatchQueue.main.async {
-                self.delegate?.showOrderConfirmationStatus(result: result)
-            }
-            
-        }
+        sendEmail()
+//        guard let order = self.order else {fatalError("order missing")}
+//        let orderConfirmation = OrderConfirmation(order: order)
+//        emailManager.send(orderConfirmation: orderConfirmation) { [unowned self] (result) in
+//            DispatchQueue.main.async {
+//                self.delegate?.showOrderConfirmationStatus(result: result)
+//            }
+//
+//        }
     }
     
     //    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -215,7 +248,7 @@ class OrderViewController: UITableViewController {
         
         let vc = storyboard?.instantiateViewController(withIdentifier : "contactOrderViewController") as? contactOrderViewController
         
-        vc?.accountID = order?.customers.id as! String
+        vc?.accountID = order!.customers.id
         
         self.navigationController?.pushViewController(vc!, animated: true)
         
