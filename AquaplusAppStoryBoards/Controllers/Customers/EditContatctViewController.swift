@@ -25,6 +25,7 @@ class EditContatctViewController: UITableViewController {
     var addCounty = ""
     var addPostCode = ""
     
+    var customer: Customers?
     
     @IBOutlet weak var accountNumber: UITextField!
     @IBOutlet weak var accountID: UILabel!
@@ -72,7 +73,7 @@ class EditContatctViewController: UITableViewController {
         //print(customInputView.textView.text ?? "")
 
         let hud = JGProgressHUD(style: .dark)
-        hud.textLabel.text = "Submitting..."
+        hud.textLabel.text = "Updating..."
         hud.show(in: view)
         
         guard let accNum = accountNumber.text else {return}
@@ -81,7 +82,7 @@ class EditContatctViewController: UITableViewController {
         guard let eAddress = eAddress.text else { return}
         guard let tPhone = mobilePhone.text else {return}
         guard let add1 = address1.text else {return}
-        guard let add2 = address1.text else { return}
+        guard let add2 = address2.text else { return}
         guard let addTown = addressTown.text else {return}
         guard let coun = addressCounty.text else { return}
         guard let postCo = addressPostCode.text else { return}
@@ -96,6 +97,9 @@ class EditContatctViewController: UITableViewController {
                 hud.dismiss()
                 self.accountNumber.text = nil
                 self.accountNumber.isHidden = false
+                self.reloadInputViews()
+                self.navigationController?.popViewController(animated: true)
+                self.dismiss(animated: true, completion: nil)
                 //self.fetchCustomerProfile()
         }
     }
