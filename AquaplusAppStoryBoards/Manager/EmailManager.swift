@@ -42,7 +42,7 @@ struct EmailManager {
             try session.send(request: email, completionHandler: { (result) in
                 switch result {
                 case .success(let response):
-                    print("response: \(response.statusCode)")
+                    print("response: sent \(response.statusCode)")
                     completion(.success(orderConfirmation))
                 case .failure(let error):
                     completion(.failure(error))
@@ -92,7 +92,7 @@ struct EmailManager {
             try session.send(request: email, completionHandler: { (result) in
                 switch result {
                 case .success(let response):
-                    print("response: \(response.statusCode)")
+                    print("response: Sent \(response.statusCode)")
                     completion(.success(()))
                 case .failure(let error):
                     completion(.failure(error))

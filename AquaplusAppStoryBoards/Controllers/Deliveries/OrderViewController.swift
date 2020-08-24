@@ -121,7 +121,7 @@ class OrderViewController: UITableViewController {
         
         
             handleCompleteOrder()
-            sendEmail()
+            //sendEmail()
         
 //        let date = Date()
 //        let formatter = DateFormatter()
