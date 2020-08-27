@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/EdsonMendesDaSilva/Documents/Developer/AquaplusIOS/AquaplusAppStoryBoards/Controllers/More/AddProductViewController.swift">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/EdsonMendesDaSilva/Documents/Developer/AquaplusIOS/AquaplusAppStoryBoards/Controllers/More/ProductsViewController.swift">
+   </FileRef>
+   <FileRef
       location = "group:AquaplusAppStoryBoards.xcodeproj">
    </FileRef>
    <FileRef

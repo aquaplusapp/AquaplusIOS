@@ -509,7 +509,7 @@ App</string>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="srp-2d-dV8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4413.04347826087" y="1563.6160714285713"/>
+            <point key="canvasLocation" x="5323.188405797102" y="1563.6160714285713"/>
         </scene>
         <!--Orders-->
         <scene sceneID="mVH-9H-nKK">
@@ -1558,7 +1558,7 @@ App</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FSe-PB-RFb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5150.7246376811599" y="1563.6160714285713"/>
+            <point key="canvasLocation" x="6060.8695652173919" y="1563.6160714285713"/>
         </scene>
         <!--Pick Customer-->
         <scene sceneID="XWx-7F-MPD">
@@ -2254,16 +2254,88 @@ App</string>
             </objects>
             <point key="canvasLocation" x="4460.8695652173919" y="748.66071428571422"/>
         </scene>
+        <!--Products-->
+        <scene sceneID="pCW-ol-h7F">
+            <objects>
+                <tableViewController title="Products" id="0Gi-6f-Gu4" customClass="ProductsViewController" customModule="AquaplusAppStoryBoards" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="KU6-AI-YeH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProductCell" rowHeight="82" id="v94-BL-8BF" customClass="ProductCell" customModule="AquaplusAppStoryBoards" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="82"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="v94-BL-8BF" id="MYu-cA-a2h">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="82"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gaM-ll-OE0">
+                                            <rect key="frame" x="20" y="16" width="66" height="21"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lZ0-tn-4AM">
+                                            <rect key="frame" x="20" y="45" width="374" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7A6-QR-3AC">
+                                            <rect key="frame" x="355" y="16" width="39" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="7A6-QR-3AC" firstAttribute="trailing" secondItem="MYu-cA-a2h" secondAttribute="trailingMargin" id="2Cb-nt-iQQ"/>
+                                        <constraint firstItem="7A6-QR-3AC" firstAttribute="top" secondItem="MYu-cA-a2h" secondAttribute="topMargin" constant="5" id="BCJ-e3-2l7"/>
+                                        <constraint firstItem="7A6-QR-3AC" firstAttribute="leading" secondItem="gaM-ll-OE0" secondAttribute="trailing" constant="269" id="JFc-ih-Gce"/>
+                                        <constraint firstItem="gaM-ll-OE0" firstAttribute="top" secondItem="MYu-cA-a2h" secondAttribute="topMargin" constant="5" id="RtD-TR-TFV"/>
+                                        <constraint firstItem="lZ0-tn-4AM" firstAttribute="trailing" secondItem="MYu-cA-a2h" secondAttribute="trailingMargin" id="YFa-1F-pU4"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="lZ0-tn-4AM" secondAttribute="bottom" constant="5" id="lBx-IH-f1o"/>
+                                        <constraint firstItem="lZ0-tn-4AM" firstAttribute="leading" secondItem="MYu-cA-a2h" secondAttribute="leadingMargin" id="oeV-lE-Ee2"/>
+                                        <constraint firstItem="lZ0-tn-4AM" firstAttribute="top" secondItem="gaM-ll-OE0" secondAttribute="bottom" constant="8" id="rtZ-vT-Osb"/>
+                                        <constraint firstItem="lZ0-tn-4AM" firstAttribute="top" secondItem="7A6-QR-3AC" secondAttribute="bottom" constant="8" id="s0D-ym-lRO"/>
+                                        <constraint firstItem="gaM-ll-OE0" firstAttribute="leading" secondItem="MYu-cA-a2h" secondAttribute="leadingMargin" id="vEF-fa-26U"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="descriptionLabel" destination="lZ0-tn-4AM" id="X6y-iM-bdo"/>
+                                    <outlet property="priceLabel" destination="7A6-QR-3AC" id="cIb-gi-NFn"/>
+                                    <outlet property="productCodeLabel" destination="gaM-ll-OE0" id="Q4I-rm-J6s"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="0Gi-6f-Gu4" id="WeN-r2-28F"/>
+                            <outlet property="delegate" destination="0Gi-6f-Gu4" id="8oz-eE-Hf9"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Products" id="txJ-MQ-ydR">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="QWa-9p-tTi">
+                            <connections>
+                                <segue destination="9NE-hv-MF1" kind="presentation" id="2Cy-SQ-dBd"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I6j-Wy-fqy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3343.4782608695655" y="1630.5803571428571"/>
+        </scene>
         <!--Add Product-->
         <scene sceneID="9do-Yh-T6n">
             <objects>
-                <viewController title="Add Product" id="sXk-ij-9hk" sceneMemberID="viewController">
+                <viewController title="Add Product" id="sXk-ij-9hk" customClass="AddProductViewController" customModule="AquaplusAppStoryBoards" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rp3-1s-Jcj">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="fzt-2h-Iwc">
-                                <rect key="frame" x="24" y="112" width="366" height="461"/>
+                                <rect key="frame" x="24" y="80" width="366" height="461"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product Code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mr4-2D-n1r">
                                         <rect key="frame" x="0.0" y="0.0" width="366" height="17"/>
@@ -2293,7 +2365,7 @@ App</string>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="£0.00" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Am0-Go-wK4">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0.00" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Am0-Go-wK4">
                                         <rect key="frame" x="0.0" y="159" width="366" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -2304,7 +2376,7 @@ App</string>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="£0.00" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xlp-Px-AZM">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0.00" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xlp-Px-AZM">
                                         <rect key="frame" x="0.0" y="226" width="366" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -2354,12 +2426,31 @@ App</string>
                         <viewLayoutGuide key="safeArea" id="oAz-Jc-3cm"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add Product" id="KMx-WT-bs7">
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="U9h-zP-tkq"/>
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="5A9-AY-3TW">
+                            <connections>
+                                <segue destination="4aw-Na-xPk" kind="unwind" unwindAction="cancelToProductsViewController:" id="SoY-FR-BZ5"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="U9h-zP-tkq">
+                            <connections>
+                                <action selector="saveProduct:" destination="sXk-ij-9hk" id="RNa-7h-q1L"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="depositText" destination="Xlp-Px-AZM" id="zrz-GR-XgI"/>
+                        <outlet property="nominalText" destination="S1h-X5-7YX" id="dI7-VH-1qX"/>
+                        <outlet property="priceText" destination="Am0-Go-wK4" id="SCY-50-ifk"/>
+                        <outlet property="productCodeText" destination="ACT-cd-8GJ" id="XXb-E8-04R"/>
+                        <outlet property="productText" destination="g3g-Ic-wLE" id="ZGA-hS-tFg"/>
+                        <outlet property="productTypeText" destination="wpd-sS-dmb" id="uKj-Ll-ezl"/>
+                        <outlet property="taxCodeText" destination="gTy-g0-gv2" id="v1A-Pg-is8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gqc-cs-IW1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="4aw-Na-xPk" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-2575.36231884058" y="1634.5982142857142"/>
+            <point key="canvasLocation" x="-1997" y="1631"/>
         </scene>
         <!--Feedback-->
         <scene sceneID="8DH-fF-b98">
@@ -2428,7 +2519,7 @@ App</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rLs-ch-e25" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1288" y="1635"/>
+            <point key="canvasLocation" x="-378.26086956521743" y="1634.5982142857142"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="tBX-BY-jUO">
@@ -2465,7 +2556,7 @@ App</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p3U-nz-E6U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3502.898550724638" y="1563.6160714285713"/>
+            <point key="canvasLocation" x="4413.04347826087" y="1563.6160714285713"/>
         </scene>
         <!--Contact Details-->
         <scene sceneID="V1C-dw-bAD">
@@ -2801,7 +2892,7 @@ App</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yx6-5K-yK8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="ZMB-uX-Ftd" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="6039.130434782609" y="1563.6160714285713"/>
+            <point key="canvasLocation" x="6949.275362318841" y="1563.6160714285713"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Vnr-KP-LeM">
@@ -2825,7 +2916,6 @@ App</string>
         <!--more-->
         <scene sceneID="2YM-fD-C4m">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BUn-un-t4k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eQN-oL-Ty0" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="more" image="ellipsis" catalog="system" id="W9w-YX-A4W"/>
                     <toolbarItems/>
@@ -2839,13 +2929,13 @@ App</string>
                         <segue destination="VDN-CK-qHb" kind="relationship" relationship="rootViewController" id="vnb-hV-98n"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BUn-un-t4k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2103" y="872"/>
         </scene>
         <!--More-->
         <scene sceneID="eiH-U3-tJW">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dwp-Pu-3s1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tableViewController id="VDN-CK-qHb" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="2nc-Kf-Y9Q">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -2892,7 +2982,7 @@ App</string>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="sXk-ij-9hk" kind="show" id="qKA-7Q-7b3"/>
+                                            <segue destination="0Gi-6f-Gu4" kind="show" id="93V-O2-FHI"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="O3E-K6-Zdt" rowHeight="60" style="IBUITableViewCellStyleDefault" id="1wD-IH-oqo">
@@ -2985,8 +3075,27 @@ App</string>
                     </tableView>
                     <navigationItem key="navigationItem" title="More" id="iAS-Gx-cpf"/>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dwp-Pu-3s1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1288.4057971014495" y="871.875"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="8J2-0V-ccL">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9NE-hv-MF1" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Kr8-3x-jlq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="sXk-ij-9hk" kind="relationship" relationship="rootViewController" id="Aeu-zm-4ou"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ilz-PH-64w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2674" y="1631"/>
         </scene>
     </scenes>
     <resources>
@@ -2995,8 +3104,8 @@ App</string>
         <image name="ellipsis" catalog="system" width="128" height="37"/>
         <image name="icon_me" width="30" height="55"/>
         <image name="location" width="25" height="25"/>
-        <image name="map" width="25" height="25"/>
         <image name="map" catalog="system" width="128" height="113"/>
+        <image name="map" width="25" height="25"/>
         <image name="message.fill" catalog="system" width="128" height="113"/>
         <image name="person.3" catalog="system" width="128" height="62"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
