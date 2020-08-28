@@ -9,6 +9,9 @@ import UIKit
 
 class ProductsViewController: UITableViewController {
     
+    @IBAction func refreshProducts(_ sender: Any) {
+        print("refreshing products")
+    }
     var products = SampleData.generateProductsData()
 
     override func viewDidLoad() {
