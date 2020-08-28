@@ -1,19 +1,22 @@
 //
 //  ProductsViewController.swift
-//  
+//  AquaplusAppStoryBoards
 //
-//  Created by Edson Mendes da silva on 26/08/2020.
+//  Created by Edson Mendes da silva on 28/08/2020.
+//  Copyright © 2020 David Mendes Da Silva. All rights reserved.
 //
 
 import UIKit
 
 class ProductsViewController: UITableViewController {
     
-    @IBAction func refreshProducts(_ sender: Any) {
-        print("refreshing products")
-    }
+    
     var products = SampleData.generateProductsData()
-
+    
+    @IBAction func refreshProducts(_ sender: Any) {
+        print("Refershing Products")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -25,33 +28,21 @@ class ProductsViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
-//    override func numberOfSections(in tableView: UITableView) -> Int {
-//        // #warning Incomplete implementation, return the number of sections
-//        return 1
-//    }
-//
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return products.count
     }
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ProductCell", for: indexPath) as! ProductCell
-        
-        let product = products[indexPath.row]
-        cell.products = product
-        return cell
-    }
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
-        // Configure the cell...
-
-        return cell
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCell(withIdentifier: "ProductCell", for: indexPath) as! ProductCell
+        
+    let product = products[indexPath.row]
+    cell.products = product
+    return cell
     }
-    */
+    
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -99,12 +90,10 @@ class ProductsViewController: UITableViewController {
     */
 
 }
-
 //MARK: - IBActions
 extension ProductsViewController {
     //function to cancel delivery note
-    @IBAction func cancelToProductsViewController(_ segue: UIStoryboardSegue){
-        
+    @IBAction func cancelToProductsController(_ segue: UIStoryboardSegue){
         
     }
 }

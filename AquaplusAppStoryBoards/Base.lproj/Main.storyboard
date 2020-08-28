@@ -2334,7 +2334,7 @@ App</string>
                             </barButtonItem>
                             <barButtonItem systemItem="refresh" id="ZmO-OA-ZR5">
                                 <connections>
-                                    <action selector="refreshProducts:" destination="0Gi-6f-Gu4" id="vHn-A9-ltu"/>
+                                    <action selector="refreshProducts:" destination="0Gi-6f-Gu4" id="TEj-EL-SXZ"/>
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
@@ -2347,7 +2347,7 @@ App</string>
         <!--Add Product-->
         <scene sceneID="9do-Yh-T6n">
             <objects>
-                <viewController title="Add Product" id="sXk-ij-9hk" customClass="AddProductViewController" customModule="AquaplusAppStoryBoards" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Add Product" id="sXk-ij-9hk" customClass="AddProductsViewController" customModule="AquaplusAppStoryBoards" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rp3-1s-Jcj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2446,23 +2446,23 @@ App</string>
                     <navigationItem key="navigationItem" title="Add Product" id="KMx-WT-bs7">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="5A9-AY-3TW">
                             <connections>
-                                <segue destination="4aw-Na-xPk" kind="unwind" unwindAction="cancelToProductsViewController:" id="SoY-FR-BZ5"/>
+                                <segue destination="4aw-Na-xPk" kind="unwind" unwindAction="cancelToProductsController:" id="Ix5-22-vk8"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Save" id="U9h-zP-tkq">
                             <connections>
-                                <action selector="saveProduct:" destination="sXk-ij-9hk" id="RNa-7h-q1L"/>
+                                <action selector="saveProduct:" destination="sXk-ij-9hk" id="N91-gq-QA4"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="depositText" destination="Xlp-Px-AZM" id="zrz-GR-XgI"/>
-                        <outlet property="nominalText" destination="S1h-X5-7YX" id="dI7-VH-1qX"/>
-                        <outlet property="priceText" destination="Am0-Go-wK4" id="SCY-50-ifk"/>
-                        <outlet property="productCodeText" destination="ACT-cd-8GJ" id="XXb-E8-04R"/>
-                        <outlet property="productText" destination="g3g-Ic-wLE" id="ZGA-hS-tFg"/>
-                        <outlet property="productTypeText" destination="wpd-sS-dmb" id="uKj-Ll-ezl"/>
-                        <outlet property="taxCodeText" destination="gTy-g0-gv2" id="v1A-Pg-is8"/>
+                        <outlet property="deposit" destination="Xlp-Px-AZM" id="ndP-ts-FPt"/>
+                        <outlet property="nominal" destination="S1h-X5-7YX" id="jcE-eo-kd0"/>
+                        <outlet property="price" destination="Am0-Go-wK4" id="rd7-eZ-Ogv"/>
+                        <outlet property="product" destination="g3g-Ic-wLE" id="7fo-fT-pNy"/>
+                        <outlet property="productCode" destination="ACT-cd-8GJ" id="y2Z-Vt-VCf"/>
+                        <outlet property="productType" destination="wpd-sS-dmb" id="wOs-cg-4ah"/>
+                        <outlet property="taxCode" destination="gTy-g0-gv2" id="bn2-9M-a9N"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gqc-cs-IW1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
