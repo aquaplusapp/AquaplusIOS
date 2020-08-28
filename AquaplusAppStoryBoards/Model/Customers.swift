@@ -20,6 +20,7 @@ struct Customers: Decodable {
     let county: String
     let postCode: String
     var orders: [Order]?
+    var cooler: [Cooler]?
 }
 
 

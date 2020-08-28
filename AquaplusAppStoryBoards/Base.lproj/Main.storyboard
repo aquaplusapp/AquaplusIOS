@@ -60,7 +60,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qYK-WM-qU6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3115.9420289855075" y="871.875"/>
+            <point key="canvasLocation" x="9485.507246376812" y="871.875"/>
         </scene>
         <!--Orders-->
         <scene sceneID="msj-Ep-vXs">
@@ -148,7 +148,139 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IS7-Rp-WHE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-735" y="146"/>
+            <point key="canvasLocation" x="173.91304347826087" y="145.98214285714286"/>
+        </scene>
+        <!--Add Cooler-->
+        <scene sceneID="1Et-us-fKj">
+            <objects>
+                <viewController id="xmM-Ie-Jzi" customClass="AddNewCoolerViewController" customModule="AquaplusAppStoryBoards" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="apU-ok-xmp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Fo4-1j-3dZ">
+                                <rect key="frame" x="24" y="80" width="366" height="528"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Customer Id" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cgx-Wx-PNX">
+                                        <rect key="frame" x="0.0" y="0.0" width="366" height="17"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UdT-0D-jXb">
+                                        <rect key="frame" x="0.0" y="25" width="366" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Serial Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nen-Dm-s6Z">
+                                        <rect key="frame" x="0.0" y="67" width="366" height="17"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bmj-aO-fiE">
+                                        <rect key="frame" x="0.0" y="92" width="366" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Make" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VT8-2o-xdb">
+                                        <rect key="frame" x="0.0" y="134" width="366" height="17"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PCx-ZK-vZB">
+                                        <rect key="frame" x="0.0" y="159" width="366" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Model" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pB5-Jh-cih">
+                                        <rect key="frame" x="0.0" y="201" width="366" height="17"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eoU-nu-HRO">
+                                        <rect key="frame" x="0.0" y="226" width="366" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cooler Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ov-QE-KP4">
+                                        <rect key="frame" x="0.0" y="268" width="366" height="17"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eV9-0e-Sr7">
+                                        <rect key="frame" x="0.0" y="293" width="366" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Image" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FSu-Hv-VrH">
+                                        <rect key="frame" x="0.0" y="335" width="366" height="17"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xck-rA-EFu">
+                                        <rect key="frame" x="0.0" y="360" width="366" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K7c-Pf-WWa">
+                                        <rect key="frame" x="0.0" y="402" width="366" height="17"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wPw-ma-b08">
+                                        <rect key="frame" x="0.0" y="427" width="366" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nhK-UF-MZv">
+                                        <rect key="frame" x="0.0" y="469" width="366" height="17"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Np-7x-Jzh">
+                                        <rect key="frame" x="0.0" y="494" width="366" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Fo4-1j-3dZ" firstAttribute="top" secondItem="zZq-es-ruW" secondAttribute="top" constant="24" id="6B8-zf-e2L"/>
+                            <constraint firstItem="Fo4-1j-3dZ" firstAttribute="leading" secondItem="zZq-es-ruW" secondAttribute="leading" constant="24" id="Q4t-3A-BxU"/>
+                            <constraint firstItem="zZq-es-ruW" firstAttribute="trailing" secondItem="Fo4-1j-3dZ" secondAttribute="trailing" constant="24" id="zGN-d7-eul"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="zZq-es-ruW"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add Cooler" id="iRE-HD-SGA">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="z3g-8m-Sgh">
+                            <connections>
+                                <action selector="save:" destination="xmM-Ie-Jzi" id="vaS-ED-IgC"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="coolerTypetextField" destination="eV9-0e-Sr7" id="YuX-QQ-hLX"/>
+                        <outlet property="customerIdTextField" destination="UdT-0D-jXb" id="E1e-pP-UXM"/>
+                        <outlet property="imageTextField" destination="xck-rA-EFu" id="NUK-mZ-6iz"/>
+                        <outlet property="makeTextField" destination="PCx-ZK-vZB" id="sR1-Ah-uqz"/>
+                        <outlet property="modelTextField" destination="eoU-nu-HRO" id="Lwj-EW-EDI"/>
+                        <outlet property="notesTextField" destination="4Np-7x-Jzh" id="Yox-WF-oL6"/>
+                        <outlet property="serialNumberTextField" destination="Bmj-aO-fiE" id="oVx-wd-9G4"/>
+                        <outlet property="statusTextField" destination="wPw-ma-b08" id="Ybm-Gj-OFc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dm8-bF-fPD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-493" y="872"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="E3E-oq-Mdy">
@@ -168,7 +300,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ORf-og-t6w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1063.768115942029" y="145.98214285714286"/>
+            <point key="canvasLocation" x="2884.057971014493" y="145.98214285714286"/>
         </scene>
         <!--Login Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -262,7 +394,7 @@ App</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1921.7391304347827" y="145.98214285714286"/>
+            <point key="canvasLocation" x="3740.579710144928" y="145.98214285714286"/>
         </scene>
         <!--Register Controller-->
         <scene sceneID="I1u-23-Ewy">
@@ -373,7 +505,7 @@ App</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FFj-Ba-kFM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2568.1159420289855" y="145.98214285714286"/>
+            <point key="canvasLocation" x="4386.9565217391309" y="145.98214285714286"/>
         </scene>
         <!--Customer Profile Controller Test-->
         <scene sceneID="vHi-rW-x11">
@@ -887,7 +1019,7 @@ App</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="clR-3L-Efi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1631.8840579710147" y="871.875"/>
+            <point key="canvasLocation" x="8001.4492753623199" y="871.875"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="kmz-Rd-PgB">
@@ -906,7 +1038,7 @@ App</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ArQ-BW-6xD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2471.0144927536235" y="871.875"/>
+            <point key="canvasLocation" x="8842.0289855072479" y="871.875"/>
         </scene>
         <!--Add New Del-->
         <scene sceneID="6CS-Un-FxK">
@@ -2233,7 +2365,7 @@ App</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aR9-0l-5JZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="wfo-GK-ctE" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="5150.7246376811599" y="748.66071428571422"/>
+            <point key="canvasLocation" x="11521.739130434784" y="748.66071428571422"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="msR-ci-dZP">
@@ -2252,7 +2384,7 @@ App</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lSP-Pd-dsq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4460.8695652173919" y="748.66071428571422"/>
+            <point key="canvasLocation" x="10831.884057971016" y="748.66071428571422"/>
         </scene>
         <!--Products-->
         <scene sceneID="pCW-ol-h7F">
@@ -2468,7 +2600,7 @@ App</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gqc-cs-IW1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="4aw-Na-xPk" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-1997" y="1631"/>
+            <point key="canvasLocation" x="-1906" y="1635"/>
         </scene>
         <!--Feedback-->
         <scene sceneID="8DH-fF-b98">
@@ -2556,7 +2688,7 @@ App</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KGE-Zk-4yQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="921.73913043478262" y="871.875"/>
+            <point key="canvasLocation" x="7291.3043478260879" y="871.875"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="FOk-pr-zeo">
@@ -2929,7 +3061,7 @@ App</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XvR-Ym-08u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="65" y="146"/>
+            <point key="canvasLocation" x="1884.057971014493" y="145.98214285714286"/>
         </scene>
         <!--more-->
         <scene sceneID="2YM-fD-C4m">
@@ -2949,7 +3081,7 @@ App</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BUn-un-t4k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2103" y="872"/>
+            <point key="canvasLocation" x="-3539" y="872"/>
         </scene>
         <!--More-->
         <scene sceneID="eiH-U3-tJW">
@@ -3019,6 +3151,9 @@ App</string>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="J7I-8g-BUK" kind="show" id="gm8-ay-7cU"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="vqy-Df-5tJ" rowHeight="60" style="IBUITableViewCellStyleDefault" id="CjA-NP-XJy">
                                         <rect key="frame" x="0.0" y="234" width="414" height="60"/>
@@ -3095,7 +3230,7 @@ App</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dwp-Pu-3s1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1288.4057971014495" y="871.875"/>
+            <point key="canvasLocation" x="-2723" y="872"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="8J2-0V-ccL">
@@ -3114,6 +3249,98 @@ App</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ilz-PH-64w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2674" y="1631"/>
+        </scene>
+        <!--View Coolers-->
+        <scene sceneID="5mf-Kx-q8Q">
+            <objects>
+                <tableViewController id="J7I-8g-BUK" customClass="CoolerViewController" customModule="AquaplusAppStoryBoards" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="7ou-pz-Igq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CoolerCell" rowHeight="108" id="qvR-AG-Fes" customClass="CoolerCell" customModule="AquaplusAppStoryBoards" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="108"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qvR-AG-Fes" id="XGS-k8-ghX">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="108"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="1oC-YE-foJ">
+                                            <rect key="frame" x="20" y="11" width="109" height="77.5"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Serial Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g8I-mY-YIG">
+                                                    <rect key="frame" x="0.0" y="0.0" width="109" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Make" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BTj-Yd-Ch2">
+                                                    <rect key="frame" x="0.0" y="28.5" width="41.5" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Model" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ygc-zr-5Tp">
+                                                    <rect key="frame" x="0.0" y="57" width="47.5" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="1oC-YE-foJ" secondAttribute="bottom" constant="8.5" id="1Gn-g3-t39"/>
+                                        <constraint firstItem="1oC-YE-foJ" firstAttribute="leading" secondItem="XGS-k8-ghX" secondAttribute="leadingMargin" id="2zK-hr-CaP"/>
+                                        <constraint firstItem="1oC-YE-foJ" firstAttribute="top" secondItem="XGS-k8-ghX" secondAttribute="topMargin" id="8pO-Z3-qRE"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="1oC-YE-foJ" secondAttribute="trailing" constant="265" id="H4I-b3-A5W"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="make" destination="BTj-Yd-Ch2" id="g4R-X2-Z5C"/>
+                                    <outlet property="model" destination="Ygc-zr-5Tp" id="AAf-2I-o7e"/>
+                                    <outlet property="serialNumber" destination="g8I-mY-YIG" id="qtf-gG-MMP"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="J7I-8g-BUK" id="ZuT-AS-pse"/>
+                            <outlet property="delegate" destination="J7I-8g-BUK" id="6A9-YM-NQp"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="View Coolers" id="zj5-f6-sj1">
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="OHa-gF-ZXJ">
+                                <connections>
+                                    <segue destination="Zby-KK-0N3" kind="presentation" id="PBK-OI-Fth"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="refresh" id="1JH-33-DAX"/>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xbj-bZ-csM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1997.1014492753625" y="871.875"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ZKW-BQ-9pH">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Zby-KK-0N3" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9Lg-cS-QTX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="xmM-Ie-Jzi" kind="relationship" relationship="rootViewController" id="4u6-GZ-4H7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="otw-RS-ftK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1257" y="872"/>
         </scene>
     </scenes>
     <resources>

@@ -49,7 +49,25 @@ class Service: NSObject {
                 }
         }
     }
-    
+    func fetchCoolers(completion: @escaping (Result<[Cooler], Error>) -> ()) {
+        let url = "\(baseUrl)/cooler"
+        AF.request(url)
+            .validate(statusCode: 200..<300)
+            .responseData { (dataResp) in
+                if let err = dataResp.error {
+                    completion(.failure(err))
+                    return
+                }
+                
+                guard let data = dataResp.data else { return }
+                do {
+                    let coolers = try JSONDecoder().decode([Cooler].self, from: data)
+                    completion(.success(coolers))
+                } catch {
+                    completion(.failure(error))
+                }
+        }
+    }
     func fetchOrders(completion: @escaping (Result<[Order], Error>) -> ()) {
         let url = "\(baseUrl)/notcompletedorder"
         AF.request(url)
