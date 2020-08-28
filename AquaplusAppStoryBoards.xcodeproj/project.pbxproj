@@ -43,10 +43,8 @@
 		33DEC94D249A683E007CAAA8 /* OrderConfirmationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DEC94C249A683E007CAAA8 /* OrderConfirmationController.swift */; };
 		5A3F37D5DEB0C21E370FA1C9 /* Pods_AquaplusAppStoryBoardsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A687FE618993718C86EDFD75 /* Pods_AquaplusAppStoryBoardsTests.framework */; };
 		AB293F7B24F7048A006E180D /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB293F7A24F7048A006E180D /* ProductCell.swift */; };
-		AB293F7E24F70514006E180D /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB293F7D24F70514006E180D /* ProductsViewController.swift */; };
 		AB293F8124F85692006E180D /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB293F8024F85691006E180D /* Products.swift */; };
 		AB293F8324F85750006E180D /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB293F8224F85750006E180D /* SampleData.swift */; };
-		AB293F8724F86377006E180D /* AddProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB293F8624F86377006E180D /* AddProductViewController.swift */; };
 		AB608B6624632D2F00B8C490 /* AddNewContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB608B6524632D2F00B8C490 /* AddNewContactViewController.swift */; };
 		AB6B38A924813E9400329A27 /* DeliveryCompletedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6B38A824813E9400329A27 /* DeliveryCompletedCell.swift */; };
 		AB89BA2A248AE3030064E1DF /* contactOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB89BA29248AE3030064E1DF /* contactOrderViewController.swift */; };
@@ -108,10 +106,8 @@
 		443D53B3375FD95B69BAB9ED /* Pods-AquaplusAppStoryBoardsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AquaplusAppStoryBoardsTests.release.xcconfig"; path = "Target Support Files/Pods-AquaplusAppStoryBoardsTests/Pods-AquaplusAppStoryBoardsTests.release.xcconfig"; sourceTree = "<group>"; };
 		A687FE618993718C86EDFD75 /* Pods_AquaplusAppStoryBoardsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AquaplusAppStoryBoardsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB293F7A24F7048A006E180D /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
-		AB293F7D24F70514006E180D /* ProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProductsViewController.swift; path = /Users/EdsonMendesDaSilva/Documents/Developer/AquaplusIOS/AquaplusAppStoryBoards/Controllers/More/ProductsViewController.swift; sourceTree = "<absolute>"; };
 		AB293F8024F85691006E180D /* Products.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Products.swift; sourceTree = "<group>"; };
 		AB293F8224F85750006E180D /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
-		AB293F8624F86377006E180D /* AddProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddProductViewController.swift; path = /Users/EdsonMendesDaSilva/Documents/Developer/AquaplusIOS/AquaplusAppStoryBoards/Controllers/More/AddProductViewController.swift; sourceTree = "<absolute>"; };
 		AB608B6524632D2F00B8C490 /* AddNewContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewContactViewController.swift; sourceTree = "<group>"; };
 		AB6B38A824813E9400329A27 /* DeliveryCompletedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryCompletedCell.swift; sourceTree = "<group>"; };
 		AB89BA29248AE3030064E1DF /* contactOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contactOrderViewController.swift; sourceTree = "<group>"; };
@@ -312,8 +308,6 @@
 			isa = PBXGroup;
 			children = (
 				335246982485AB3200B67B05 /* FeedbackViewController.swift */,
-				AB293F7D24F70514006E180D /* ProductsViewController.swift */,
-				AB293F8624F86377006E180D /* AddProductViewController.swift */,
 			);
 			path = More;
 			sourceTree = "<group>";
@@ -519,7 +513,6 @@
 				335DD142245A0CAE00E00149 /* Service.swift in Sources */,
 				335DD144245A38A700E00149 /* MainTabBarController.swift in Sources */,
 				335DD1192459D1FC00E00149 /* LoginController.swift in Sources */,
-				AB293F7E24F70514006E180D /* ProductsViewController.swift in Sources */,
 				AB6B38A924813E9400329A27 /* DeliveryCompletedCell.swift in Sources */,
 				33605952245CEDF50005FC8B /* CustomerPickerController.swift in Sources */,
 				33605941245C7A900005FC8B /* Order.swift in Sources */,
@@ -548,7 +541,6 @@
 				33DEC94D249A683E007CAAA8 /* OrderConfirmationController.swift in Sources */,
 				33605950245CED2E0005FC8B /* AddNewDeliveryController.swift in Sources */,
 				AB89BA2A248AE3030064E1DF /* contactOrderViewController.swift in Sources */,
-				AB293F8724F86377006E180D /* AddProductViewController.swift in Sources */,
 				3360596A245E70BF0005FC8B /* CustomerProfileControllerTest.swift in Sources */,
 				335DD1152459D1FC00E00149 /* AppDelegate.swift in Sources */,
 				335DD1172459D1FC00E00149 /* SceneDelegate.swift in Sources */,
@@ -714,13 +706,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 99E2XX32KG;
+				DEVELOPMENT_TEAM = S899XY5RMB;
 				INFOPLIST_FILE = AquaplusAppStoryBoards/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Edson.AquaplusAppStoryBoards;
+				PRODUCT_BUNDLE_IDENTIFIER = com.David.AquaplusAppStoryBoards;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -740,7 +732,6 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Edson.AquaplusAppStoryBoards;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
