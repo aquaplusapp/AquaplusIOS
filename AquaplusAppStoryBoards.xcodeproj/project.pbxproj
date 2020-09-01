@@ -76,7 +76,7 @@
 		3345B61C24F94B1100192407 /* AddNewCoolerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewCoolerViewController.swift; sourceTree = "<group>"; };
 		3345B61E24F955FE00192407 /* Cooler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cooler.swift; sourceTree = "<group>"; };
 		3345B62024F9621C00192407 /* CoolerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoolerCell.swift; sourceTree = "<group>"; };
-		3345B62224F9632700192407 /* CoolerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CoolerViewController.swift; path = Controllers/More/CoolerViewController.swift; sourceTree = "<group>"; };
+		3345B62224F9632700192407 /* CoolerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoolerViewController.swift; sourceTree = "<group>"; };
 		335246982485AB3200B67B05 /* FeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
 		3352469A2485B0BD00B67B05 /* FeedbackCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackCategory.swift; sourceTree = "<group>"; };
 		335C0744249CDC78009D81CE /* OrderConfirmation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderConfirmation.swift; sourceTree = "<group>"; };
@@ -188,7 +188,6 @@
 				335DD1142459D1FC00E00149 /* AppDelegate.swift */,
 				335DD1162459D1FC00E00149 /* SceneDelegate.swift */,
 				335DD11A2459D1FC00E00149 /* Main.storyboard */,
-				3345B62224F9632700192407 /* CoolerViewController.swift */,
 				335DD11D2459D20200E00149 /* Assets.xcassets */,
 				335DD11F2459D20200E00149 /* LaunchScreen.storyboard */,
 				335DD1222459D20200E00149 /* Info.plist */,
@@ -326,6 +325,7 @@
 				335246982485AB3200B67B05 /* FeedbackViewController.swift */,
 				AB293F8E24F94B06006E180D /* AddProductsViewController.swift */,
 				AB293F9024F94B31006E180D /* ProductsViewController.swift */,
+				3345B62224F9632700192407 /* CoolerViewController.swift */,
 			);
 			path = More;
 			sourceTree = "<group>";
