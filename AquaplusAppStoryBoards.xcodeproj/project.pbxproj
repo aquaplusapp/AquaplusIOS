@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		3329575C24883FD400A858B6 /* FeedbackForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3329575B24883FD300A858B6 /* FeedbackForm.swift */; };
 		3329575F2488569600A858B6 /* EmailManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3329575E2488569600A858B6 /* EmailManager.swift */; };
+		3345B61D24F94B1100192407 /* AddNewCoolerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3345B61C24F94B1100192407 /* AddNewCoolerViewController.swift */; };
+		3345B61F24F955FE00192407 /* Cooler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3345B61E24F955FE00192407 /* Cooler.swift */; };
+		3345B62124F9621C00192407 /* CoolerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3345B62024F9621C00192407 /* CoolerCell.swift */; };
+		3345B62324F9632700192407 /* CoolerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3345B62224F9632700192407 /* CoolerViewController.swift */; };
 		335246992485AB3200B67B05 /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335246982485AB3200B67B05 /* FeedbackViewController.swift */; };
 		3352469B2485B0BD00B67B05 /* FeedbackCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3352469A2485B0BD00B67B05 /* FeedbackCategory.swift */; };
 		335C0745249CDC78009D81CE /* OrderConfirmation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335C0744249CDC78009D81CE /* OrderConfirmation.swift */; };
@@ -69,6 +73,10 @@
 		2278A66F61C46F41D8044BDB /* Pods-AquaplusAppStoryBoardsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AquaplusAppStoryBoardsTests.debug.xcconfig"; path = "Target Support Files/Pods-AquaplusAppStoryBoardsTests/Pods-AquaplusAppStoryBoardsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3329575B24883FD300A858B6 /* FeedbackForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackForm.swift; sourceTree = "<group>"; };
 		3329575E2488569600A858B6 /* EmailManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailManager.swift; sourceTree = "<group>"; };
+		3345B61C24F94B1100192407 /* AddNewCoolerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewCoolerViewController.swift; sourceTree = "<group>"; };
+		3345B61E24F955FE00192407 /* Cooler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cooler.swift; sourceTree = "<group>"; };
+		3345B62024F9621C00192407 /* CoolerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoolerCell.swift; sourceTree = "<group>"; };
+		3345B62224F9632700192407 /* CoolerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CoolerViewController.swift; path = Controllers/More/CoolerViewController.swift; sourceTree = "<group>"; };
 		335246982485AB3200B67B05 /* FeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
 		3352469A2485B0BD00B67B05 /* FeedbackCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackCategory.swift; sourceTree = "<group>"; };
 		335C0744249CDC78009D81CE /* OrderConfirmation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderConfirmation.swift; sourceTree = "<group>"; };
@@ -180,6 +188,7 @@
 				335DD1142459D1FC00E00149 /* AppDelegate.swift */,
 				335DD1162459D1FC00E00149 /* SceneDelegate.swift */,
 				335DD11A2459D1FC00E00149 /* Main.storyboard */,
+				3345B62224F9632700192407 /* CoolerViewController.swift */,
 				335DD11D2459D20200E00149 /* Assets.xcassets */,
 				335DD11F2459D20200E00149 /* LaunchScreen.storyboard */,
 				335DD1222459D20200E00149 /* Info.plist */,
@@ -222,6 +231,7 @@
 				335DD147245A3A0B00E00149 /* ContactCell.swift */,
 				33605959245DE16A0005FC8B /* CustomerOrderCell.swift */,
 				3360596B245E715D0005FC8B /* CustomerHeader.swift */,
+				3345B62024F9621C00192407 /* CoolerCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -243,6 +253,7 @@
 				3352469A2485B0BD00B67B05 /* FeedbackCategory.swift */,
 				3329575B24883FD300A858B6 /* FeedbackForm.swift */,
 				335C0744249CDC78009D81CE /* OrderConfirmation.swift */,
+				3345B61E24F955FE00192407 /* Cooler.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -311,6 +322,7 @@
 		AB293F7C24F704D6006E180D /* More */ = {
 			isa = PBXGroup;
 			children = (
+				3345B61C24F94B1100192407 /* AddNewCoolerViewController.swift */,
 				335246982485AB3200B67B05 /* FeedbackViewController.swift */,
 				AB293F8E24F94B06006E180D /* AddProductsViewController.swift */,
 				AB293F9024F94B31006E180D /* ProductsViewController.swift */,
@@ -515,6 +527,7 @@
 			files = (
 				335DD148245A3A0B00E00149 /* ContactCell.swift in Sources */,
 				335DD1372459D42900E00149 /* HomeController.swift in Sources */,
+				3345B62324F9632700192407 /* CoolerViewController.swift in Sources */,
 				3329575F2488569600A858B6 /* EmailManager.swift in Sources */,
 				AB293F9124F94B31006E180D /* ProductsViewController.swift in Sources */,
 				335DD142245A0CAE00E00149 /* Service.swift in Sources */,
@@ -528,6 +541,7 @@
 				AB293F8324F85750006E180D /* SampleData.swift in Sources */,
 				AB293F8124F85692006E180D /* Products.swift in Sources */,
 				33605943245C7A980005FC8B /* User.swift in Sources */,
+				3345B61D24F94B1100192407 /* AddNewCoolerViewController.swift in Sources */,
 				3360593F245C7A860005FC8B /* Customers.swift in Sources */,
 				AB293F7B24F7048A006E180D /* ProductCell.swift in Sources */,
 				AB608B6624632D2F00B8C490 /* AddNewContactViewController.swift in Sources */,
@@ -551,7 +565,9 @@
 				AB89BA2A248AE3030064E1DF /* contactOrderViewController.swift in Sources */,
 				3360596A245E70BF0005FC8B /* CustomerProfileControllerTest.swift in Sources */,
 				335DD1152459D1FC00E00149 /* AppDelegate.swift in Sources */,
+				3345B61F24F955FE00192407 /* Cooler.swift in Sources */,
 				335DD1172459D1FC00E00149 /* SceneDelegate.swift in Sources */,
+				3345B62124F9621C00192407 /* CoolerCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -714,13 +730,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 99E2XX32KG;
+				DEVELOPMENT_TEAM = S899XY5RMB;
 				INFOPLIST_FILE = AquaplusAppStoryBoards/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Edson.AquaplusAppStoryBoards;
+				PRODUCT_BUNDLE_IDENTIFIER = com.David.AquaplusAppStoryBoards;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -740,7 +756,6 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Edson.AquaplusAppStoryBoards;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

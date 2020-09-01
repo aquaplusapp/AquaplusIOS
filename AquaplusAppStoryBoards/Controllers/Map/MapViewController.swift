@@ -47,7 +47,7 @@ class MapViewController: UIViewController {
             let placemark = placemarks?.first
             let lat = placemark?.location?.coordinate.latitude
             let lon = placemark?.location?.coordinate.longitude
-            print("Lat: \(lat), Lon: \(lon)")
+            print("Lat: \(String(describing: lat)), Lon: \(String(describing: lon))")
 
                     // Creates a marker in the center of the map.
                     let marker = GMSMarker()
