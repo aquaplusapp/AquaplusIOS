@@ -11,7 +11,7 @@ import UIKit
 class CoolerViewController: UITableViewController {
 
     var coolers = [Cooler]()
-    
+    //David
     
     override func viewDidLoad() {
         super.viewDidLoad()
