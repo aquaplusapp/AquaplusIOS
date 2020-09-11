@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Products {
+struct ProductsSample{
     
     //MARK: - Properties
     var productCode: String?

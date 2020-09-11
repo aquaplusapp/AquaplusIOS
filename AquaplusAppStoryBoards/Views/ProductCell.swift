@@ -10,21 +10,21 @@ import UIKit
 
 class ProductCell: UITableViewCell {
     
+   private var product: Product?
     //MARK: - IBOutlets
     @IBOutlet weak var productCodeLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     
-    //MARK: - Properties
-    var products: Products? {
-        didSet {
-            guard let products = products else { return }
-            
-            productCodeLabel.text = products.productCode
-            descriptionLabel.text = products.product
-            priceLabel.text = String(products.price)
-        }
+    
+    
+    func configure(with product: Product) {
+        self.product = product
+        productCodeLabel.text = product.productCode
+        descriptionLabel.text = product.product
+        priceLabel.text = String(product.price)
     }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

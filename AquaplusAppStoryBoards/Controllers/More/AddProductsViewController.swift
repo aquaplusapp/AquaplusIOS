@@ -5,8 +5,10 @@
 //  Created by Edson Mendes da silva on 28/08/2020.
 //  Copyright © 2020 David Mendes Da Silva. All rights reserved.
 //
-
 import UIKit
+import Alamofire
+import JGProgressHUD
+import Combine
 
 class AddProductsViewController: UIViewController {
 
@@ -21,6 +23,8 @@ class AddProductsViewController: UIViewController {
     
     @IBAction func saveProduct(_ sender: Any) {
         print("Saving Product")
+        saveProduct()
+        
     }
     
     override func viewDidLoad() {
@@ -40,4 +44,36 @@ class AddProductsViewController: UIViewController {
     }
     */
 
+        @objc func saveProduct() {
+            
+            let hud = JGProgressHUD(style: .dark)
+            hud.textLabel.text = "Submitting..."
+            hud.show(in: view)
+
+            guard let productCode = productCode.text else {return}
+            guard let product = product.text else {return}
+            guard let price = price.text else {return}
+            guard let productType = productType.text else {return}
+            guard let nominal = nominal.text else {return}
+            guard let taxCode = taxCode.text else {return}
+            guard let deposit = deposit.text else {return}
+            
+            
+            let params = ["productCode": productCode, "product": product, "price": price, "productType": productType, "nominal": nominal, "taxCode": taxCode, "deposit": deposit]
+            
+            let url = "\(Service.shared.baseUrl)/product"
+            AF.request(url, method: .post, parameters: params)
+                .validate(statusCode: 200..<300)
+                .responseData { (dataResp) in
+
+                    hud.dismiss()
+    //                self.waterLabel.text = nil
+    //                self.waterLabel.isHidden = false
+
+                    self.dismiss(animated: false, completion: nil)
+
+                    //self.fetchCustomerProfile()
+
+            }
+        }
 }

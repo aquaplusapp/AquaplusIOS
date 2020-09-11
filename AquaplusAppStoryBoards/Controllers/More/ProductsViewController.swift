@@ -10,21 +10,31 @@ import UIKit
 
 class ProductsViewController: UITableViewController {
     
-    
-    var products = SampleData.generateProductsData()
+    var products = [Product]()
+
+    //var products = SampleData.generateProductsData()
     
     @IBAction func refreshProducts(_ sender: Any) {
         print("Refershing Products")
+        fetchProducts()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        fetchProducts()
+    }
+    
+    @objc func fetchProducts() {
+        Service.shared.fetchProducts { (res) in
+            self.tableView.refreshControl?.endRefreshing()
+            switch res {
+            case .failure(let err):
+                print("Failed to fetch products:", err)
+            case .success(let products):
+                self.products = products
+                self.tableView.reloadData()
+            }
+        }
     }
 
     // MARK: - Table view data source
@@ -37,9 +47,10 @@ class ProductsViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "ProductCell", for: indexPath) as! ProductCell
         
-    let product = products[indexPath.row]
-    cell.products = product
-    return cell
+        let product = products[indexPath.row]
+        cell.configure(with: product)
+        return cell
+ 
     }
     
     
